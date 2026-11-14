@@ -1,4 +1,4 @@
-/* seclab HUD theme - shared across all lab dashboards */
+/* seclab HUD theme: flat terminal style, shared across the lab dashboards */
 :root {
   --bg: #0b0b0d;
   --panel: #141418;
@@ -6,24 +6,18 @@
   --border: #2b2a31;
   --text: #dcd8cc;
   --muted: #8b877d;
-  --accent: #b8322a;      /* dried blood */
-  --accent-2: #7a5cff;    /* bruise violet */
+  --accent: #b8322a;
+  --accent-2: #7a5cff;
   --ok: #5f9e5a;
   --warn: #d49a1e;
   --crit: #e04a3a;
   --info: #4f8fb8;
   --grid: #24232a;
   --mono: "Hack", "Fira Code", "DejaVu Sans Mono", monospace;
-  --radius: 4px;
+  --radius: 0;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 var(--mono); }
-body {
-  background-image:
-    radial-gradient(ellipse at top, rgba(184, 50, 42, 0.07), transparent 60%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 3px);
-  min-height: 100vh;
-}
 a { color: var(--info); }
 header.hud {
   display: flex; align-items: center; gap: 16px; padding: 12px 20px;
@@ -31,7 +25,6 @@ header.hud {
   position: sticky; top: 0; z-index: 10;
 }
 header.hud .brand { font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; }
-header.hud .brand::before { content: "\1F987  "; }
 header.hud .sub { color: var(--muted); font-size: 12px; }
 header.hud nav { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
 header.hud nav button, .btn {

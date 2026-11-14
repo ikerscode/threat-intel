@@ -1,3 +1,7 @@
+import os
+
+os.environ.setdefault("SECLAB_ALLOWED_HOSTS", "testserver")  # FastAPI TestClient host
+
 """Test setup: every test session gets its own temporary database, cache and report folder.
 
 Tests never touch the network. The seeded database is built once from fixtures/.
@@ -20,6 +24,7 @@ def isolated_env(tmp_path_factory):
     os.environ["TI_REPORTS"] = str(base / "reports")
     os.environ.pop("ABUSECH_AUTH_KEY", None)
     os.environ.pop("NVD_API_KEY", None)
+    os.environ["TI_NO_KEYRING"] = "1"  # tests never read the real keyring
     from threatintel import asn, config
     config.reset()
     asn.reload()

@@ -32,6 +32,12 @@ def cmd_correlate(args) -> int:
     return 0
 
 
+def cmd_tui(args) -> int:
+    from . import termhud
+    from .tui_spec import SPEC
+    return termhud.run(SPEC, args.url, args.once)
+
+
 def cmd_seed(args) -> int:
     from . import seed
     stats = seed.run(fresh=args.fresh)
@@ -77,6 +83,22 @@ def cmd_export(args) -> int:
     return 0
 
 
+def cmd_set_key(args) -> int:
+    """Store an API key in the desktop keyring (prompted, never echoed or logged)."""
+    import getpass
+    from . import secrets
+    if args.delete:
+        print("deleted" if secrets.delete(args.name) else "nothing stored")
+        return 0
+    value = getpass.getpass(f"{args.name}: ").strip()
+    if not value:
+        print("empty key, nothing stored")
+        return 1
+    secrets.store(args.name, value)
+    print(f"{args.name} stored in the keyring")
+    return 0
+
+
 def main(argv=None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
@@ -91,6 +113,10 @@ def main(argv=None) -> int:
     s.set_defaults(func=cmd_collect)
     s = sub.add_parser("correlate", help="merge aliases, link entities, score, cluster")
     s.set_defaults(func=cmd_correlate)
+    s = sub.add_parser("tui", help="terminal HUD over the local API (1-9/Tab views, Enter detail, q quit)")
+    s.add_argument("--url", default="http://127.0.0.1:8102", help="API base URL (default 127.0.0.1:8102)")
+    s.add_argument("--once", action="store_true", help="print every view as plain text and exit")
+    s.set_defaults(func=cmd_tui)
     s = sub.add_parser("search", help="pivot on any value (IP, domain, URL, CVE, group, technique, malware)")
     s.add_argument("value")
     s.add_argument("--depth", type=int, default=2)
@@ -103,6 +129,10 @@ def main(argv=None) -> int:
     s.add_argument("--out", default=None, help="output directory (default data/exports)")
     s.add_argument("--fanged", action="store_true", help="write URL/domain blocklists un-defanged (for blockers)")
     s.set_defaults(func=cmd_export)
+    s = sub.add_parser("set-key", help="store an API key in the desktop keyring (encrypted at rest)")
+    s.add_argument("name", choices=["ABUSECH_AUTH_KEY", "NVD_API_KEY"])
+    s.add_argument("--delete", action="store_true", help="remove the stored key")
+    s.set_defaults(func=cmd_set_key)
     args = p.parse_args(argv)
     return args.func(args)
 

@@ -4,3 +4,21 @@ data/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# secrets and captured data: never commit
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.kdbx
+id_rsa*
+id_ed25519*
+*.db
+*.sqlite
+*.sqlite3
+*.pcap
+*.pcapng
+*.joblib
+*.pkl
+.run/

@@ -15,7 +15,7 @@ import json
 import os
 from pathlib import Path
 
-from .. import config, fetch
+from .. import config, fetch, secrets
 
 
 class SkipFeed(Exception):
@@ -48,7 +48,7 @@ class Collector:
         return res
 
     def env(self, var: str | None) -> str | None:
-        return os.environ.get(var) if var else None
+        return secrets.get(var) if var else None
 
     # ------------------------------------------------------------ steps
     def check_live(self) -> None:

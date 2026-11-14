@@ -14,6 +14,7 @@ from fastapi import Body, FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
+from .localguard import LocalGuard
 from . import NAME, __version__, brief, collectors, correlate, db, enrich, export, pivot, queries, scoring, seed
 from .config import ROOT
 from .scheduler import Scheduler
@@ -34,6 +35,9 @@ async def lifespan(app):
 
 
 app = FastAPI(title="seclab threat-intel", version=__version__, lifespan=lifespan)
+
+
+app.add_middleware(LocalGuard)  # localhost-only: host allowlist, CSRF block, CSP
 
 
 def run_job(kind: str, fn, *args) -> dict:

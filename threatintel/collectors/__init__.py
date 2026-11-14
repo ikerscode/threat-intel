@@ -7,7 +7,7 @@ import threading
 import traceback
 from pathlib import Path
 
-from .. import config, db
+from .. import config, db, secrets
 from ..config import FIXTURES
 from ..fetch import FetchError
 from .attack import AttackCollector
@@ -121,7 +121,7 @@ def feed_status(conn) -> list[dict]:
             "override": None if not override else override["enabled_override"],
             "interval_min": cfg.get("interval_min"),
             "key_env": key_env, "key_required": bool(cls.requires_env),
-            "key_present": bool(key_env and os.environ.get(key_env)),
+            "key_present": bool(key_env and secrets.get(key_env)),
             "context_only": cls.context_only,
             "last_run": last, "last_ok": last_ok,
         })

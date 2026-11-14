@@ -61,7 +61,15 @@ python -m threatintel export [--fanged]     # writes data/exports/
 python -m pytest -q                         # 41 tests, offline, about 1 s
 ```
 
-Optional keys (environment variables, never stored in files):
+Optional keys. They are never written to a file or the repo. Store them in the desktop keyring
+(Secret Service, encrypted at rest and unlocked with your login):
+
+```bash
+.venv/bin/python -m threatintel set-key ABUSECH_AUTH_KEY      # prompts, no echo, no shell history
+.venv/bin/python -m threatintel set-key ABUSECH_AUTH_KEY --delete
+```
+
+An environment variable with the same name overrides the keyring (useful for containers).
 
 | variable | used by | effect |
 |---|---|---|
@@ -86,6 +94,29 @@ The HUD is deliberately plain: three tabs, mostly tables, one button per action.
 - **Feeds & Brief**: "Load demo data (offline)", "Run correlation", scheduler on/off,
   one row per feed with an enable checkbox, last status, rows, key status, last error and
   a refresh button; the brief generator with view/download links; export links; recent runs.
+
+## Terminal HUD
+
+A curses view of the same API for SSH sessions. Start the server first (`./run.sh`), then:
+
+```
+.venv/bin/python -m threatintel tui                  # 127.0.0.1:8102
+.venv/bin/python -m threatintel tui --url http://127.0.0.1:8102 --once   # plain text, for SSH or scripts
+```
+
+Views: Overview counts, Vulns (prioritised CVEs), Ransomware groups, Feeds status.
+
+- `1`-`9` or Tab: switch view. Left and right arrows also switch.
+- Up and Down arrows (PgUp, PgDn): move through rows. On detail screens they scroll.
+- Enter: open a detail. On Vulns and Ransomware this runs a search pivot on the CVE or
+  group. On Feeds it shows that feed's recent runs.
+- Esc or Backspace: back from a detail.
+- Action keys, shown in the footer: `c` correlate, `b` brief, `f` refresh the selected feed
+  (use it on the Feeds view), `s` load demo data. Each asks `[y/N]` first.
+- `r`: refresh the current view. `q`: quit.
+
+`--once` prints every view as plain text and exits 1 if any view cannot reach the API.
+Feed collection is never started by `--once`.
 
 ## Data sources and terms
 

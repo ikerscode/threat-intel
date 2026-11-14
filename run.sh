@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Start the threat-intel HUD on 127.0.0.1:8102 (creates the venv on first run).
+umask 077  # data (captured credentials, samples, intel) is private to this user
 set -euo pipefail
 cd "$(dirname "$0")"
 PORT="${PORT:-8102}"
