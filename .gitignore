@@ -1,0 +1,6 @@
+# runtime data: database, feed cache (ATT&CK alone is ~50 MB), ip2asn table, reports, exports
+data/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

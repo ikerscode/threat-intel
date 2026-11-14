@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Threat Intel</title>
+<link rel="stylesheet" href="/static/hud.css">
+<style>
+  .stats { display: flex; gap: 22px; flex-wrap: wrap; }
+  .formula { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+  td.num { text-align: right; }
+  #graph { min-height: 200px; }
+</style>
+</head>
+<body>
+<header class="hud">
+  <span class="brand">Threat Intel</span>
+  <span class="sub" id="sub">seclab :8102</span>
+  <nav>
+    <button data-view="overview">Overview</button>
+    <button data-view="search">Search &amp; Enrich</button>
+    <button data-view="feeds">Feeds &amp; Brief</button>
+  </nav>
+</header>
+<main>
+
+<section class="view" id="overview">
+  <div class="grid">
+    <div class="panel span-12">
+      <h2>Counts</h2>
+      <div class="stats" id="stats"></div>
+      <p class="muted" id="ov-note"></p>
+    </div>
+    <div class="panel span-12">
+      <h2>Prioritised known exploited vulnerabilities</h2>
+      <p class="formula" id="vuln-formula"></p>
+      <div class="row"><label><input type="checkbox" id="rw-only"> ransomware-linked only</label>
+        <input id="vuln-q" placeholder="filter vendor / product / CVE"></div>
+      <div class="scroll" id="vulns"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>Ransomware groups (leak-site posts)</h2>
+      <p class="formula" id="rw-anchor"></p>
+      <div class="scroll" id="rw-groups"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>ATT&amp;CK techniques across active groups</h2>
+      <div class="scroll" id="techniques"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>C2 servers by malware family</h2>
+      <div class="scroll" id="c2"></div>
+      <h2 style="margin-top:14px">Infrastructure clusters</h2>
+      <div class="scroll" id="clusters"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>Phishing (offline analysis)</h2>
+      <div id="phish"></div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="search">
+  <div class="grid">
+    <div class="panel span-12">
+      <h2>Pivot search</h2>
+      <div class="row">
+        <input id="q" size="48" placeholder="IP, domain, URL, CVE, group, technique ID, malware">
+        <button class="btn primary" id="go">Search</button>
+        <span class="muted">try:</span><span id="examples"></span>
+      </div>
+      <div id="entity" class="scroll" style="margin-top:10px; max-height:220px"></div>
+      <div id="graph"></div>
+      <div id="linked"></div>
+    </div>
+    <div class="panel span-12">
+      <h2>Enrich IOCs</h2>
+      <p class="muted">Paste IPs, domains, URLs or hashes (one per line, defanged is fine) or a STIX 2.1 bundle.</p>
+      <textarea id="ioc-text"></textarea>
+      <div class="row"><button class="btn primary" id="enrich">Enrich</button>
+        <button class="btn" id="enrich-sample">Sample input</button><span id="enrich-summary" class="muted"></span></div>
+      <div class="scroll" id="enrich-out"></div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="feeds">
+  <div class="grid">
+    <div class="panel span-12">
+      <h2>Feeds</h2>
+      <div class="row">
+        <button class="btn primary" id="seed">Load demo data (offline)</button>
+        <button class="btn" id="correlate">Run correlation</button>
+        <button class="btn" id="sched"></button>
+        <span id="job" class="muted"></span>
+      </div>
+      <div class="scroll" id="feed-table" style="margin-top:10px"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>Intelligence brief</h2>
+      <div class="row"><label>days <input id="brief-days" type="number" value="7" min="1" max="90" style="width:60px"></label>
+        <button class="btn primary" id="brief">Generate brief</button></div>
+      <div id="reports" style="margin-top:8px"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>Exports</h2>
+      <p><a href="/api/export/stix" download>STIX 2.1 bundle</a> &middot; <a href="/api/export/csv" download>indicators.csv</a></p>
+      <p>Blocklists: <a href="/api/export/blocklist/ip" download>ip</a> &middot; <a href="/api/export/blocklist/cidr" download>cidr</a>
+        &middot; <a href="/api/export/blocklist/domain" download>domain</a> &middot; <a href="/api/export/blocklist/url" download>url</a>
+        &middot; <a href="/api/export/blocklist/hash" download>hash</a></p>
+      <p class="muted">Domain and URL lists are defanged unless ?fanged=true is added.</p>
+      <h2>Recent runs</h2>
+      <div class="scroll" id="runs"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<script src="/static/hud.js"></script>
+<script src="/static/app.js?v=6"></script>
+</body>
+</html>

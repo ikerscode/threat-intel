@@ -1,0 +1,104 @@
+# seclab threat-intel feed configuration.
+#
+# enabled          collect this feed in `collect all` and in the scheduler
+# interval_min     scheduler interval in minutes
+# min_refetch_s    if the cached copy is younger than this, reuse it and do not hit the server
+# timeout_s        HTTP timeout for this feed
+#
+# API keys are never stored here. They are read from environment variables:
+#   NVD_API_KEY       optional, raises the NVD rate limit
+#   ABUSECH_AUTH_KEY  required by URLhaus and ThreatFox since their public exports were retired
+#
+# The HUD can switch a feed on or off at runtime. That override is kept in the
+# database (feed_state table) so this file stays the clean default.
+
+[general]
+user_agent = "seclab-ti/0.1"
+cache_dir = "data/cache"
+db_path = "data/threatintel.db"
+reports_dir = "data/reports"
+# minimum seconds between two requests to the same host
+default_host_interval_s = 1.5
+
+[scheduler]
+enabled = false          # can be switched on from the Feeds tab
+tick_s = 60              # how often the scheduler checks for due feeds
+correlate_after = true   # re-run correlation after any successful collection
+
+[feeds.kev]
+enabled = true
+interval_min = 360
+min_refetch_s = 1800
+timeout_s = 60
+
+[feeds.epss]
+enabled = true
+interval_min = 1440
+min_refetch_s = 3600
+timeout_s = 60
+batch_size = 100
+
+[feeds.nvd]
+enabled = false          # slow: about 4 large paged requests with 6.5 s gaps, run it on demand
+interval_min = 10080
+min_refetch_s = 86400
+timeout_s = 120
+page_size = 500
+
+[feeds.attack]
+enabled = true
+interval_min = 10080
+min_refetch_s = 86400
+timeout_s = 180
+
+[feeds.feodo]
+enabled = true
+interval_min = 60
+min_refetch_s = 600
+timeout_s = 30
+
+[feeds.urlhaus]
+enabled = true           # skipped cleanly unless ABUSECH_AUTH_KEY is set
+interval_min = 60
+min_refetch_s = 600
+timeout_s = 60
+limit = 500
+
+[feeds.threatfox]
+enabled = true           # skipped cleanly unless ABUSECH_AUTH_KEY is set
+interval_min = 60
+min_refetch_s = 600
+timeout_s = 60
+days = 3
+
+[feeds.openphish]
+enabled = true
+interval_min = 360
+min_refetch_s = 1800
+timeout_s = 30
+
+[feeds.ransomware]
+enabled = true
+interval_min = 360
+min_refetch_s = 1800
+timeout_s = 60
+# ransomware.live answers "1 per 1 minute" when called faster than this
+host_interval_s = 62
+
+[feeds.spamhaus]
+enabled = true
+interval_min = 1440
+min_refetch_s = 3600
+timeout_s = 30
+
+[feeds.tor]
+enabled = true
+interval_min = 360
+min_refetch_s = 1800
+timeout_s = 30
+
+[feeds.ip2asn]
+enabled = false          # 11 MB download, run `python -m threatintel collect ip2asn` when wanted
+interval_min = 43200
+min_refetch_s = 604800
+timeout_s = 300

@@ -1,0 +1,23 @@
+{
+ "created": "2026-11-13",
+ "note": "Trimmed snapshots of live feeds fetched on the creation date. URLs are stored defanged.",
+ "synthetic": {
+  "urlhaus-recent.json": "Synthetic sample in URLhaus API format (the API needs an Auth-Key). RFC 5737 IPs and .example/.test names only; hashes are made up.",
+  "threatfox-iocs.json": "Synthetic sample in ThreatFox API format (the API needs an Auth-Key). RFC 5737 IPs and .example names only; hashes are made up."
+ },
+ "files": [
+  "attack-enterprise-trimmed.json",
+  "epss.json",
+  "feodo-ipblocklist.json",
+  "ip2asn-subset.tsv",
+  "kev.json",
+  "nvd.json",
+  "openphish-feed.txt",
+  "ransomware-groups.json",
+  "ransomware-victims.json",
+  "spamhaus-drop.jsonl",
+  "threatfox-iocs.json",
+  "tor-exits.txt",
+  "urlhaus-recent.json"
+ ]
+}

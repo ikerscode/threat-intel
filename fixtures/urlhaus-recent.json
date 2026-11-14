@@ -1,0 +1,685 @@
+{
+ "query_status": "ok",
+ "urls": [
+  {
+   "id": "3000000",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]20/bins/66f7fa8580.elf",
+   "url_status": "offline",
+   "host": "198[.]51[.]100[.]20",
+   "date_added": "2026-11-13 12:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000001",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]21/files/7819c7e6b2.elf",
+   "url_status": "online",
+   "host": "198[.]51[.]100[.]21",
+   "date_added": "2026-11-13 01:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000002",
+   "urlhaus_reference": null,
+   "url": "hxxp://cdn-files[.]example/dl/30edeb9264.exe",
+   "url_status": "online",
+   "host": "cdn-files[.]example",
+   "date_added": "2026-11-12 14:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "AsyncRAT",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000003",
+   "urlhaus_reference": null,
+   "url": "hxxp://dl[.]cdn-files[.]example/x/d26084351b.exe",
+   "url_status": "offline",
+   "host": "dl[.]cdn-files[.]example",
+   "date_added": "2026-11-12 03:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "Remcos",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000004",
+   "urlhaus_reference": null,
+   "url": "hxxp://203[.]0[.]113[.]42/bins/a16ba33acf.sh",
+   "url_status": "online",
+   "host": "203[.]0[.]113[.]42",
+   "date_added": "2026-11-11 16:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "sh",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000005",
+   "urlhaus_reference": null,
+   "url": "hxxp://panel[.]badhost[.]test/files/eee1c94dcb.dll",
+   "url_status": "online",
+   "host": "panel[.]badhost[.]test",
+   "date_added": "2026-11-11 05:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "dll",
+    "QakBot",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000006",
+   "urlhaus_reference": null,
+   "url": "hxxp://static[.]badhost[.]test/dl/c9ba50152d.zip",
+   "url_status": "offline",
+   "host": "static[.]badhost[.]test",
+   "date_added": "2026-11-10 18:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "zip",
+    "Lumma",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000007",
+   "urlhaus_reference": null,
+   "url": "hxxp://192[.]0[.]2[.]77/x/82c960d0cd.exe",
+   "url_status": "online",
+   "host": "192[.]0[.]2[.]77",
+   "date_added": "2026-11-10 07:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "CobaltStrike",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000008",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]20/bins/1f3229e699.elf",
+   "url_status": "online",
+   "host": "198[.]51[.]100[.]20",
+   "date_added": "2026-11-09 20:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000009",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]21/files/1ba1505fbf.elf",
+   "url_status": "offline",
+   "host": "198[.]51[.]100[.]21",
+   "date_added": "2026-11-09 09:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000010",
+   "urlhaus_reference": null,
+   "url": "hxxp://cdn-files[.]example/dl/b8bb61a296.exe",
+   "url_status": "online",
+   "host": "cdn-files[.]example",
+   "date_added": "2026-11-08 22:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "AsyncRAT",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000011",
+   "urlhaus_reference": null,
+   "url": "hxxp://dl[.]cdn-files[.]example/x/f16c15f576.exe",
+   "url_status": "online",
+   "host": "dl[.]cdn-files[.]example",
+   "date_added": "2026-11-08 11:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "Remcos",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000012",
+   "urlhaus_reference": null,
+   "url": "hxxp://203[.]0[.]113[.]42/bins/a09abcff16.sh",
+   "url_status": "offline",
+   "host": "203[.]0[.]113[.]42",
+   "date_added": "2026-11-08 00:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "sh",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000013",
+   "urlhaus_reference": null,
+   "url": "hxxp://panel[.]badhost[.]test/files/002578891a.dll",
+   "url_status": "online",
+   "host": "panel[.]badhost[.]test",
+   "date_added": "2026-11-07 13:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "dll",
+    "QakBot",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000014",
+   "urlhaus_reference": null,
+   "url": "hxxp://static[.]badhost[.]test/dl/b913555815.zip",
+   "url_status": "online",
+   "host": "static[.]badhost[.]test",
+   "date_added": "2026-11-07 02:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "zip",
+    "Lumma",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000015",
+   "urlhaus_reference": null,
+   "url": "hxxp://192[.]0[.]2[.]77/x/957858b701.exe",
+   "url_status": "offline",
+   "host": "192[.]0[.]2[.]77",
+   "date_added": "2026-11-06 15:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "CobaltStrike",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000016",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]20/bins/c25f5a9d74.elf",
+   "url_status": "online",
+   "host": "198[.]51[.]100[.]20",
+   "date_added": "2026-11-06 04:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000017",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]21/files/09f7e39340.elf",
+   "url_status": "online",
+   "host": "198[.]51[.]100[.]21",
+   "date_added": "2026-11-05 17:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000018",
+   "urlhaus_reference": null,
+   "url": "hxxp://cdn-files[.]example/dl/026591cfbe.exe",
+   "url_status": "offline",
+   "host": "cdn-files[.]example",
+   "date_added": "2026-11-05 06:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "AsyncRAT",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000019",
+   "urlhaus_reference": null,
+   "url": "hxxp://dl[.]cdn-files[.]example/x/0ae2812633.exe",
+   "url_status": "online",
+   "host": "dl[.]cdn-files[.]example",
+   "date_added": "2026-11-04 19:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "Remcos",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000020",
+   "urlhaus_reference": null,
+   "url": "hxxp://203[.]0[.]113[.]42/bins/6e7bc9b338.sh",
+   "url_status": "online",
+   "host": "203[.]0[.]113[.]42",
+   "date_added": "2026-11-04 08:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "sh",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000021",
+   "urlhaus_reference": null,
+   "url": "hxxp://panel[.]badhost[.]test/files/37e599098f.dll",
+   "url_status": "offline",
+   "host": "panel[.]badhost[.]test",
+   "date_added": "2026-11-03 21:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "dll",
+    "QakBot",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000022",
+   "urlhaus_reference": null,
+   "url": "hxxp://static[.]badhost[.]test/dl/661302330d.zip",
+   "url_status": "online",
+   "host": "static[.]badhost[.]test",
+   "date_added": "2026-11-03 10:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "zip",
+    "Lumma",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000023",
+   "urlhaus_reference": null,
+   "url": "hxxp://192[.]0[.]2[.]77/x/4851fd2a66.exe",
+   "url_status": "online",
+   "host": "192[.]0[.]2[.]77",
+   "date_added": "2026-11-02 23:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "CobaltStrike",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000024",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]20/bins/12781e3349.elf",
+   "url_status": "offline",
+   "host": "198[.]51[.]100[.]20",
+   "date_added": "2026-11-02 12:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000025",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]21/files/d44a65e1e3.elf",
+   "url_status": "online",
+   "host": "198[.]51[.]100[.]21",
+   "date_added": "2026-11-02 01:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000026",
+   "urlhaus_reference": null,
+   "url": "hxxp://cdn-files[.]example/dl/87eeb1ae1a.exe",
+   "url_status": "online",
+   "host": "cdn-files[.]example",
+   "date_added": "2026-11-01 14:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "AsyncRAT",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000027",
+   "urlhaus_reference": null,
+   "url": "hxxp://dl[.]cdn-files[.]example/x/aca67f7886.exe",
+   "url_status": "offline",
+   "host": "dl[.]cdn-files[.]example",
+   "date_added": "2026-11-01 03:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "Remcos",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000028",
+   "urlhaus_reference": null,
+   "url": "hxxp://203[.]0[.]113[.]42/bins/eec4b8d48f.sh",
+   "url_status": "online",
+   "host": "203[.]0[.]113[.]42",
+   "date_added": "2026-10-31 16:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "sh",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000029",
+   "urlhaus_reference": null,
+   "url": "hxxp://panel[.]badhost[.]test/files/18c55ee1e7.dll",
+   "url_status": "online",
+   "host": "panel[.]badhost[.]test",
+   "date_added": "2026-10-31 05:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "dll",
+    "QakBot",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000030",
+   "urlhaus_reference": null,
+   "url": "hxxp://static[.]badhost[.]test/dl/9162e4b5f7.zip",
+   "url_status": "offline",
+   "host": "static[.]badhost[.]test",
+   "date_added": "2026-10-30 18:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "zip",
+    "Lumma",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000031",
+   "urlhaus_reference": null,
+   "url": "hxxp://192[.]0[.]2[.]77/x/9967ba5f03.exe",
+   "url_status": "online",
+   "host": "192[.]0[.]2[.]77",
+   "date_added": "2026-10-30 07:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "CobaltStrike",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000032",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]20/bins/fe522d6328.elf",
+   "url_status": "online",
+   "host": "198[.]51[.]100[.]20",
+   "date_added": "2026-10-29 20:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000033",
+   "urlhaus_reference": null,
+   "url": "hxxp://198[.]51[.]100[.]21/files/7076ca6c37.elf",
+   "url_status": "offline",
+   "host": "198[.]51[.]100[.]21",
+   "date_added": "2026-10-29 09:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "elf",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000034",
+   "urlhaus_reference": null,
+   "url": "hxxp://cdn-files[.]example/dl/89f0de8cde.exe",
+   "url_status": "online",
+   "host": "cdn-files[.]example",
+   "date_added": "2026-10-28 22:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "AsyncRAT",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000035",
+   "urlhaus_reference": null,
+   "url": "hxxp://dl[.]cdn-files[.]example/x/85fa1b3acf.exe",
+   "url_status": "online",
+   "host": "dl[.]cdn-files[.]example",
+   "date_added": "2026-10-28 11:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "Remcos",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000036",
+   "urlhaus_reference": null,
+   "url": "hxxp://203[.]0[.]113[.]42/bins/6ceebe6ad0.sh",
+   "url_status": "offline",
+   "host": "203[.]0[.]113[.]42",
+   "date_added": "2026-10-28 00:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "sh",
+    "mirai",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000037",
+   "urlhaus_reference": null,
+   "url": "hxxp://panel[.]badhost[.]test/files/72687dd285.dll",
+   "url_status": "online",
+   "host": "panel[.]badhost[.]test",
+   "date_added": "2026-10-27 13:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "dll",
+    "QakBot",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000038",
+   "urlhaus_reference": null,
+   "url": "hxxp://static[.]badhost[.]test/dl/8590720e18.zip",
+   "url_status": "online",
+   "host": "static[.]badhost[.]test",
+   "date_added": "2026-10-27 02:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "zip",
+    "Lumma",
+    "synthetic"
+   ]
+  },
+  {
+   "id": "3000039",
+   "urlhaus_reference": null,
+   "url": "hxxp://192[.]0[.]2[.]77/x/635dd5ac7a.exe",
+   "url_status": "offline",
+   "host": "192[.]0[.]2[.]77",
+   "date_added": "2026-10-26 15:00:00 UTC",
+   "threat": "malware_download",
+   "blacklists": {},
+   "reporter": "seclab-fixture",
+   "larted": "false",
+   "tags": [
+    "exe",
+    "CobaltStrike",
+    "synthetic"
+   ]
+  }
+ ]
+}

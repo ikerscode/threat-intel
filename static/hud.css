@@ -1,0 +1,86 @@
+/* seclab HUD theme - shared across all lab dashboards */
+:root {
+  --bg: #0b0b0d;
+  --panel: #141418;
+  --panel-2: #1b1b21;
+  --border: #2b2a31;
+  --text: #dcd8cc;
+  --muted: #8b877d;
+  --accent: #b8322a;      /* dried blood */
+  --accent-2: #7a5cff;    /* bruise violet */
+  --ok: #5f9e5a;
+  --warn: #d49a1e;
+  --crit: #e04a3a;
+  --info: #4f8fb8;
+  --grid: #24232a;
+  --mono: "Hack", "Fira Code", "DejaVu Sans Mono", monospace;
+  --radius: 4px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 var(--mono); }
+body {
+  background-image:
+    radial-gradient(ellipse at top, rgba(184, 50, 42, 0.07), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 3px);
+  min-height: 100vh;
+}
+a { color: var(--info); }
+header.hud {
+  display: flex; align-items: center; gap: 16px; padding: 12px 20px;
+  border-bottom: 1px solid var(--border); background: rgba(20,20,24,0.92);
+  position: sticky; top: 0; z-index: 10;
+}
+header.hud .brand { font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; }
+header.hud .brand::before { content: "\1F987  "; }
+header.hud .sub { color: var(--muted); font-size: 12px; }
+header.hud nav { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+header.hud nav button, .btn {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: var(--radius); font: inherit; cursor: pointer;
+}
+header.hud nav button.active, .btn.primary { border-color: var(--accent); color: #fff; background: #2a1414; }
+.btn:hover, header.hud nav button:hover { border-color: var(--muted); }
+.btn.danger { border-color: var(--crit); color: var(--crit); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+main { padding: 18px 20px 40px; max-width: 1500px; margin: 0 auto; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(12, 1fr); }
+.span-3 { grid-column: span 3; } .span-4 { grid-column: span 4; } .span-6 { grid-column: span 6; }
+.span-8 { grid-column: span 8; } .span-12 { grid-column: span 12; }
+@media (max-width: 900px) { .span-3, .span-4, .span-6, .span-8 { grid-column: span 12; } }
+.panel {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 14px; min-width: 0;
+}
+.panel h2 {
+  margin: 0 0 10px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  border-bottom: 1px dashed var(--border); padding-bottom: 6px;
+}
+.stat { font-size: 28px; font-weight: bold; }
+.stat small { display: block; font-size: 11px; color: var(--muted); font-weight: normal; letter-spacing: 0.1em; text-transform: uppercase; }
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--muted); font-weight: normal; text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; }
+tr:hover td { background: var(--panel-2); }
+.scroll { max-height: 420px; overflow: auto; }
+.tag { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 11px; border: 1px solid var(--border); margin: 1px 2px; }
+.tag.crit { border-color: var(--crit); color: var(--crit); }
+.tag.warn { border-color: var(--warn); color: var(--warn); }
+.tag.ok { border-color: var(--ok); color: var(--ok); }
+.tag.info { border-color: var(--info); color: var(--info); }
+.muted { color: var(--muted); }
+input, select, textarea {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 6px 8px; font: inherit;
+}
+textarea { width: 100%; min-height: 90px; }
+pre, code { background: #0f0f12; border: 1px solid var(--grid); border-radius: var(--radius); }
+pre { padding: 10px; overflow: auto; max-height: 420px; font-size: 12px; }
+code { padding: 0 4px; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.view { display: none; } .view.active { display: block; }
+.toast {
+  position: fixed; bottom: 16px; right: 16px; background: var(--panel-2); border: 1px solid var(--accent);
+  padding: 10px 14px; border-radius: var(--radius); max-width: 420px; z-index: 50;
+}
+svg text { fill: var(--muted); font: 11px var(--mono); }
+.chart { width: 100%; }
