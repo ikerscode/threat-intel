@@ -1,0 +1,5050 @@
+{
+ "manifest": {
+  "814c12e6-0e88-42fb-a463-601d42b70881": {
+   "Orgc": {
+    "name": "CIRCL",
+    "uuid": "55f6ea5e-2c60-40e5-964f-47a8950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-malware=\"Kali365 - S9044\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-software=\"Kali365 - S9044\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0087e8",
+     "local": false,
+     "name": "osint:certainty=\"50\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:white",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    }
+   ],
+   "info": "NEW KALI365 PHAAS KIT BEING ABUSED IN THE WILD",
+   "date": "2026-04-24",
+   "analysis": 0,
+   "threat_level_id": 4,
+   "timestamp": 1789735773
+  },
+  "b10656a2-7551-45ed-a0b1-d97fe3ef2b81": {
+   "Orgc": {
+    "name": "Krawczyk Industries Limited",
+    "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#d6f264",
+     "local": false,
+     "name": "MALWARE",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00833c",
+     "local": false,
+     "name": "misp:threat-level=\"medium-risk\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00ce5f",
+     "local": false,
+     "name": "misp:event-type=\"observation\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#009042",
+     "local": false,
+     "name": "misp:automation-level=\"unsupervised\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0064ac",
+     "local": false,
+     "name": "osint:source-type=\"manual-collection\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "Maltrail IOC for 2026-08-11",
+   "date": "2026-08-10",
+   "analysis": 1,
+   "threat_level_id": 2,
+   "timestamp": 1786478412
+  },
+  "6cb37027-b16f-4d80-aa77-a0dfd2dfe872": {
+   "Orgc": {
+    "name": "Krawczyk Industries Limited",
+    "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#d6f264",
+     "local": false,
+     "name": "MALWARE",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00833c",
+     "local": false,
+     "name": "misp:threat-level=\"medium-risk\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00ce5f",
+     "local": false,
+     "name": "misp:event-type=\"observation\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#009042",
+     "local": false,
+     "name": "misp:automation-level=\"unsupervised\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0064ac",
+     "local": false,
+     "name": "osint:source-type=\"manual-collection\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "Maltrail IOC for 2026-08-14",
+   "date": "2026-08-13",
+   "analysis": 1,
+   "threat_level_id": 2,
+   "timestamp": 1786701604
+  },
+  "ff2d1e23-caba-4a52-a374-ba223b1e7700": {
+   "Orgc": {
+    "name": "CIRCL",
+    "uuid": "55f6ea5e-2c60-40e5-964f-47a8950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0087e8",
+     "local": false,
+     "name": "osint:certainty=\"50\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:white",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#fa2a0d",
+     "local": false,
+     "name": "JAG",
+     "relationship_type": ""
+    }
+   ],
+   "info": "Malicious File Creates Network Socket and Contacts fdh32fsdfhs.shop - Kunai Analysis Report sample - 2d266ab2597c72424aa21bc00718f9a13e5836e8",
+   "date": "2025-06-20",
+   "analysis": 0,
+   "threat_level_id": 3,
+   "timestamp": 1786895296
+  },
+  "ea593018-b2e9-4e7e-8da9-cc20a751e3f6": {
+   "Orgc": {
+    "name": "ESET",
+    "uuid": "55f6ea5e-51ac-4344-bc8c-4170950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:white",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:target-information=\"Belarus\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "MoustachedBouncer: Espionage against foreign diplomats in Belarus",
+   "date": "2023-07-21",
+   "analysis": 0,
+   "threat_level_id": 1,
+   "timestamp": 1793405516
+  },
+  "60118dab-1ab8-40b2-b02b-b6f80aba047c": {
+   "Orgc": {
+    "name": "CERT-FR_1510",
+    "uuid": "56bdf779-46f8-4353-bdf9-2bb95bce2212"
+   },
+   "Tag": [
+    {
+     "colour": "#ff1f00",
+     "local": false,
+     "name": "fr-classif:non-classifiees=\"NON-CLASSIFIEES\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#008e63",
+     "local": false,
+     "name": "cossi:RechercheSourceOuverte=\"Interdite\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00714f",
+     "local": false,
+     "name": "cossi:fiabilite=\"Bonne\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#6d35f2",
+     "local": false,
+     "name": "misp-galaxy:threat-actor=\"IRIDIUM\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:threat-actor=\"TeleBots\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#12e300",
+     "local": false,
+     "name": "misp-galaxy:threat-actor=\"Sandworm\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:threat-actor=\"ELECTRUM\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "cossi:TLP=\"white\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0087e8",
+     "local": false,
+     "name": "osint:certainty=\"50\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:white",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Exploit Public-Facing Application - T1190\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Deobfuscate/Decode Files or Information - T1140\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"File and Directory Discovery - T1083\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Exfiltration Over Command and Control Channel - T1041\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004577",
+     "local": false,
+     "name": "osint:source-type=\"block-or-filter-list\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00714f",
+     "local": false,
+     "name": "cert-fr:fiabilite=\"Bonne\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "PAP:CLEAR",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#493000",
+     "local": false,
+     "name": "cert-ist:threat_targeted_system=\"Linux\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#e49600",
+     "local": false,
+     "name": "cert-ist:threat_targeted_region=\"Western Europe\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#fea700",
+     "local": false,
+     "name": "cert-ist:enriched",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#392500",
+     "local": false,
+     "name": "cert-ist:ioc_accuracy=\"high\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Web Shell - T1505.003\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Create or Modify System Process - T1543\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#065100",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Windows Service - T1543.003\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Symmetric Cryptography - T1573.001\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Asymmetric Cryptography - T1573.002\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Encrypted Channel - T1573\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Web Protocols - T1071.001\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Exfiltration Over C2 Channel - T1041\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#3a2600",
+     "local": false,
+     "name": "cert-ist:threat_level=\"low\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#f8a400",
+     "local": false,
+     "name": "cert-ist:threat_type=\"apt\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "[CERT-FR] Sandworm intrusion set campaign targeting Centreon systems",
+   "date": "2021-01-27",
+   "analysis": 0,
+   "threat_level_id": 4,
+   "timestamp": 1788004532
+  },
+  "118e66a6-103e-4d16-bf65-5ff0b6ecf532": {
+   "Orgc": {
+    "name": "Krawczyk Industries Limited",
+    "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#d6f264",
+     "local": false,
+     "name": "MALWARE",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00833c",
+     "local": false,
+     "name": "misp:threat-level=\"medium-risk\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00ce5f",
+     "local": false,
+     "name": "misp:event-type=\"observation\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#009042",
+     "local": false,
+     "name": "misp:automation-level=\"unsupervised\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0064ac",
+     "local": false,
+     "name": "osint:source-type=\"manual-collection\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "Maltrail IOC for 2026-08-09",
+   "date": "2026-08-08",
+   "analysis": 1,
+   "threat_level_id": 2,
+   "timestamp": 1786305615
+  },
+  "5b773e07-e694-458b-b99c-27f30a016219": {
+   "Orgc": {
+    "name": "ESET",
+    "uuid": "55f6ea5e-51ac-4344-bc8c-4170950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#12e200",
+     "local": false,
+     "name": "misp-galaxy:threat-actor=\"Turla Group\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Component Object Model Hijacking\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-attack-pattern=\"Email Collection\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-enterprise-attack-attack-pattern=\"Component Object Model Hijacking - T1122\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0088cc",
+     "local": false,
+     "name": "misp-galaxy:mitre-enterprise-attack-attack-pattern=\"Email Collection - T1114\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:white",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0087e8",
+     "local": false,
+     "name": "osint:certainty=\"50\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#9d6800",
+     "local": false,
+     "name": "cert-ist:threat_targeted_sector=\"Academic and Research\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#986400",
+     "local": false,
+     "name": "cert-ist:threat_targeted_sector=\"Gov\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#e49600",
+     "local": false,
+     "name": "cert-ist:threat_targeted_region=\"Western Europe\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#fea700",
+     "local": false,
+     "name": "cert-ist:enriched",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#372500",
+     "local": false,
+     "name": "cert-ist:ioc_accuracy=\"medium\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#3c2700",
+     "local": false,
+     "name": "cert-ist:threat_level=\"medium\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#f8a400",
+     "local": false,
+     "name": "cert-ist:threat_type=\"apt\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#FFC000",
+     "local": false,
+     "name": "tlp:amber",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#ff0000",
+     "local": false,
+     "name": "BR_CTI_Investigar",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004577",
+     "local": false,
+     "name": "osint:source-type=\"block-or-filter-list\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "Turla Outlook White Paper",
+   "date": "2018-08-17",
+   "analysis": 0,
+   "threat_level_id": 1,
+   "timestamp": 1794614463
+  },
+  "0badeefd-70f0-46e6-87f4-a6f1454661f9": {
+   "Orgc": {
+    "name": "Krawczyk Industries Limited",
+    "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#d6f264",
+     "local": false,
+     "name": "MALWARE",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00833c",
+     "local": false,
+     "name": "misp:threat-level=\"medium-risk\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00ce5f",
+     "local": false,
+     "name": "misp:event-type=\"observation\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#009042",
+     "local": false,
+     "name": "misp:automation-level=\"unsupervised\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0064ac",
+     "local": false,
+     "name": "osint:source-type=\"manual-collection\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "Maltrail IOC for 2026-08-10",
+   "date": "2026-08-09",
+   "analysis": 1,
+   "threat_level_id": 2,
+   "timestamp": 1786388421
+  },
+  "da6cf323-074f-4272-8ddd-8fddddac8690": {
+   "Orgc": {
+    "name": "Krawczyk Industries Limited",
+    "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+   },
+   "Tag": [
+    {
+     "colour": "#ffffff",
+     "local": false,
+     "name": "tlp:clear",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#d6f264",
+     "local": false,
+     "name": "MALWARE",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00833c",
+     "local": false,
+     "name": "misp:threat-level=\"medium-risk\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#00ce5f",
+     "local": false,
+     "name": "misp:event-type=\"observation\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#009042",
+     "local": false,
+     "name": "misp:automation-level=\"unsupervised\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#004646",
+     "local": false,
+     "name": "type:OSINT",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0071c3",
+     "local": false,
+     "name": "osint:lifetime=\"perpetual\"",
+     "relationship_type": ""
+    },
+    {
+     "colour": "#0064ac",
+     "local": false,
+     "name": "osint:source-type=\"manual-collection\"",
+     "relationship_type": ""
+    }
+   ],
+   "info": "Maltrail IOC for 2026-08-08",
+   "date": "2026-08-07",
+   "analysis": 1,
+   "threat_level_id": 2,
+   "timestamp": 1786226406
+  }
+ },
+ "events": [
+  {
+   "Event": {
+    "uuid": "814c12e6-0e88-42fb-a463-601d42b70881",
+    "info": "NEW KALI365 PHAAS KIT BEING ABUSED IN THE WILD",
+    "date": "2026-04-24",
+    "timestamp": "1789735773",
+    "threat_level_id": "4",
+    "analysis": "0",
+    "published": true,
+    "Orgc": {
+     "name": "CIRCL",
+     "uuid": "55f6ea5e-2c60-40e5-964f-47a8950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-malware=\"Kali365 - S9044\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-software=\"Kali365 - S9044\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0087e8",
+      "local": false,
+      "name": "osint:certainty=\"50\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:white",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729423",
+      "uuid": "fc61fb57-4d28-4f73-ad91-d354e81183a4",
+      "value": "template-targetedorganisation-template[.]sharepoint-msviewer[.]com"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729444",
+      "uuid": "ae5320b5-1145-4202-abef-872cded9cbcf",
+      "value": "data-doc-sfym[.]p-50ds7vs5[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729459",
+      "uuid": "5bd35c7e-c023-4bee-98cb-5ff24f8d9537",
+      "value": "sync-link-z79k[.]bartlett-pamela[.]workers[.]dev"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729471",
+      "uuid": "a2f7d229-e93c-4168-a61f-4e7d6f3c21d4",
+      "value": "157.230.53.233"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729483",
+      "uuid": "05ec3515-5714-4e33-906d-ace18b2dcd94",
+      "value": "167.99.0.116"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729495",
+      "uuid": "07023b34-3453-4a9e-a700-dc715f2359a7",
+      "value": "162.243.166.119"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729587",
+      "uuid": "9a799db6-6c8c-4cf4-882a-1c2ba6007cbe",
+      "value": "102.89.22.100"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729606",
+      "uuid": "6c671608-df75-45e4-82a1-eae9427d3443",
+      "value": "159.203.163.96"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729645",
+      "uuid": "97c4a531-5c2b-4120-bf94-505bb4afe5d8",
+      "value": "216.203.20.95"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729668",
+      "uuid": "e0169ccd-c7ab-4747-8fc1-08e5facf96d9",
+      "value": "199.91.220.111"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729679",
+      "uuid": "6f010120-6d2f-428e-a1f2-3f86c8f74da0",
+      "value": "www[.]mediaplanung[.]biz"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729691",
+      "uuid": "80031cc5-4271-4be0-96ee-a6901ef663f9",
+      "value": "www[.]stpaulscathedralokc[.]org"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729704",
+      "uuid": "8cb99cc9-6b5b-42c1-a207-8c4ca38f706d",
+      "value": "open-share-njlb[.]p-l4yg6fjb[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729720",
+      "uuid": "e32c504a-d02d-4fb9-abce-f66578bedbfe",
+      "value": "sync-store-ur85[.]p-lboid22u[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729758",
+      "uuid": "231041ff-fa3d-42bd-ae77-d9d34a9b8b40",
+      "value": "share-portal-r6le[.]p-deum4gog[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729796",
+      "uuid": "9ff78155-0117-435d-9030-2e52f591d9cb",
+      "value": "cloud-link-j46j[.]p-zltii3tp[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729816",
+      "uuid": "a8300b34-f889-47cb-a350-4da1e1b9ea3f",
+      "value": "access-base-yz6o[.]p-uhv4e1ee[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729830",
+      "uuid": "68119701-dd74-4be2-b1a1-adf234991b15",
+      "value": "drive-edge-lzl0[.]p-8pd549l5[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729847",
+      "uuid": "998eb774-2d91-43c2-a435-5a1c10d0bdd8",
+      "value": "file-doc-uhug[.]p-ao3eomo9[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729897",
+      "uuid": "2b0ac1fa-a9ac-4038-8e35-2e11a229bc66",
+      "value": "access-file-z1or[.]steve-c57[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729930",
+      "uuid": "3207a682-5c19-4ffe-826d-55bdbde11cff",
+      "value": "view-base-5vpr[.]3mdcy99f8511wpsebllpbkjizyg3run6[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729940",
+      "uuid": "e3bc6609-2599-4897-b5c2-a83b4b095fbb",
+      "value": "data-form-f5at[.]p-lvqyivvk[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729963",
+      "uuid": "fd9f53d0-6859-4349-89c7-41a294cf0c5f",
+      "value": "page-core-sv2l[.]p-anmh2mbc[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729973",
+      "uuid": "c6f1218c-241e-45e1-b537-3ffe79120e10",
+      "value": "v2[.]duemineral[.]uk"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789729982",
+      "uuid": "802a4c43-36ff-4a70-a74c-93ae7aff0483",
+      "value": "www[.]abt90[.]org"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730026",
+      "uuid": "9994ba49-605b-48ca-b5a9-f5bfd9298eb7",
+      "value": "nysexams[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730036",
+      "uuid": "2b410fed-724a-43f2-8232-9c64c76cb34b",
+      "value": "loadingdocuments[.]uk"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730062",
+      "uuid": "98757b72-0dcf-4585-8fd4-103b8c8ec526",
+      "value": "vault-cloud-maou[.]p-afw8621d[.]workers[.]dev"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730073",
+      "uuid": "decd8e68-0b16-4ce3-98c0-b68fe8da4b50",
+      "value": "pohlusa[.]co"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730083",
+      "uuid": "4477c225-cdf6-4821-8634-730163c33b17",
+      "value": "www[.]democrakidsradio[.]org"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730107",
+      "uuid": "c836b2e5-f0c4-4743-ada1-82d74cfb60d1",
+      "value": "flow-open-7ff0[.]p-ygj98iy2[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730128",
+      "uuid": "ca89b45a-6b96-4019-abbf-f2fc8807e691",
+      "value": "www[.]duemineral[.]uk"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730150",
+      "uuid": "93f50609-aac6-46b4-b140-1b78919172d0",
+      "value": "www[.]walter-software[.]com"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730173",
+      "uuid": "e7646cad-6786-4372-93d2-124dcad06417",
+      "value": "drive-mail-wmou[.]pwyv30sj[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730205",
+      "uuid": "69cae507-79ae-4fbe-90b6-1fd06523dae7",
+      "value": "www[.]cecyani[.]xyz"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730221",
+      "uuid": "c48d5b68-fc87-4fc8-abb1-22802faf2a3e",
+      "value": "api[.]kali365[.]xyz"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730230",
+      "uuid": "826469c1-5a9d-45cf-84a9-fef5f200e1c8",
+      "value": "auth[.]kali365[.]xyz"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730239",
+      "uuid": "480cf574-d478-4df3-a376-ddc61c1bdaee",
+      "value": "v2[.]kali365[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730270",
+      "uuid": "d41edbd8-4569-402c-a33f-e4a6cab7c623",
+      "value": "kali365[.]xyz"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730289",
+      "uuid": "f1765d10-d8d6-4752-8e9d-6e3078b95713",
+      "value": "ls[.]sharepoint-msviewer[.]com"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730308",
+      "uuid": "01020976-ff05-4068-b253-420355b47f69",
+      "value": "sharepoint-63m[.]pages[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730337",
+      "uuid": "f78cdd05-3142-4857-a746-b7be6b2acbab",
+      "value": "sharepoint-81c[.]pages[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730345",
+      "uuid": "856c28a5-ef53-41d2-b6bf-e3b74790e78c",
+      "value": "portal-share-tj8e[.]p-50ds7vs5[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730358",
+      "uuid": "70688742-97f3-4a4d-9c99-fd8057a4b871",
+      "value": "core-flow-0np5[.]pdfonlinedocsdocs-outlook-com-s-account[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730368",
+      "uuid": "13a0cbed-fa5d-4d9a-84da-d4e5e5cf3fa1",
+      "value": "vault-web-s3ue[.]p-y10utwre[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730377",
+      "uuid": "08aab659-ca31-4d55-ad59-15707220fc7a",
+      "value": "egvmu-ejrp-8rmc[.]royalbase3[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730405",
+      "uuid": "fbafdcb2-585a-4209-835d-6e5ac84b1a5f",
+      "value": "pgfqi-epwc-d1t6[.]p-1razygxw[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730433",
+      "uuid": "e0dded62-cbb9-4cff-af6f-9d7b85ca5ada",
+      "value": "secure-link-ek3t[.]c-kzevzz5a[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730485",
+      "uuid": "00b9391b-c197-4739-b7f3-89cf667d6c06",
+      "value": "oynfe-roik-zlpe[.]c-qtkfck53[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730518",
+      "uuid": "778723fe-5061-4c3f-942e-f0ce31e30ba1",
+      "value": "rwlha-qilv-ic1v[.]p-rrw76os2[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730612",
+      "uuid": "5f1df227-1e23-4991-aee2-0be4a48d7f26",
+      "value": "core-mail-etk1[.]p-b8eaz6oe[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730624",
+      "uuid": "395ec185-2e62-4490-afd7-5f7e03aa6d83",
+      "value": "chrji-fhav-oz04[.]p-qtlv10l7[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730639",
+      "uuid": "1a5d70fb-ea6a-4990-9751-a37d90d3c5cb",
+      "value": "acqxx-nikg-5cub[.]p-8kehah0a[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730650",
+      "uuid": "801f5c24-e3f4-4f05-9ba8-3b66c613aade",
+      "value": "base-flow-38xb[.]p-l3bhkqec[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730668",
+      "uuid": "523336f6-cf25-47ad-8145-fda00c8af362",
+      "value": "gmkcb-bdxh-03l9[.]c-cmd509g3[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730682",
+      "uuid": "cc21f264-c33b-4875-b7a3-92222116072e",
+      "value": "pwjss-npaw-3soj[.]mary-3fb[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730694",
+      "uuid": "7c005803-a948-4424-82d5-46303d661186",
+      "value": "tryingdocusign[.]pages[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730703",
+      "uuid": "1ae91445-af72-4a92-aadf-1216aa781139",
+      "value": "form-hub-lfct[.]p-utpgo2kb[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730724",
+      "uuid": "d74cb249-d859-41af-8fcd-e46bbfb24e2b",
+      "value": "cloud-access-uc53[.]p-vy4za09n[.]workers[.]dev"
+     },
+     {
+      "type": "hostname",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1789730736",
+      "uuid": "1dff3504-7f35-48f2-90ca-3c4a51b81629",
+      "value": "page-mail-vm24[.]p-8xzcvt1x[.]workers[.]dev"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "b10656a2-7551-45ed-a0b1-d97fe3ef2b81",
+    "info": "Maltrail IOC for 2026-08-11",
+    "date": "2026-08-10",
+    "timestamp": "1786478412",
+    "threat_level_id": "2",
+    "analysis": "1",
+    "published": true,
+    "Orgc": {
+     "name": "Krawczyk Industries Limited",
+     "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#d6f264",
+      "local": false,
+      "name": "MALWARE",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00833c",
+      "local": false,
+      "name": "misp:threat-level=\"medium-risk\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00ce5f",
+      "local": false,
+      "name": "misp:event-type=\"observation\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#009042",
+      "local": false,
+      "name": "misp:automation-level=\"unsupervised\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0064ac",
+      "local": false,
+      "name": "osint:source-type=\"manual-collection\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435205",
+      "uuid": "f6a6d4bf-a11a-4308-934e-ba61332d1f51",
+      "value": "smarture[.]cyou"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435205",
+      "uuid": "11baac0a-d8f3-4056-b366-57bc791f8273",
+      "value": "154.222.31.232"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435205",
+      "uuid": "817522f0-7929-4772-a4d7-746dd63abfed",
+      "value": "156.239.40.175"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435206",
+      "uuid": "297e236b-5ff5-456a-a73b-39f682d5333e",
+      "value": "172.104.101.21"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435206",
+      "uuid": "ae3d54d5-c5f4-47b9-9a07-4d9231f4a9fb",
+      "value": "172.232.203.225"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435206",
+      "uuid": "fb5bb8b7-8bc3-4caf-ad19-05d1781fe5f8",
+      "value": "172.233.76.115"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435206",
+      "uuid": "6c4196a3-8ca9-4b7d-8743-e54ba6678ffa",
+      "value": "39.104.79.212"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435206",
+      "uuid": "a0b322c3-8f74-4859-88a1-5e54a9bfa3b4",
+      "value": "47.105.104.239"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435206",
+      "uuid": "c70dad2a-56bc-4b38-b080-d40b8291d685",
+      "value": "47.113.115.96"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435207",
+      "uuid": "64732f2f-8ad3-46cc-9ca4-0eed7d927b14",
+      "value": "admin[.]yanyujialan[.]cn"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435207",
+      "uuid": "678f58e4-02dd-47f7-a9e0-763c7cbb1ca7",
+      "value": "dravex[.]life"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435207",
+      "uuid": "c5812644-3d0a-463d-b701-aadcc6095181",
+      "value": "argentashenwatch[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435207",
+      "uuid": "61488a79-7543-425f-ad6a-8e90ab532726",
+      "value": "argentfennexus[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435208",
+      "uuid": "43fed166-baa2-4944-bc60-08a12a724c02",
+      "value": "astralashenwind[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435208",
+      "uuid": "c74246b3-b4df-45f7-a10f-91a51e6b7668",
+      "value": "astralnorthpoint[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435208",
+      "uuid": "c6c113bf-1f91-470a-a198-6774dbef3af3",
+      "value": "astralwinterrun[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435208",
+      "uuid": "75cf10d6-e0b4-4211-bf18-128aa2e82163",
+      "value": "cinderfenhollow[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435208",
+      "uuid": "82aa45f3-2224-4148-a281-152f620d46fe",
+      "value": "cinderfluxport[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435208",
+      "uuid": "74f0c1d3-87c4-4e00-9232-533652f1260d",
+      "value": "cindervaleforge[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435209",
+      "uuid": "6dfc1de3-d39e-4a86-85bd-d1e25c5c0cb2",
+      "value": "cobaltfluxrun[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435209",
+      "uuid": "1f9bf268-a6f6-4eb1-9cff-b950f97279fa",
+      "value": "cobaltironrun[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435209",
+      "uuid": "88a37064-3c36-4ea6-8ac9-ce281803919d",
+      "value": "cobaltwildpath[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435209",
+      "uuid": "ce03c00a-9be9-4c47-87f4-6ea192693a5d",
+      "value": "crimsonmoonwatch[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435209",
+      "uuid": "6d22a4cf-c331-4890-9b1e-3b2b1ac9fed5",
+      "value": "crystalrainview[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435209",
+      "uuid": "ef3ec61e-6f6c-43e8-9b5a-99b417c9de4b",
+      "value": "driftleafcitadel[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435210",
+      "uuid": "0f1b228f-bac6-459e-bccd-01eea0c76497",
+      "value": "driftraingate[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435210",
+      "uuid": "b0b05777-f9f1-4158-b75f-16c28de896ea",
+      "value": "emberflintwind[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435210",
+      "uuid": "d2451735-d9b2-4af0-9175-22a09e05800b",
+      "value": "emberirongate[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435210",
+      "uuid": "6c75a941-7b16-47d3-842b-4d5acca189ee",
+      "value": "emberwindcitadel[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435210",
+      "uuid": "e2deed3e-01e4-456a-8eac-693267545b63",
+      "value": "frostwindward[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435210",
+      "uuid": "4f2ebbd9-f121-436c-8542-8eb2bb680e78",
+      "value": "heliostormfield[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435211",
+      "uuid": "be10e5be-16f2-470e-ba88-940096cd3194",
+      "value": "indigocinderhall[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435211",
+      "uuid": "d6fe88c7-7cd5-47e2-a694-3e551d29308b",
+      "value": "indigodawnpoint[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435211",
+      "uuid": "e300bc7d-4f4c-4bf8-814f-974e5641189b",
+      "value": "indigomoonbridge[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435211",
+      "uuid": "0da0f9ee-0352-4f05-87f3-91342f8b0919",
+      "value": "indigoriverfrontier[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435211",
+      "uuid": "7f155f79-297a-46b6-84c1-87ae07ddabfb",
+      "value": "indigosilvertrail[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435211",
+      "uuid": "7ec020af-59a7-47d1-b4c5-ba743272a0eb",
+      "value": "indigowinterrise[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435212",
+      "uuid": "9e16f205-002a-4d9e-a97a-59f6e77a886a",
+      "value": "ivoryveilspire[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435212",
+      "uuid": "681f5955-923e-4265-b186-d007905d2c49",
+      "value": "jaspershadowhall[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435212",
+      "uuid": "0de41dbb-42d7-4731-9832-f39970f29db6",
+      "value": "jasperstormview[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435212",
+      "uuid": "1997b68f-8f85-4cdc-9061-272080da9be7",
+      "value": "jaspervalewell[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435212",
+      "uuid": "e74acbba-e1e7-43ba-92b5-77061cf5fd50",
+      "value": "karmicshadowwell[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435212",
+      "uuid": "03f6962b-902b-4b90-9e5d-80f4ac9ce955",
+      "value": "karmicsnowroot[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435213",
+      "uuid": "3a037bf4-5122-4149-84b8-6c9b0c8996eb",
+      "value": "karmicwindspire[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435213",
+      "uuid": "e0b8ebc1-45ef-4fc2-bcf5-4ddc57c18369",
+      "value": "lumenflintcliff[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435213",
+      "uuid": "935a5ef2-01c4-41af-bc17-3c0a94843cc6",
+      "value": "lunarstonepeak[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435213",
+      "uuid": "7f5cc8a9-4d1d-4446-acbb-d29fe58b9557",
+      "value": "marbleglasswell[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435213",
+      "uuid": "88b07eae-14b9-4bc5-9944-8445823c5f0b",
+      "value": "marbleleafrun[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435213",
+      "uuid": "c75b1f63-e64b-42df-9f47-a29f3187d828",
+      "value": "marblenighthaven[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435214",
+      "uuid": "241fc67e-fd2a-46a9-b0bb-a10198a5c03d",
+      "value": "mysticcragcrown[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435214",
+      "uuid": "4ebf5f12-1a5b-4d53-b586-c081e0b19811",
+      "value": "mysticrainfield[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435214",
+      "uuid": "ab42ce90-4244-4434-9de9-13676c102206",
+      "value": "mysticwildhollow[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435214",
+      "uuid": "43571b6c-8c45-4b0d-91f3-2bcb70a7c28a",
+      "value": "nebulaveilforge[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435214",
+      "uuid": "82e132f1-ab32-4333-b140-8120b4347501",
+      "value": "nocturnepinerun[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435214",
+      "uuid": "95feff2c-2677-4d4b-8ead-ecec95560e3c",
+      "value": "obliquecloudwood[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435215",
+      "uuid": "6877c36d-0690-4c64-82cb-6cb4ae528665",
+      "value": "obsidianbrightpoint[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435215",
+      "uuid": "d66f27f3-a600-4b83-8a56-ce70be698519",
+      "value": "obsidianskyvale[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435215",
+      "uuid": "29ca7566-1458-4b09-adea-8a72064c3de6",
+      "value": "onyxoaknexus[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435215",
+      "uuid": "ba64992d-6a3a-4239-8c8f-b0ebe70ba2b3",
+      "value": "opalinesilverreach[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786435215",
+      "uuid": "f2f161f9-63b6-404b-8139-0bd62e2b8446",
+      "value": "pumpfunlivestream[.]xyz"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "6cb37027-b16f-4d80-aa77-a0dfd2dfe872",
+    "info": "Maltrail IOC for 2026-08-14",
+    "date": "2026-08-13",
+    "timestamp": "1786701604",
+    "threat_level_id": "2",
+    "analysis": "1",
+    "published": true,
+    "Orgc": {
+     "name": "Krawczyk Industries Limited",
+     "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#d6f264",
+      "local": false,
+      "name": "MALWARE",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00833c",
+      "local": false,
+      "name": "misp:threat-level=\"medium-risk\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00ce5f",
+      "local": false,
+      "name": "misp:event-type=\"observation\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#009042",
+      "local": false,
+      "name": "misp:automation-level=\"unsupervised\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0064ac",
+      "local": false,
+      "name": "osint:source-type=\"manual-collection\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694404",
+      "uuid": "f6d275d7-2b25-4f79-b919-b7b74620b7c5",
+      "value": "shinyhunters[.]group"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694404",
+      "uuid": "858a8e1a-bf4a-4d75-b2e9-4218d2403508",
+      "value": "shinyhunters[.]red"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694405",
+      "uuid": "656c3a23-b9e7-400d-a04f-9bbbe0c88049",
+      "value": "176.120.22.24"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694405",
+      "uuid": "e7459ec9-e25b-4a39-9b21-4c203590de9b",
+      "value": "193.24.123.69"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694405",
+      "uuid": "ac3fc260-7c37-40f3-8cf7-ce747ef8ebf8",
+      "value": "37.77.150.95"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694405",
+      "uuid": "9463c563-e59c-47a4-a763-c333b11ab60d",
+      "value": "91.202.233.104"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694405",
+      "uuid": "90649f00-8599-4af1-a491-643dac2c51c3",
+      "value": "91.215.85.103"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694406",
+      "uuid": "a8056757-a3d0-45d7-8fb0-6716b104ff57",
+      "value": "91.215.85.22"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694406",
+      "uuid": "e15c16c6-34aa-4ef5-ae60-b6cfb9b3bd92",
+      "value": "joefilters[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694406",
+      "uuid": "e5834661-ee37-451f-ac8b-c26f08919775",
+      "value": "api[.]joefilters[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786694406",
+      "uuid": "70b2c85a-ff83-4147-8e89-47f4e2abf296",
+      "value": "digitden[.]cyou"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786698004",
+      "uuid": "08f52de7-dce4-4bcf-bac2-f33f7454410e",
+      "value": "45.61.163.8"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786701603",
+      "uuid": "3d065f40-fd78-409b-8082-06eb90e31c70",
+      "value": "iseopolo[.]buzz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786701604",
+      "uuid": "ce5e09d9-eefc-4018-9c02-d7a765617d68",
+      "value": "doc[.]iseopolo[.]buzz"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "ff2d1e23-caba-4a52-a374-ba223b1e7700",
+    "info": "Malicious File Creates Network Socket and Contacts fdh32fsdfhs.shop - Kunai Analysis Report sample - 2d266ab2597c72424aa21bc00718f9a13e5836e8",
+    "date": "2025-06-20",
+    "timestamp": "1786895296",
+    "threat_level_id": "3",
+    "analysis": "0",
+    "published": true,
+    "Orgc": {
+     "name": "CIRCL",
+     "uuid": "55f6ea5e-2c60-40e5-964f-47a8950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0087e8",
+      "local": false,
+      "name": "osint:certainty=\"50\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:white",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#fa2a0d",
+      "local": false,
+      "name": "JAG",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407614",
+      "uuid": "3c219d9e-5bdb-4aba-8b8d-5fa5995c0aaa",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407614",
+      "uuid": "11410b12-b83c-4d16-a868-0b73b222cd88",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "1651e485-6ba7-4af2-a3c5-a99d504814a7",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "7e5cb121-b948-4df7-9068-015db833cee3",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "2fea3756-8955-460e-b828-644e892125f8",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "f9c2a13c-32b2-4526-a82b-f381a56aca26",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "f50f0734-10cf-4d7e-a5c3-08779bbebd11",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "c194dcdb-6a4a-4ea6-8a11-135c73b125c2",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "13c24226-c13f-4118-ad9a-4369f9f421d4",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "785b3ac3-72a4-4ea8-b612-7d28606f445b",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "3c22bb01-2f7c-4d96-a31d-1b5f8ef67744",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "b9dc351c-44f9-4b4b-9556-84ac7b768557",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407615",
+      "uuid": "a5e5fb5d-b287-4673-9d50-b2bd26ae8a28",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "18b080ad-10d7-4db7-b39e-6fae8dacc110",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "b2518ebf-b8d8-4ad0-8b8a-be9b0f2ecd44",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "0a1ed8ca-f316-4877-ba23-9f3963991baa",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "ff785caf-712e-4336-8c58-10eda3e8e3a6",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "8ff5ae0b-979b-4064-8398-29d248e65915",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "e780c5b4-d5d6-4a51-88b4-62a343678372",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "1d30ac6b-f116-49a7-9561-49ff7aefcbef",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "0fa723d6-9e74-4923-8057-032bcd66f44e",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "07574cee-4f0e-4fb7-8267-b9dcdbe0c919",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "8c4116bb-d82c-4437-ba78-d70496f3ed11",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "edf7d962-1e86-4707-99e1-78e5e1d94574",
+      "value": "fdh32fsdfhs[.]shop"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "eec5cfba-99fe-403c-815f-b0347c7e9afa",
+      "value": "196.251.88.165"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "481dec93-32d8-4baf-b840-a787a0cf63ab",
+      "value": "a231b1d76e93c3c5f2f595bb6ed53e3f"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "42db0e39-1233-4158-992e-081b2e1e3af5",
+      "value": "2d266ab2597c72424aa21bc00718f9a13e5836e8"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1750407616",
+      "uuid": "f12725f5-6d7c-4444-b930-4bae10221688",
+      "value": "0d2211b7e92fcc6a9f7c94d4adf8e47f6f97e31dacd3b2ffb6cce3c485fcef26"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "ea593018-b2e9-4e7e-8da9-cc20a751e3f6",
+    "info": "MoustachedBouncer: Espionage against foreign diplomats in Belarus",
+    "date": "2023-07-21",
+    "timestamp": "1793405516",
+    "threat_level_id": "1",
+    "analysis": "0",
+    "published": true,
+    "Orgc": {
+     "name": "ESET",
+     "uuid": "55f6ea5e-51ac-4344-bc8c-4170950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:white",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:target-information=\"Belarus\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1793278635",
+      "uuid": "ae13d755-f844-4203-9888-d081d62d94b7",
+      "value": "updates[.]microsoft[.]com"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "6ac7b12a-3a21-42ab-9573-0cb880ae0f65",
+      "value": "hxxp://updates[.]microsoft[.]com"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "777c5de8-7f77-4a7f-90c2-12dd47424567",
+      "value": "41898dae353a85c04282979c44448beb"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "ad1d3c19-7627-4d1d-9d92-f3436b33a8ff",
+      "value": "02790dc4b276dfbb26c714f29d19e53129bb6186"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "44415a8e-4b9d-4585-a329-90df4565f42c",
+      "value": "b654f03e7e9125169088a8b4ee5cd04e3f96982ff1148eef2781d9f2613b08bb"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "eca396c5-c21e-456f-bff3-d4b7ecde6e34",
+      "value": "hxxp://updates[.]microsoft[.]com/jdrop.js"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "fa38692f-8821-4c8b-816f-a4a4b210a69e",
+      "value": "56f8c84135c3b42d332ac720c25d0b76"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "fa8051d8-29c4-482a-a3a0-aa54238e0c56",
+      "value": "6eff58edf7ac0fc60f0b8f7e22cfe243566e2a13"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "9dbdf47a-9e9e-4296-bec6-e13650fd583b",
+      "value": "498a903f94e91159ccf1b43f363e83252345295435b084ba7d912e3bd0021980"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "39500972-e8ed-4c0c-8c5c-19177295b465",
+      "value": "hxxp://updates[.]microsoft[.]com/MicrosoftUpdate845255.zip"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946468",
+      "uuid": "f187076b-29c0-4894-a87e-1189dbf001f1",
+      "value": "367c31aa5e1d3f4d36e56303d73b760d"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "c9fb0d70-6759-4a81-ac8e-44c6a38b6c9c",
+      "value": "e65eb4467ddb1c99b09ae87ba0a964c36bab4c30"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "e8261a66-7b30-461b-b603-5d0328c2f20f",
+      "value": "645aa19daec5752821b194ddbd4a4ec5f0c3072cb58fb140aa6b16abb9cbcfca"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "8a8937bb-d3cc-4965-92c2-e19e90445030",
+      "value": "b1f2f44b213831056e2d1fa34031b5df"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "27e0fb1c-7bd7-48e0-9589-d75acf179d4b",
+      "value": "3a9b699a25257cbd0476cb1239ff9b25810305fe"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "47856ef3-3dbd-4d01-bb0d-4cad4eeccf59",
+      "value": "89b7c003b65365241e100d895a7ad7926d8eafe109ba26669cfc9f6c259ad8fd"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1764988339",
+      "uuid": "3e1117e5-cb5b-4e0a-a582-259650f8eba1",
+      "value": "38.9.8.78"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "8501fd71-336e-45a3-a65f-d9ae8a28f4e1",
+      "value": "smb://38[.]9[.]8[.]78/driverpack/DPU.exe"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "4483209e-b0ea-45ab-8142-42cb5f47a231",
+      "value": "05821f6ad89a5c9c586ff662e82b0e1c"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "87e54a81-b9a3-4acb-a822-133acbd2943a",
+      "value": "19e3d06fbe276d4aaea25abc36cc40ea88435630"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "f80a817d-3b3c-4e66-b26b-ffae10d32c2e",
+      "value": "9fc8a77b40ac77ae892bd43fd174fc21d3dafff0e7fcceefea98bd4dc7e26a32"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1764988340",
+      "uuid": "9d6aa46a-09fa-4b8d-9888-1c1dbc24b599",
+      "value": "5445ca8e5f076c2147bc9312b61a224a"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1764988340",
+      "uuid": "07ec711a-f0e8-446f-84dd-c2abaa40ee15",
+      "value": "52be04c420795b0d9c7cd1a4acbf8d5953fafd16"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1764988340",
+      "uuid": "eae59680-c18c-454d-b08e-fee0c59b1567",
+      "value": "b0b8effdda97a3589daaae373bf321810bc29b22623eb12ad7b46fb931e40d9b"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "c70f5144-91d5-4d9d-a20e-aa39eebc6030",
+      "value": "14500d005f29b5cf9452ea21de0a5771"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "9cd18064-7c87-4ccd-bd80-485a3eeac198",
+      "value": "0241a01d4b03bd360dd09165b59b63ac2ceceafb"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "6fe5b859-f4ff-437e-b1b2-43057f52f40b",
+      "value": "f7aa0d7d2ef62e3bb9c925375823250f896da6e05d7d8e64ec8cdf8d26932699"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1764988341",
+      "uuid": "502e7ced-cfdd-4a22-b372-2ce2ef516b6e",
+      "value": "209.19.37.184"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "692d7f63-e107-40d1-a401-8e885ba8b399",
+      "value": "smb://209[.]19[.]37[.]184/driverpack/aact.exe"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "5d6a660e-c9ec-4edb-a6a9-fd398c4fece5",
+      "value": "f75c4a594ed7a85cddffc9ca817bca81"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "2cf040d1-2617-4aa1-b573-edb8b5cf32f0",
+      "value": "a01f1a9336c83ffe1b13410c93c1b04e15e2996c"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "ad6b6576-b794-4505-80a2-c7d5a051fc4a",
+      "value": "5e3b7c34db0b8c155d06b026ee935c11cf58635532faff628281a0ddd5dd7bd0"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "4dcb2d25-cfa5-4c2e-9f6b-4977e914a035",
+      "value": "smb://209[.]19[.]37[.]184/driverpack/officetelemetry.exe"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "58e6a048-0c3e-4bfd-b2a3-284d1330d4ef",
+      "value": "72adcf5641dbea85fd7f99844c66d2ec"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "0f865cf5-50b0-45ca-ad71-7a3b14134fb8",
+      "value": "c2aa90b441391adefaa3a841aa8ce777d6ec7e18"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "e21786b6-b1e6-4264-bc72-34f64387b57c",
+      "value": "ae81489226c57b09672fe5f6ac34c89123598960cbaf8ca8b00e43f75879bd43"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1764988342",
+      "uuid": "98d93643-21af-4cca-aec8-a65713d71b28",
+      "value": "52.3.8.25"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "bc913dd0-e729-4671-b7ef-2e3e2ce121ec",
+      "value": "smb://52[.]3[.]8[.]25/oracle/oracleTelemetry.exe"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "c7de0a40-cacf-4ff5-9dda-d668c70357c3",
+      "value": "317e591a34c87537d614dfb41e895b91"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "a88ffb48-b11c-472c-affd-39cd80c002db",
+      "value": "c5b2323eae5e01a6019931ce35ff7623df7346ba"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "92f0728b-b616-4e66-b565-fc6e6f41bab5",
+      "value": "9f59ac2b6ad389950beefb899ef02cba02fc6038a44646e9a797ec9916d0acf9"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1764988343",
+      "uuid": "67cd29bb-c51a-46fe-9cd7-8020d81e55b7",
+      "value": "59.6.8.25"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "55ed4486-0ce5-4472-bbc5-6a523b0048ca",
+      "value": "smb://59[.]6[.]8[.]25/outlooksync/outlooksync.exe"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "5899d0a2-e066-461a-b0ae-f575d59f2b71",
+      "value": "05887f9c2b0d92032a32f6186523b760"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "c448c8d2-079f-4da4-b06e-c377dc9fb2e8",
+      "value": "c46cb98d0ceccb83ec7de070b3fa7afee7f41189"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "9fc26374-4f70-4fb6-bb39-73ed51b84aa1",
+      "value": "3c37a01c6b2f1cf9e15f043cb55c2ed0682d859179e5b51812dd80f676247bf4"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1764988343",
+      "uuid": "0f0bbc39-b790-4bd4-a8d0-bdf31ad26b53",
+      "value": "24.9.51.94"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "a041aa83-2fc5-4f2c-bf84-2953dddb8b24",
+      "value": "smb://24[.]9[.]51[.]94/EDGEUPDATE/"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "5c60c2d6-33a7-445b-a3dd-71a6ca7904e7",
+      "value": "4c2114ee7ae26fc09443b7e1b7658ca0"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "afccc9f2-eba3-46ca-b9eb-b947e838b197",
+      "value": "a3ae82b19fee2756d6354e85a094f1a4598314ab"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "aa506651-7a99-482a-9af7-927eb7e35e23",
+      "value": "c4d7cef97f1111aed8b876e11e51faa772dfe0b8c51fa042aeee82ede0bfca22"
+     },
+     {
+      "type": "url",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "24569cd0-ab13-4110-b96a-0323ae960ae8",
+      "value": "smb://24[.]9[.]51[.]94/EDGEUPDATE/update/"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "766c847c-858c-4341-b48a-e80ba3e641cf",
+      "value": "f048c6118856a6edcb46fa90c88e8ecb"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "15dfd8c2-6680-4f01-923a-ec2a54b83b21",
+      "value": "4f1cecf6d05571ae35ed00ac02d5e8e0f878a984"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "c5f686c6-0fa5-4a73-a353-d8ee220e279e",
+      "value": "45a9b848f0b8844a3819df4603fff92b16080f28f14393ac0fde42c5b5d64cbd"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "ec19eed8-bb5f-46bb-b34e-5951219e4107",
+      "value": "7396b1e03da633fb1841daaaf0d395bb"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "bc476531-7021-4605-8bbd-71355e79e5e2",
+      "value": "0daea89f91a55f46d33c294cfe84ef06ce22e393"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "26a9db43-8c0c-4473-9ceb-d25648ee2f39",
+      "value": "b19784949e32d0cc8a032be3b58962233dbff5bfec0b26f426202820f336e845"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "474689eb-f3f0-4199-950b-4c7c5d3fa05b",
+      "value": "af727e5a0e45fac2e9c476c7a6fbd813"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1689946469",
+      "uuid": "c781c783-9ca4-4531-983f-4bf5a6fadf28",
+      "value": "11cf38d971534d9b619581cedc19319962f3b996"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "60118dab-1ab8-40b2-b02b-b6f80aba047c",
+    "info": "[CERT-FR] Sandworm intrusion set campaign targeting Centreon systems",
+    "date": "2021-01-27",
+    "timestamp": "1788004532",
+    "threat_level_id": "4",
+    "analysis": "0",
+    "published": true,
+    "Orgc": {
+     "name": "CERT-FR_1510",
+     "uuid": "56bdf779-46f8-4353-bdf9-2bb95bce2212"
+    },
+    "Tag": [
+     {
+      "colour": "#ff1f00",
+      "local": false,
+      "name": "fr-classif:non-classifiees=\"NON-CLASSIFIEES\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#008e63",
+      "local": false,
+      "name": "cossi:RechercheSourceOuverte=\"Interdite\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00714f",
+      "local": false,
+      "name": "cossi:fiabilite=\"Bonne\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#6d35f2",
+      "local": false,
+      "name": "misp-galaxy:threat-actor=\"IRIDIUM\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:threat-actor=\"TeleBots\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#12e300",
+      "local": false,
+      "name": "misp-galaxy:threat-actor=\"Sandworm\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:threat-actor=\"ELECTRUM\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "cossi:TLP=\"white\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0087e8",
+      "local": false,
+      "name": "osint:certainty=\"50\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:white",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Exploit Public-Facing Application - T1190\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Deobfuscate/Decode Files or Information - T1140\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"File and Directory Discovery - T1083\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Exfiltration Over Command and Control Channel - T1041\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004577",
+      "local": false,
+      "name": "osint:source-type=\"block-or-filter-list\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00714f",
+      "local": false,
+      "name": "cert-fr:fiabilite=\"Bonne\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "PAP:CLEAR",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#493000",
+      "local": false,
+      "name": "cert-ist:threat_targeted_system=\"Linux\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#e49600",
+      "local": false,
+      "name": "cert-ist:threat_targeted_region=\"Western Europe\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#fea700",
+      "local": false,
+      "name": "cert-ist:enriched",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#392500",
+      "local": false,
+      "name": "cert-ist:ioc_accuracy=\"high\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Web Shell - T1505.003\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Create or Modify System Process - T1543\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#065100",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Windows Service - T1543.003\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Symmetric Cryptography - T1573.001\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Asymmetric Cryptography - T1573.002\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Encrypted Channel - T1573\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Web Protocols - T1071.001\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Exfiltration Over C2 Channel - T1041\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#3a2600",
+      "local": false,
+      "name": "cert-ist:threat_level=\"low\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#f8a400",
+      "local": false,
+      "name": "cert-ist:threat_type=\"apt\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "3c500d71-d8b4-40e8-9020-ce5da94ce6e7",
+      "value": "e1ff729f45b587a5ebbc8a8a97a7923fc4ada14de4973704c9b4b89c50fd1146"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "75a5b7ba-fbcd-4bd7-a047-f88eef56cbfe",
+      "value": "a739f44390037b3d0a3942cd43d161a7c45fd7e7"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "92cf1af0-e0a9-495d-bb8e-3542f696fd26",
+      "value": "92ef0aaf5f622b1253e5763f11a08857"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "af5c1dbb-53a8-4866-a2b7-b435cc2918f5",
+      "value": "893750547255b848a273bd1668e128a5e169011e79a7f5c7bb86cc5d7b2153bc"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "9ecd65eb-4436-41fb-9f7c-84a7033b2fd7",
+      "value": "c69db1b120d21bd603f13006d87e817fed016667"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "e9defd19-33e8-4adf-a250-5a0c43fb1245",
+      "value": "84837778682450cdca43d1397afd2310"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "dd87b555-c5c5-4382-87aa-eaea02f4b16a",
+      "value": "928d8dde63b0255feffc3d03db30aa76f7ed8913238321cc101083c2c5056ffa"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "f1cd62fe-be67-4e61-a3da-123b7b51fd70",
+      "value": "b7afb8c91f8f9df4f18764c25251576a0f8bef6f"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "cb528466-9645-41f1-8cb9-435a5cf10bf7",
+      "value": "a89251cd4c15909a8e15256ead40584e"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "a9596937-f6ed-46d2-8088-d2a5f3d2951e",
+      "value": "ebe98d5e1ab6966ec1e292fafbd5ef21c2b15bd7c7bb871d8e756971b8b6877a"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "9d497cf4-2411-4430-a3df-6ba6b50b5fbf",
+      "value": "5a58e46e5b8f468445f848f8eca741eddebcef3e"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1611763115",
+      "uuid": "74926977-49c1-4116-98ba-89dd9219edd7",
+      "value": "9885fcdda12167b2f598b2d22de07d5b"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "118e66a6-103e-4d16-bf65-5ff0b6ecf532",
+    "info": "Maltrail IOC for 2026-08-09",
+    "date": "2026-08-08",
+    "timestamp": "1786305615",
+    "threat_level_id": "2",
+    "analysis": "1",
+    "published": true,
+    "Orgc": {
+     "name": "Krawczyk Industries Limited",
+     "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#d6f264",
+      "local": false,
+      "name": "MALWARE",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00833c",
+      "local": false,
+      "name": "misp:threat-level=\"medium-risk\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00ce5f",
+      "local": false,
+      "name": "misp:event-type=\"observation\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#009042",
+      "local": false,
+      "name": "misp:automation-level=\"unsupervised\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0064ac",
+      "local": false,
+      "name": "osint:source-type=\"manual-collection\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786255203",
+      "uuid": "d159f154-8286-4026-b996-98eba524f1b9",
+      "value": "hulahoopproft[.]cc"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786255204",
+      "uuid": "cdaa18bb-c684-475d-af2a-be241b475b33",
+      "value": "dragonz[.]cc"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786255204",
+      "uuid": "b6d11d82-3eb3-40e7-8d92-166d785074af",
+      "value": "rules[.]dragonz[.]cc"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280404",
+      "uuid": "42f4ace1-2c27-480c-8f16-5ffbb95b5c87",
+      "value": "0fxtys05[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280404",
+      "uuid": "6d84e686-9b27-4a7a-87ee-944eebf01fb1",
+      "value": "21hsm[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280404",
+      "uuid": "3797ec37-83f0-4841-99a1-f5880fb64c04",
+      "value": "4ycan0[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280405",
+      "uuid": "3fe70e70-783c-478d-af10-e583d7b808d0",
+      "value": "4ywmd[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280405",
+      "uuid": "ce6a788b-9a49-407f-aa79-50e5f91d2bfc",
+      "value": "73dw8[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280405",
+      "uuid": "59c0c568-ed46-40f6-b446-ea1bbdbce0d6",
+      "value": "7neca[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280405",
+      "uuid": "0c00d5ab-fc75-4a04-bd6f-7ec316aec5e6",
+      "value": "81ex001[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280405",
+      "uuid": "64953217-d975-468f-bc36-57c8bb0bf0d5",
+      "value": "81ex008[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280406",
+      "uuid": "ce608cb2-a39b-4a56-9cb3-8123cb7acde1",
+      "value": "81ex009[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280406",
+      "uuid": "aa0810f1-f3ca-4372-93d1-4ea6695246c2",
+      "value": "81ex01[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280406",
+      "uuid": "5514ac7f-fc50-408e-93aa-51a448f20876",
+      "value": "8cdyk[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280406",
+      "uuid": "d0b8fadf-7b81-4066-95c0-a3dfc60bed90",
+      "value": "9pi4p[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280406",
+      "uuid": "29f785f1-1fec-4481-b444-cb562925eb5c",
+      "value": "9u74o[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280406",
+      "uuid": "3920b73f-da83-470c-867f-46f3b937cc56",
+      "value": "almefn[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280406",
+      "uuid": "20d6659c-2b23-4be6-b8ce-81ecc9a9c64a",
+      "value": "api[.]0fxtys05[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280407",
+      "uuid": "c74adceb-6bd3-43af-8c16-2bc3873d8e31",
+      "value": "api[.]21hsm[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280407",
+      "uuid": "fc359acf-b6e0-4031-83ac-724c38ab8482",
+      "value": "api[.]4ycan0[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280407",
+      "uuid": "b5240178-cc20-4f8a-8d5a-a4938390df02",
+      "value": "api[.]4ywmd[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280407",
+      "uuid": "381bfa86-7b52-4049-a222-963aae04fd5b",
+      "value": "api[.]73dw8[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280407",
+      "uuid": "e3678d13-78a8-4fde-bdc4-403dfcffba8d",
+      "value": "api[.]7neca[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280407",
+      "uuid": "380311ac-9db6-4dd7-ad22-09c9c407239d",
+      "value": "api[.]81ex001[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280408",
+      "uuid": "5f888058-7422-4300-a8d5-4dec489e491e",
+      "value": "api[.]81ex008[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280408",
+      "uuid": "c71acf0d-1b80-402c-9498-d9498a1a054e",
+      "value": "api[.]81ex009[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280408",
+      "uuid": "ae45304e-0f24-47cc-b4c9-c54133505c25",
+      "value": "api[.]81ex01[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280408",
+      "uuid": "29cf633a-5230-49a4-8ae8-fc3ab1884479",
+      "value": "api[.]8cdyk[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280408",
+      "uuid": "8926efbb-0cf5-42bc-80a9-0ecffd1b3ec2",
+      "value": "api[.]9pi4p[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280408",
+      "uuid": "591bf384-2034-4ee4-a305-dd0c399f92f3",
+      "value": "api[.]9u74o[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280409",
+      "uuid": "dfbac34c-80c0-4ef5-95c7-1f64427c04bc",
+      "value": "api[.]almefn[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280409",
+      "uuid": "89d42ec6-d5f2-49d6-83ae-444b6e89d5ed",
+      "value": "api[.]bagawf45[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280409",
+      "uuid": "36f4d809-273a-4daa-90c1-96b8ee692716",
+      "value": "api[.]bdgan234[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280409",
+      "uuid": "67823284-09a1-4fe9-babe-e5147a0a12f8",
+      "value": "api[.]bkldlgna34[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280409",
+      "uuid": "783ff14e-6c5d-4b91-9101-fe80e4cf8550",
+      "value": "api[.]bmmm4w8r[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280409",
+      "uuid": "0ac61626-ace3-405a-8d47-dbfc459edad8",
+      "value": "api[.]cgje4[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280410",
+      "uuid": "fcfe29ec-59aa-4540-828a-c96d551a58c3",
+      "value": "api[.]cowotc[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280410",
+      "uuid": "cea50ab1-c55a-45ba-bfed-ac14f2cec6c4",
+      "value": "api[.]d1z39aui[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280410",
+      "uuid": "59bc4283-e90a-43af-80bd-238479e4f0ce",
+      "value": "api[.]e13falsz[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280410",
+      "uuid": "b4b83dc7-d453-4fc9-aa69-5f970be45874",
+      "value": "api[.]edbrl[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280410",
+      "uuid": "2fbb95df-97dd-44bb-981b-388b2e19d3a1",
+      "value": "api[.]fql01[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280410",
+      "uuid": "3015551a-c8ec-4bf9-908d-a0a239f27d13",
+      "value": "api[.]fql02[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280410",
+      "uuid": "86d60a10-b42b-48a5-a21e-39c81b324163",
+      "value": "api[.]fqlexchanger[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280411",
+      "uuid": "867874b7-5dcc-48f4-b27b-94c54bdb00f8",
+      "value": "api[.]gpfql001[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280411",
+      "uuid": "70baed49-ab71-42b0-813b-fdad995c7d96",
+      "value": "api[.]hns6i[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280411",
+      "uuid": "b1dda4e0-bf4d-4fe2-847a-7851c4a9dceb",
+      "value": "api[.]iewrawx342[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280411",
+      "uuid": "58d55f9c-1e1d-4706-a25b-a85e2c042be7",
+      "value": "api[.]jgwaeewg234[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280411",
+      "uuid": "22e19d77-0d50-4349-baad-9368ad3342f5",
+      "value": "api[.]jrscg[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280411",
+      "uuid": "a46a8162-74d9-49d2-8d8b-23c380843cf9",
+      "value": "api[.]k1axxgfa[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280412",
+      "uuid": "e6e1a67d-e675-4688-b053-220d152d5480",
+      "value": "api[.]kcns332[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280412",
+      "uuid": "be0117c9-e5f1-4c95-9e62-85e3429b16c4",
+      "value": "api[.]kle2b[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280412",
+      "uuid": "96faf713-f22c-40a5-b3da-8739dc225871",
+      "value": "api[.]kuzief[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280412",
+      "uuid": "87e5b956-6bd4-44f5-995a-f88174545735",
+      "value": "api[.]ll1jo[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280412",
+      "uuid": "a63dd9ac-eeeb-4fe3-a93f-fac7a3c7635f",
+      "value": "api[.]m1e50b[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280412",
+      "uuid": "f6ae7222-6306-4b20-b269-1a01875bda80",
+      "value": "api[.]mhtqp[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280413",
+      "uuid": "53797b24-381f-4f6d-aa1c-2efd7ebe3661",
+      "value": "api[.]mnfdaf23[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280413",
+      "uuid": "0973afdf-168f-41c7-bf24-f8f1a172a11b",
+      "value": "api[.]nbfaogaw[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280413",
+      "uuid": "516d1443-be30-4774-8b5c-1bb47b645ab4",
+      "value": "api[.]nbxvvfa324[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280413",
+      "uuid": "425702a5-2e7e-4d0b-9604-6037dce31d6e",
+      "value": "api[.]nbzvzga353[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786280413",
+      "uuid": "f1f79dfe-abfb-46d5-8e0a-7c94db18238a",
+      "value": "api[.]nzxcvjoaaf34[.]com"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "5b773e07-e694-458b-b99c-27f30a016219",
+    "info": "Turla Outlook White Paper",
+    "date": "2018-08-17",
+    "timestamp": "1794614463",
+    "threat_level_id": "1",
+    "analysis": "0",
+    "published": true,
+    "Orgc": {
+     "name": "ESET",
+     "uuid": "55f6ea5e-51ac-4344-bc8c-4170950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#12e200",
+      "local": false,
+      "name": "misp-galaxy:threat-actor=\"Turla Group\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Component Object Model Hijacking\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-attack-pattern=\"Email Collection\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-enterprise-attack-attack-pattern=\"Component Object Model Hijacking - T1122\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0088cc",
+      "local": false,
+      "name": "misp-galaxy:mitre-enterprise-attack-attack-pattern=\"Email Collection - T1114\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:white",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0087e8",
+      "local": false,
+      "name": "osint:certainty=\"50\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#9d6800",
+      "local": false,
+      "name": "cert-ist:threat_targeted_sector=\"Academic and Research\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#986400",
+      "local": false,
+      "name": "cert-ist:threat_targeted_sector=\"Gov\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#e49600",
+      "local": false,
+      "name": "cert-ist:threat_targeted_region=\"Western Europe\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#fea700",
+      "local": false,
+      "name": "cert-ist:enriched",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#372500",
+      "local": false,
+      "name": "cert-ist:ioc_accuracy=\"medium\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#3c2700",
+      "local": false,
+      "name": "cert-ist:threat_level=\"medium\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#f8a400",
+      "local": false,
+      "name": "cert-ist:threat_type=\"apt\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#FFC000",
+      "local": false,
+      "name": "tlp:amber",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#ff0000",
+      "local": false,
+      "name": "BR_CTI_Investigar",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004577",
+      "local": false,
+      "name": "osint:source-type=\"block-or-filter-list\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632211",
+      "uuid": "04ef56e8-d383-4896-b8da-38dc73c6433b",
+      "value": "7009af646c6c3e6abc0af744152ca968"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632211",
+      "uuid": "d1abb482-c179-40d6-b11c-870dbadd2ab7",
+      "value": "8a7e2399a61ec025c15d06ecdd9b7b37d6245ec2"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632211",
+      "uuid": "ad918b1b-4c0e-4cce-b05c-0ca7e0ec6e48",
+      "value": "e869c8e7f61d4f49d357d02179ed557e466b1d66ce6993faddbc23d5992ff59b"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632268",
+      "uuid": "ee9ee1a5-ec3f-4abc-9900-84243a5466c0",
+      "value": "af8889f4705145d4390ee8d581f45436"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632269",
+      "uuid": "52f15861-f1bd-4d93-8285-09558f3438c4",
+      "value": "cf943895684c6ff8d1e922a76b71a188cfb371d7"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632269",
+      "uuid": "13ba97ae-2892-41a2-ab84-536ced0401f1",
+      "value": "6a9bc3a1eb4f814af952f27066b70136b9cd7ad980f705dad5bc91b697888b5f"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632297",
+      "uuid": "d0795a4d-3f92-4460-9182-0641e0d080a0",
+      "value": "851dffa6cd611dc70c9a0d5b487ff00bc3853f30"
+     },
+     {
+      "type": "md5",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632321",
+      "uuid": "186f573b-10b7-4933-9570-6ce05f358444",
+      "value": "ff8c3f362d7c9b9a19cfa09b4b3cfc75"
+     },
+     {
+      "type": "sha1",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632321",
+      "uuid": "c82b6c8e-89bf-4738-81b8-290eb6dd52b7",
+      "value": "f992abe8a67120667a01b88cd5bf11ca39d491a0"
+     },
+     {
+      "type": "sha256",
+      "category": "Payload delivery",
+      "to_ids": true,
+      "timestamp": "1535632321",
+      "uuid": "915c97f0-9d0e-4eb2-a6f0-8a21c23d0569",
+      "value": "881941ea24e92f4bd4d69d79e27ce1d2b10094172cb3cc93b223daf70ef2d867"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "0badeefd-70f0-46e6-87f4-a6f1454661f9",
+    "info": "Maltrail IOC for 2026-08-10",
+    "date": "2026-08-09",
+    "timestamp": "1786388421",
+    "threat_level_id": "2",
+    "analysis": "1",
+    "published": true,
+    "Orgc": {
+     "name": "Krawczyk Industries Limited",
+     "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#d6f264",
+      "local": false,
+      "name": "MALWARE",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00833c",
+      "local": false,
+      "name": "misp:threat-level=\"medium-risk\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00ce5f",
+      "local": false,
+      "name": "misp:event-type=\"observation\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#009042",
+      "local": false,
+      "name": "misp:automation-level=\"unsupervised\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0064ac",
+      "local": false,
+      "name": "osint:source-type=\"manual-collection\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345204",
+      "uuid": "ceb33f06-dfff-464a-8585-fa3cc164db95",
+      "value": "103.143.81.12"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345204",
+      "uuid": "44c2ef75-6611-49ae-a562-7b4271523ed3",
+      "value": "111.229.160.83"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345204",
+      "uuid": "880bd781-7c6e-4a7f-beca-86d5a76cbfe2",
+      "value": "111.229.87.116"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345204",
+      "uuid": "599c4790-c46c-44e2-b617-de86a6e98bbd",
+      "value": "117.72.46.208"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345205",
+      "uuid": "f98b61be-731f-4f2f-8e28-a73f86e2563f",
+      "value": "195.242.118.95"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345205",
+      "uuid": "20abfef6-61c2-4187-995f-811a080210ae",
+      "value": "38.174.219.136"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345205",
+      "uuid": "23ed86fe-3374-44d1-8aa3-308dab971833",
+      "value": "64.118.130.228"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345205",
+      "uuid": "3406a01e-7be3-4066-a89b-fecbc9fcf302",
+      "value": "84.54.3.198"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345205",
+      "uuid": "4fb7e1bf-d3f9-41f1-b465-70cf7266fd56",
+      "value": "185-242-3-106[.]cprapid[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786345205",
+      "uuid": "fc66b8da-7b65-473a-8fd9-7ad6da226642",
+      "value": "xioskins[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348805",
+      "uuid": "729f6fe4-b2c8-47cf-8339-1d2ab47d77c6",
+      "value": "canadafarmersbusinessnetwork[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348805",
+      "uuid": "ad2e30fa-e86c-424a-a634-f8d33e9bd52a",
+      "value": "hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348805",
+      "uuid": "2cf63af7-0e48-493f-9a77-e2a71f7c3510",
+      "value": "soprasteria-local[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348805",
+      "uuid": "039d87af-28f3-4efc-9131-f28f78d9344d",
+      "value": "whantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348806",
+      "uuid": "857ce1f8-43f2-4890-b870-b5eb4e942ed5",
+      "value": "admin[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348806",
+      "uuid": "ca4cec7e-0c01-45e2-bd20-33feb0ad1781",
+      "value": "assets[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348806",
+      "uuid": "bedb8aa6-5dba-4726-b334-c467fbb1cc45",
+      "value": "dev[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348806",
+      "uuid": "228d27cb-29bf-4600-844f-b120bf7bd2b1",
+      "value": "frtgcwljktnews[.]m[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348806",
+      "uuid": "ad765609-a3be-440b-884d-08ea991ece75",
+      "value": "jwc[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348806",
+      "uuid": "74fccf88-53c6-4c70-b7f9-077024460d8f",
+      "value": "jwc[.]siban[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348807",
+      "uuid": "cc5d8f44-ce64-4dae-9131-5e1fc6097d51",
+      "value": "learn[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348807",
+      "uuid": "93940deb-aab2-4f59-8c61-01dfc0990f1b",
+      "value": "ln[.]canadafarmersbusinessnetwork[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348807",
+      "uuid": "8e50f63e-4801-4a07-98b9-85e6bb1d327a",
+      "value": "media[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348807",
+      "uuid": "a129eec3-3cfc-4f9a-8a3e-562a0c2c267a",
+      "value": "news[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348807",
+      "uuid": "8e241f3d-f65f-474e-9602-843d3d636475",
+      "value": "news[.]jwc[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348807",
+      "uuid": "76dfa713-8728-4218-b771-e5972d9c0182",
+      "value": "news[.]m[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348808",
+      "uuid": "675a0593-4075-46be-8d99-0118e3d97cf7",
+      "value": "news[.]oa[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348808",
+      "uuid": "7e3af848-0135-4981-946d-07cb25d45aae",
+      "value": "news[.]renshi[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348808",
+      "uuid": "20d197e5-7749-40a8-93dd-a10db4dc1af0",
+      "value": "prod[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348808",
+      "uuid": "e313aeeb-c08b-40f1-a168-2f9e84af1633",
+      "value": "qjdtfsmtp[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348808",
+      "uuid": "ea119de9-20bc-40e1-9516-ddb034f02be7",
+      "value": "renshi[.]news[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348808",
+      "uuid": "80a2f716-26e1-4784-a021-3f2be753975e",
+      "value": "sanban[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348809",
+      "uuid": "73e8f015-e780-4b9b-a48c-97934b226629",
+      "value": "shop[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348809",
+      "uuid": "e7fcb903-6f9d-42e6-ba6e-2b15e8ac1200",
+      "value": "siban[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348809",
+      "uuid": "f9c52744-7858-4448-9f2c-4c476e49cedb",
+      "value": "site[.]canadafarmersbusinessnetwork[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348809",
+      "uuid": "5fe134eb-1f3a-4093-9437-be65f96a0cc5",
+      "value": "staging[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348809",
+      "uuid": "f606f2e8-48c4-4cbe-890d-39f16bb230e5",
+      "value": "test[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348809",
+      "uuid": "a136229f-8885-4e1b-845a-b799e1770d34",
+      "value": "uhxqlnews[.]media[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348810",
+      "uuid": "e5461186-cc7c-47d5-af4d-3b5d3322c068",
+      "value": "wildcard[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348810",
+      "uuid": "06f96674-f7ba-4117-b6be-c4d7efc28604",
+      "value": "xmybnnews[.]gs[.]hantangcapital[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348810",
+      "uuid": "ded2265d-17a3-4a26-8dfb-f4bb359fe66c",
+      "value": "xybdgapi[.]hantangcapital[.]com"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348810",
+      "uuid": "ad9d79aa-4fcc-480b-ba1f-6f0fbe874f83",
+      "value": "139.28.36.23"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348811",
+      "uuid": "f3bf9930-67a2-4e6d-9bc2-66d2d27c9bd8",
+      "value": "atlasgroup-ua[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348811",
+      "uuid": "13458b21-0ec7-4a06-9f14-c94092efc1e0",
+      "value": "douncloud[.]site"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348811",
+      "uuid": "de2dfb7b-9796-4df1-800e-b1b47f1a9ce8",
+      "value": "soprasteria-bg[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348811",
+      "uuid": "e796c3f9-c92e-4529-b734-d497a04c946a",
+      "value": "soprasteriabg[.]com"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348811",
+      "uuid": "0eb6fdbf-2622-475a-8217-8f61648bda86",
+      "value": "104.194.133.88"
+     },
+     {
+      "type": "ip-dst",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348812",
+      "uuid": "c7181dd7-fe92-4e1f-afbb-4091a790b173",
+      "value": "58.96.118.232"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348812",
+      "uuid": "2ffdbf28-a43e-48d9-9ead-5a172bd95cac",
+      "value": "0-0x[.]xyz"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348812",
+      "uuid": "ebbef722-abee-467c-8aef-6dcf71807dd6",
+      "value": "06manmustrise07[.]top"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348812",
+      "uuid": "f828f6db-554e-4d6b-b7a3-af9a9572fad7",
+      "value": "09serenight088[.]top"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348812",
+      "uuid": "77eda704-3fa9-4147-910e-a02df3deb059",
+      "value": "0rtcs[.]sbs"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348812",
+      "uuid": "91711c93-d3d2-477b-9ccc-a7cc88301c56",
+      "value": "104[.]194[.]133[.]88[.]sslip[.]io"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348813",
+      "uuid": "61b60221-c524-4ad1-9049-a8d31bd14976",
+      "value": "136-0-213-87[.]sslip[.]io"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348813",
+      "uuid": "ef58b6a9-c32b-490a-ad26-a17ff15666d0",
+      "value": "147-124-214-127[.]plesk[.]page"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348813",
+      "uuid": "d612ed17-bbfa-48ed-bb71-5660087ef66c",
+      "value": "1aea[.]org"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348813",
+      "uuid": "ce5ead35-2fdd-4d08-be0b-7a2952ca3a0e",
+      "value": "1q[.]spravki24[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348813",
+      "uuid": "6d0b2ab5-66d4-4442-ac4b-f8bab2db825b",
+      "value": "1rtech[.]support"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348814",
+      "uuid": "ccfe5119-cdf2-493e-bd39-3f94b99453a5",
+      "value": "1trusted[.]live"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786348814",
+      "uuid": "729abf69-2db0-4017-b4de-9ca43cdfd622",
+      "value": "1w[.]access-to[.]tech"
+     }
+    ]
+   }
+  },
+  {
+   "Event": {
+    "uuid": "da6cf323-074f-4272-8ddd-8fddddac8690",
+    "info": "Maltrail IOC for 2026-08-08",
+    "date": "2026-08-07",
+    "timestamp": "1786226406",
+    "threat_level_id": "2",
+    "analysis": "1",
+    "published": true,
+    "Orgc": {
+     "name": "Krawczyk Industries Limited",
+     "uuid": "593e9fc8-be28-4cb2-a79b-43f8950d210f"
+    },
+    "Tag": [
+     {
+      "colour": "#ffffff",
+      "local": false,
+      "name": "tlp:clear",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#d6f264",
+      "local": false,
+      "name": "MALWARE",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00833c",
+      "local": false,
+      "name": "misp:threat-level=\"medium-risk\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#00ce5f",
+      "local": false,
+      "name": "misp:event-type=\"observation\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#009042",
+      "local": false,
+      "name": "misp:automation-level=\"unsupervised\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#004646",
+      "local": false,
+      "name": "type:OSINT",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0071c3",
+      "local": false,
+      "name": "osint:lifetime=\"perpetual\"",
+      "relationship_type": ""
+     },
+     {
+      "colour": "#0064ac",
+      "local": false,
+      "name": "osint:source-type=\"manual-collection\"",
+      "relationship_type": ""
+     }
+    ],
+    "Attribute": [
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786190404",
+      "uuid": "c0afab82-3e76-4483-a9f1-5be4f94b920e",
+      "value": "advipscaner[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786190405",
+      "uuid": "09997b57-a83a-4980-a90e-934c7dd469a4",
+      "value": "euronics[.]it[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786190405",
+      "uuid": "f21d2d1b-e9f4-455e-8826-629d10994327",
+      "value": "geva[.]it[.]com"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786190405",
+      "uuid": "a0a0cca8-44a9-423d-8b71-a1aa0f575953",
+      "value": "recmyfile[.]online"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786190405",
+      "uuid": "8319c627-c591-4c3e-93b1-7c2d8af06a60",
+      "value": "rnotes[.]app"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197604",
+      "uuid": "2c074172-0504-4429-b89a-d66e38fd97e6",
+      "value": "futupath[.]cyou"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197604",
+      "uuid": "a0004682-fd96-4db6-bb68-e75d6df36f7b",
+      "value": "valuidge[.]cyou"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197604",
+      "uuid": "66f82895-c145-4c44-befc-7af2b725eeae",
+      "value": "aetherbirchspire[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197604",
+      "uuid": "3830705f-f5a9-49ef-b159-6339cd3e1c15",
+      "value": "aetherbrightfrontier[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197604",
+      "uuid": "8c5c9049-6058-4d79-b5c9-5f310d894631",
+      "value": "argentfentrail[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197605",
+      "uuid": "dd798fc7-1269-4bd1-b193-547dd8bcb46c",
+      "value": "argentglassnexus[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197605",
+      "uuid": "c3685037-f917-4a95-b713-c63c7be7a187",
+      "value": "argentwintergate[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197605",
+      "uuid": "b36257d8-a94f-4dcb-b784-590676750be1",
+      "value": "astralbirchcliff[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197605",
+      "uuid": "cdcd9394-c997-4147-ab3c-c74d982d9099",
+      "value": "astralhollowgate[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197605",
+      "uuid": "f0918630-81e4-432a-8315-9604bb09df54",
+      "value": "astralthornkeep[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197605",
+      "uuid": "f9cf3d2e-5d6a-4476-9b75-62d6dd79b421",
+      "value": "boreapinewood[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197606",
+      "uuid": "be816bbc-5f0b-4af3-8100-9b3939333164",
+      "value": "cindernighttrail[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197606",
+      "uuid": "bc0eeaa6-9f06-47b2-b5fc-2c3ff073655f",
+      "value": "coincommumites[.]org"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197606",
+      "uuid": "2be47244-14b9-4eb6-af12-ece297e864c7",
+      "value": "crimsonpinefrontier[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197606",
+      "uuid": "c46ab537-96e7-4bc6-a100-3c4e5ccdfe61",
+      "value": "driftcinderhollow[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197606",
+      "uuid": "924961e0-76ab-4fdb-a54d-1c600628fc68",
+      "value": "driftvalevault[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197606",
+      "uuid": "5731af28-b972-438c-b065-4175ff046153",
+      "value": "driftwindshore[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197607",
+      "uuid": "e57f9102-e613-4491-b0d5-967f56b60e63",
+      "value": "emberbirchpoint[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197607",
+      "uuid": "2105ccc6-ed58-456e-a592-db6a5f3e9d30",
+      "value": "embernightcrown[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197607",
+      "uuid": "6ac96d4a-9aa6-41ba-901c-27f976741c3e",
+      "value": "emberstormwatch[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197607",
+      "uuid": "b929ff43-288a-46f6-a7d5-e31ccb3c5790",
+      "value": "garnetmoonhall[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197607",
+      "uuid": "e3ea02cc-304d-461a-9662-859f6c0725f4",
+      "value": "halcyonbrightvale[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197607",
+      "uuid": "5022630d-2495-4419-bbb4-9c1b95153daa",
+      "value": "halcyonwildview[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197608",
+      "uuid": "3fd7b3d4-c866-4384-86c9-00cd057a2a88",
+      "value": "heliocloudnexus[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197608",
+      "uuid": "df9a0c3e-f6a8-4346-8ebb-7d38c1316105",
+      "value": "heliopinewood[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197608",
+      "uuid": "d8455350-de7f-4e68-82d8-59b9dc88f153",
+      "value": "hyperglassfrontier[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197608",
+      "uuid": "31953024-1852-45c4-bfbc-db2794756c25",
+      "value": "indigoevervault[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197608",
+      "uuid": "54707ee3-7683-40ce-a603-c8c6c5c88cc7",
+      "value": "indigofluxroot[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197609",
+      "uuid": "4cb863ab-2ca1-4cc8-aa54-5a8db5854f36",
+      "value": "ivorystonebridge[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197609",
+      "uuid": "71a1e69a-7561-4749-a093-aea46e7fbd69",
+      "value": "jaspermoontrail[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197609",
+      "uuid": "32b76d89-4c88-4f4c-b882-d23294814e6e",
+      "value": "jaspernorthpath[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197609",
+      "uuid": "46aaf000-931e-498b-97a2-f9011be39a51",
+      "value": "lunarveilfield[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197609",
+      "uuid": "35316b4e-eebd-4382-bac5-5f15e1413803",
+      "value": "lunarwindshore[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197609",
+      "uuid": "dcc18af1-478a-4b5e-8786-3b23df005eef",
+      "value": "marbleshadowcrest[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197610",
+      "uuid": "dc4c082e-75eb-40b9-ba05-c9a4a5bf4ff1",
+      "value": "meridianvalespire[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197610",
+      "uuid": "617d287a-537f-4e04-8850-b7c18a48e2e5",
+      "value": "nebulamoonvault[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197610",
+      "uuid": "382b8412-f075-479c-b7aa-0c0fdb81ab25",
+      "value": "nimbusnightfrontier[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197610",
+      "uuid": "76de6993-94de-4631-8d9e-851d52a2abaf",
+      "value": "opalineembergrove[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197610",
+      "uuid": "2140a1a4-a81e-4f03-98f7-5f707c83428d",
+      "value": "orchidglassspire[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197610",
+      "uuid": "c6631ce0-dc31-422a-918b-ec9472df40ca",
+      "value": "radiantashenmark[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197610",
+      "uuid": "a2c54477-bcca-4fdc-80f7-28b4024c604a",
+      "value": "radiantsnowpoint[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197611",
+      "uuid": "12f1e7f8-74d2-4e69-8cdd-2c333f7eae6f",
+      "value": "radiantvaleview[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197611",
+      "uuid": "9b727d2f-ef34-4600-91e9-ab3f01105549",
+      "value": "ravensilverreach[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197611",
+      "uuid": "52ba5114-aa24-4370-a339-6dd4b4994e43",
+      "value": "rusticashenwatch[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197611",
+      "uuid": "2147a7e7-efcb-413a-81db-0b392fdc0174",
+      "value": "rusticfernpeak[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197611",
+      "uuid": "84835bac-bb0c-49af-a435-b6d0f2806070",
+      "value": "rusticshadowpath[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197611",
+      "uuid": "6e2ef404-33cb-46ee-a85d-cd8db4d68d80",
+      "value": "sablebrightmark[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197612",
+      "uuid": "53e9d80a-97cb-4a72-8186-bd567cf0f255",
+      "value": "sablevalefield[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197612",
+      "uuid": "4bab0744-0d21-45a0-b11e-7ac6f40bae53",
+      "value": "solsticeashenfield[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197612",
+      "uuid": "d915da57-f8cf-4aa2-a0e8-d383031d2269",
+      "value": "tempestnightvault[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197612",
+      "uuid": "0dff477b-dda2-456c-933c-8641c5945d8a",
+      "value": "twilightskycrown[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197612",
+      "uuid": "655d3991-fe87-474e-bfe8-1ae132642f7a",
+      "value": "twilightwildcrest[.]shop"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197613",
+      "uuid": "582e3a1f-601f-47ed-b47f-f97dc0a92580",
+      "value": "umbraleverwood[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197613",
+      "uuid": "71999713-5355-46fa-9001-3b83478fd535",
+      "value": "umbralshadowwatch[.]pro"
+     },
+     {
+      "type": "domain",
+      "category": "Network activity",
+      "to_ids": true,
+      "timestamp": "1786197613",
+      "uuid": "ce2aa449-5d8b-4dee-a684-ff1515079564",
+      "value": "umbralskykeep[.]shop"
+     }
+    ]
+   }
+  }
+ ]
+}

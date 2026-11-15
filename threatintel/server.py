@@ -15,7 +15,7 @@ from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
 from .localguard import LocalGuard
-from . import NAME, __version__, brief, collectors, correlate, db, enrich, export, pivot, queries, scoring, seed
+from . import NAME, __version__, brief, collectors, correlate, db, enrich, export, pivot, queries, rdap, scoring, seed, trends
 from .config import ROOT
 from .scheduler import Scheduler
 
@@ -153,9 +153,22 @@ def do_correlate():
 # ------------------------------------------------------------------ search / pivot
 
 @app.get("/api/search")
-def search(q: str = Query(..., min_length=1, max_length=2000), depth: int = Query(2, ge=1, le=3)):
+def search(q: str = Query(..., min_length=1, max_length=2000), depth: int = Query(2, ge=1, le=3),
+           rdap: bool = False):
     with db.session() as conn:
-        return pivot.search(conn, q, depth)
+        return pivot.search(conn, q, depth, rdap=rdap)
+
+
+@app.get("/api/rdap")
+def rdap_lookup(q: str = Query(..., min_length=1, max_length=300), refresh: bool = False):
+    """Registration data for a domain, URL or IP from the RDAP registry (cached; never contacts the host itself)."""
+    t = rdap.target(q)
+    if not t:
+        raise HTTPException(400, "give a public IP address, a domain or a URL")
+    with db.session() as conn:
+        row = rdap.lookup(conn, q, refresh=refresh)
+    return {"query": q, "target": {"kind": t[0], "value": t[1]}, "rdap": rdap.summary(row),
+            "statuses": (row or {}).get("statuses", [])}
 
 
 # ------------------------------------------------------------------ domain views
@@ -181,7 +194,21 @@ def infrastructure():
     with db.session() as conn:
         return {"c2_by_family": queries.c2_by_family(conn), "c2": queries.c2_list(conn, 100),
                 "clusters": queries.clusters(conn), "drop_overlaps": queries.drop_overlaps(conn),
-                "phishing": queries.phishing_stats(conn), "formula": scoring.INDICATOR_FORMULA}
+                "phishing": queries.phishing_stats(conn), "formula": scoring.INDICATOR_FORMULA,
+                "by_source": queries.infrastructure_by_source(conn), "misp_events": queries.misp_events(conn, 15)}
+
+
+@app.get("/api/phishing")
+def phishing_view(limit: int = Query(50, le=1000), brand: str = "", min_score: int = Query(0, ge=0, le=100)):
+    with db.session() as conn:
+        return {"formula": scoring.PHISH_FORMULA, "summary": queries.phishing_analysis_summary(conn),
+                "rows": queries.phishing_top(conn, limit, brand, min_score)}
+
+
+@app.get("/api/trends")
+def trends_view(days: int = Query(30, ge=1, le=365)):
+    with db.session() as conn:
+        return trends.trends(conn, days)
 
 
 @app.get("/api/attack")
@@ -213,12 +240,12 @@ def indicators(type: str = "", q: str = "", limit: int = Query(100, le=2000), in
 # ------------------------------------------------------------------ enrichment
 
 @app.post("/api/enrich")
-def do_enrich(payload: dict | list = Body(...), record: bool = False, reporter: str = "lab"):
+def do_enrich(payload: dict | list = Body(...), record: bool = False, reporter: str = "lab", rdap: bool = False):
     items = enrich.parse_payload(payload)
     if not items:
         raise HTTPException(400, "no IOCs found; send {'iocs': [...]}, {'text': '...'} or a STIX 2.1 bundle")
     with db.session() as conn:
-        return enrich.enrich(conn, items, record=record, reporter=reporter)
+        return enrich.enrich(conn, items, record=record, reporter=reporter, rdap=rdap)
 
 
 # ------------------------------------------------------------------ exports and reports
@@ -270,7 +297,7 @@ def get_report(name: str, fmt: str, download: bool = False):
 
 @app.get("/api/formulas")
 def formulas():
-    return {"indicator": scoring.INDICATOR_FORMULA, "vulnerability": scoring.VULN_FORMULA,
+    return {"indicator": scoring.INDICATOR_FORMULA, "vulnerability": scoring.VULN_FORMULA, "phishing": scoring.PHISH_FORMULA,
             "source_weights": scoring.SOURCE_WEIGHTS, "half_life_days": scoring.HALF_LIFE_DAYS}
 
 

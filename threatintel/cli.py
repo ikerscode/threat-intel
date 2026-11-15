@@ -6,7 +6,7 @@ import json
 import logging
 import sys
 
-from . import collectors, db
+from . import collectors, db, secrets
 
 
 def cmd_collect(args) -> int:
@@ -48,7 +48,7 @@ def cmd_seed(args) -> int:
 def cmd_search(args) -> int:
     from . import pivot
     with db.session() as conn:
-        res = pivot.search(conn, args.value, depth=args.depth)
+        res = pivot.search(conn, args.value, depth=args.depth, rdap=args.rdap)
     if args.json:
         print(json.dumps(res, indent=2, default=str))
         return 0
@@ -62,7 +62,34 @@ def cmd_search(args) -> int:
             print(f"\n[{section}] ({len(items)})")
             for it in items[:15]:
                 print("  ", json.dumps(it, default=str)[:200])
+    if res.get("rdap"):
+        print("\nrdap:", json.dumps(res["rdap"], default=str))
     print(f"\ngraph: {len(res['graph']['nodes'])} nodes, {len(res['graph']['links'])} links")
+    return 0
+
+
+def cmd_rdap(args) -> int:
+    """RDAP lookups for one or more values (registry servers only, cached)."""
+    from . import rdap
+    with db.session() as conn:
+        values = list(args.values)
+        if args.top_phishing:
+            values += [r["reg_domain"] for r in db.rows(conn, """SELECT i.reg_domain, MAX(pa.score) s FROM phishing_analysis pa
+                       JOIN indicators i ON i.id=pa.indicator_id WHERE i.reg_domain IS NOT NULL AND i.reg_domain LIKE '%[.]%'
+                       GROUP BY i.reg_domain ORDER BY s DESC LIMIT ?""", (args.top_phishing * 3,))]
+            values = [v for v in values if rdap.target(v)][: len(args.values) + args.top_phishing]
+        rows = rdap.lookup_many(conn, values, limit=len(values) + 1)
+    for key, row in rows.items():
+        s = rdap.summary(row)
+        print(f"{key:<45} {s['status']:<10} {(s['registered'] or '')[:10]:<11} {(s['registrar'] or s['network'] or '')[:40]:<41} {s['abuse_email'] or ''}")
+    return 0
+
+
+def cmd_trends(args) -> int:
+    from . import trends
+    with db.session() as conn:
+        t = trends.trends(conn, args.days)
+    print(json.dumps(t if args.json else {k: t[k] for k in ("baseline_day", "history_days", "daily")}, indent=2, default=str))
     return 0
 
 
@@ -121,7 +148,17 @@ def main(argv=None) -> int:
     s.add_argument("value")
     s.add_argument("--depth", type=int, default=2)
     s.add_argument("--json", action="store_true")
+    s.add_argument("--rdap", action="store_true", help="also look the domain/IP up in RDAP (registry only)")
     s.set_defaults(func=cmd_search)
+    s = sub.add_parser("rdap", help="RDAP registration lookup (registry servers only, never the host itself)")
+    s.add_argument("values", nargs="*")
+    s.add_argument("--top-phishing", type=int, default=0, metavar="N",
+                   help="also look up the N highest-scoring phishing registered domains")
+    s.set_defaults(func=cmd_rdap)
+    s = sub.add_parser("trends", help="daily history and new-per-day trends")
+    s.add_argument("--days", type=int, default=30)
+    s.add_argument("--json", action="store_true", help="every trend table, not just the daily one")
+    s.set_defaults(func=cmd_trends)
     s = sub.add_parser("brief", help="generate the intelligence brief (Markdown + HTML)")
     s.add_argument("--days", type=int, default=7)
     s.set_defaults(func=cmd_brief)
@@ -130,7 +167,7 @@ def main(argv=None) -> int:
     s.add_argument("--fanged", action="store_true", help="write URL/domain blocklists un-defanged (for blockers)")
     s.set_defaults(func=cmd_export)
     s = sub.add_parser("set-key", help="store an API key in the desktop keyring (encrypted at rest)")
-    s.add_argument("name", choices=["ABUSECH_AUTH_KEY", "NVD_API_KEY"])
+    s.add_argument("name", choices=list(secrets.KNOWN_KEYS))
     s.add_argument("--delete", action="store_true", help="remove the stored key")
     s.set_defaults(func=cmd_set_key)
     args = p.parse_args(argv)

@@ -57,6 +57,33 @@
       <h2>Phishing (offline analysis)</h2>
       <div id="phish"></div>
     </div>
+    <div class="panel span-12">
+      <h2>Brand impersonation (highest scores)</h2>
+      <p class="formula" id="phish-formula"></p>
+      <div class="scroll" id="phish-top"></div>
+    </div>
+    <div class="panel span-12">
+      <h2>Trends (daily history)</h2>
+      <p class="formula" id="trend-note"></p>
+      <div class="scroll" id="trend-daily"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>C2 listings per day by family</h2>
+      <div class="scroll" id="trend-c2"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>Phishing first seen per day by brand</h2>
+      <div class="scroll" id="trend-phish"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>Leak-site posts per week</h2>
+      <div class="scroll" id="trend-rw"></div>
+    </div>
+    <div class="panel span-6">
+      <h2>Sources and MISP events</h2>
+      <div class="scroll" id="sources"></div>
+      <div class="scroll" id="events" style="margin-top:10px"></div>
+    </div>
   </div>
 </section>
 
@@ -67,6 +94,7 @@
       <div class="row">
         <input id="q" size="48" placeholder="IP, domain, URL, CVE, group, technique ID, malware">
         <button class="btn primary" id="go">Search</button>
+        <label title="ask the RDAP registry (never the host itself)"><input type="checkbox" id="q-rdap"> RDAP</label>
         <span class="muted">try:</span><span id="examples"></span>
       </div>
       <div id="entity" class="scroll" style="margin-top:10px; max-height:220px"></div>
@@ -78,7 +106,8 @@
       <p class="muted">Paste IPs, domains, URLs or hashes (one per line, defanged is fine) or a STIX 2.1 bundle.</p>
       <textarea id="ioc-text"></textarea>
       <div class="row"><button class="btn primary" id="enrich">Enrich</button>
-        <button class="btn" id="enrich-sample">Sample input</button><span id="enrich-summary" class="muted"></span></div>
+        <button class="btn" id="enrich-sample">Sample input</button>
+        <label title="registration data from RDAP registries, at most 8 lookups"><input type="checkbox" id="enrich-rdap"> with RDAP</label><span id="enrich-summary" class="muted"></span></div>
       <div class="scroll" id="enrich-out"></div>
     </div>
   </div>
@@ -117,6 +146,6 @@
 
 </main>
 <script src="/static/hud.js"></script>
-<script src="/static/app.js?v=6"></script>
+<script src="/static/app.js?v=7"></script>
 </body>
 </html>

@@ -1,21 +1,32 @@
 {
  "created": "2026-11-13",
- "note": "Trimmed snapshots of live feeds fetched on the creation date. URLs are stored defanged.",
+ "updated": "2026-11-14",
+ "note": "Trimmed snapshots of live feeds fetched on the creation date (round 2 feeds and rdap-cache.json on the update date). URLs and domains are stored defanged. rdap-samples.json holds the real IANA bootstrap (trimmed) and two real RDAP answers used by the offline tests.",
  "synthetic": {
   "urlhaus-recent.json": "Synthetic sample in URLhaus API format (the API needs an Auth-Key). RFC 5737 IPs and .example/.test names only; hashes are made up.",
-  "threatfox-iocs.json": "Synthetic sample in ThreatFox API format (the API needs an Auth-Key). RFC 5737 IPs and .example names only; hashes are made up."
+  "threatfox-iocs.json": "Synthetic sample in ThreatFox API format (the API needs an Auth-Key). RFC 5737 IPs and .example names only; hashes are made up.",
+  "otx-pulses.json": "Synthetic sample in OTX pulses API format (the API needs a key). RFC 5737 IPs and .example names only; the hash is made up."
  },
  "files": [
   "attack-enterprise-trimmed.json",
+  "blocklistde-ssh.txt",
+  "cins-badguys.txt",
+  "circl-osint.json",
   "epss.json",
+  "et-compromised-ips.txt",
   "feodo-ipblocklist.json",
   "ip2asn-subset.tsv",
   "kev.json",
   "nvd.json",
   "openphish-feed.txt",
+  "otx-pulses.json",
+  "phishing-army.txt",
   "ransomware-groups.json",
   "ransomware-victims.json",
+  "rdap-cache.json",
+  "rdap-samples.json",
   "spamhaus-drop.jsonl",
+  "sslbl-certs.csv",
   "threatfox-iocs.json",
   "tor-exits.txt",
   "urlhaus-recent.json"

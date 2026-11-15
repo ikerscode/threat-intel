@@ -88,13 +88,22 @@ def enrich_one(conn, raw: str, nb: NetblockIndex) -> dict:
         res.update(match=True, confidence=ind["confidence"], sources=db.jload(ind["sources"]),
                    tags=db.jload(ind["tags"]), malware=ind["malware"],
                    first_seen=ind["first_seen"], last_seen=ind["last_seen"])
+        obs = conn.execute("""SELECT MIN(first_obs), MAX(last_obs), MAX(days_seen) FROM sightings
+                              WHERE indicator_id=? AND source != 'enrich'""", (ind["id"],)).fetchone()
+        if obs and obs[0]:
+            res["observed"] = {"first": obs[0], "last": obs[1], "days_seen": obs[2]}
+        pa = conn.execute("SELECT score, brands, reasons FROM phishing_analysis WHERE indicator_id=?", (ind["id"],)).fetchone()
+        if pa:
+            res["phishing"] = {"score": pa[0], "brands": db.jload(pa[1]), "reasons": db.jload(pa[2])}
         if ind["malware"]:
             res["actors"] = _actors_for_malware(conn, ind["malware"])
     res["verdict"] = verdict(ind, inside)
     return res
 
 
-def enrich(conn, items: list[str], record: bool = False, reporter: str = "lab") -> dict:
+def enrich(conn, items: list[str], record: bool = False, reporter: str = "lab", rdap: bool = False) -> dict:
+    """Match IOCs. rdap=True also looks up registration data (at most rdap.max_per_request over the network)."""
+    from . import rdap as rdap_mod
     nb = NetblockIndex(conn)
     seen, results = set(), []
     for raw in items[:5000]:
@@ -103,6 +112,20 @@ def enrich(conn, items: list[str], record: bool = False, reporter: str = "lab") 
             continue
         seen.add(raw)
         results.append(enrich_one(conn, raw, nb))
+    budget = int(rdap_mod.settings()["max_per_request"]) if rdap else 0
+    for r in results:
+        if r["type"] not in ("ip", "domain", "url"):
+            continue
+        try:
+            row = rdap_mod.cached(conn, r["value"])
+            stale = not row or (row.get("fetched_at") or 0) < db.now() - float(rdap_mod.settings()["ttl_days"]) * 86400
+            if rdap and stale and budget > 0:
+                row = rdap_mod.lookup(conn, r["value"])
+                budget -= 1
+        except Exception as exc:  # optional context: report, never fail the enrichment
+            row = {"status": "error", "error": f"{type(exc).__name__}: {exc}"[:200]}
+        if row:
+            r["rdap"] = rdap_mod.summary(row)
     if record:
         for r in results:
             if r["type"] in ("ip", "domain", "url", "hash"):

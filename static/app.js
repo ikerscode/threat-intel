@@ -29,7 +29,41 @@ async function loadOverview() {
     ? "Database is empty. Go to Feeds & Brief and press 'Load demo data' (no network needed)."
     : `Last correlation: ${lc ? fmtTime(lc.at) : "never"}. Indicator confidence: ${ov.formulas.indicator}`;
   document.getElementById("rw-anchor").textContent = `7/30-day windows end ${ov.anchor.victims}. Claims by criminals, not verified.`;
-  await Promise.all([loadVulns(), loadRansomware(), loadAttack(), loadInfra()]);
+  await Promise.all([loadVulns(), loadRansomware(), loadAttack(), loadInfra(), loadPhishing(), loadTrends()]);
+}
+
+async function loadPhishing() {
+  const data = await api("/api/phishing?limit=40&min_score=30");
+  document.getElementById("phish-formula").textContent = data.formula;
+  renderTable("#phish-top", data.rows, [
+    { key: "score", label: "score", render: (v) => `<b>${esc(v)}</b>` },
+    { key: "brand", label: "brand" }, { key: "method", label: "method" },
+    { key: "value", label: "url / domain (defanged)", render: (v) => pivotLink(v) },
+    { key: "sources", label: "sources", render: list },
+    { key: "reasons", label: "reasons", render: (r) => esc((r || []).join("; ")) },
+  ], { empty: "No phishing data yet." });
+}
+
+async function loadTrends() {
+  const t = await api("/api/trends?days=30");
+  document.getElementById("trend-note").textContent =
+    `${t.history_days} day(s) of snapshots. Baseline (first collection) ${t.baseline_day || "-"}: it counts everything already listed as new. ${t.note}.`;
+  renderTable("#trend-daily", t.daily, [
+    { key: "day", label: "day", render: (v, r) => esc(v) + (r.baseline ? " (baseline)" : "") },
+    { key: "indicators", label: "indicators" }, { key: "new_indicators", label: "new" },
+    { key: "c2_ips", label: "C2 IPs" }, { key: "c2_certs", label: "C2 certs" }, { key: "new_c2", label: "new C2" },
+    { key: "phishing_urls", label: "phish URLs" }, { key: "phishing_domains", label: "phish domains" },
+    { key: "phishing_branded", label: "branded" }, { key: "victims", label: "victim posts" },
+  ], { empty: "No history yet: run correlation once a day (the scheduler does it after each collection)." });
+  renderTable("#trend-c2", t.c2_reported_by_family.slice(0, 40), [
+    { key: "day", label: "day (feed date)" }, { key: "family", label: "family", render: (v) => pivotLink(v) }, { key: "n", label: "n" },
+  ], { empty: "No dated C2 listings in 30 days." });
+  renderTable("#trend-phish", t.phishing_by_brand.slice(0, 40), [
+    { key: "day", label: "day (first observed)" }, { key: "key", label: "brand" }, { key: "n", label: "n" },
+  ]);
+  renderTable("#trend-rw", t.victims_by_week.slice(0, 40), [
+    { key: "week", label: "week" }, { key: "group", label: "group", render: (v) => pivotLink(v) }, { key: "n", label: "posts" },
+  ]);
 }
 
 async function loadVulns() {
@@ -78,10 +112,24 @@ async function loadInfra() {
     { key: "families", label: "families", render: list },
     { key: "members", label: "members (first)", render: (m) => m.slice(0, 4).map(pivotLink).join(" ") },
   ]);
+  renderTable("#sources", data.by_source, [
+    { key: "source", label: "source" }, { key: "indicators", label: "indicators" },
+    { key: "new_observed", label: "new 7d" }, { key: "avg_confidence", label: "avg conf" },
+    { key: "malicious_verdicts", label: "conf>=60" },
+  ]);
+  renderTable("#events", data.misp_events, [
+    { key: "date", label: "date" }, { key: "org", label: "org" },
+    { key: "info", label: "MISP event", render: (v, r) => `<a href="#search" data-pivot="event:${esc(r.uuid)}">${esc(v)}</a>` },
+    { key: "stored", label: "IOCs" }, { key: "malware", label: "malware", render: list },
+  ], { empty: "No MISP events collected." });
   const p = data.phishing;
+  const a = p.analysis || { by_source: {} };
   const small = (rows) => rows.slice(0, 8).map((r) => `${esc(r.label)} (${r.value})`).join(", ") || "-";
+  const before = Object.entries(a.by_source).map(([k, v]) =>
+    `${esc(k)}: ${v.total} total, unbranded ${v.unbranded} (${v.unbranded_pct}%), keyword-only matcher ${v.unbranded_keyword_only} (${v.unbranded_pct_keyword_only}%)`).join("<br>");
   document.getElementById("phish").innerHTML =
-    `<p>${p.total} URLs, ${p.unbranded} without a brand keyword.</p>
+    `<p>${p.total} URLs, ${p.unbranded} without a brand match.</p><p class="muted">${before || ""}</p>
+     <p class="muted">methods: ${small(a.methods || [])}</p>
      <table><tbody>
        <tr><th>brands</th><td>${small(p.brands)}</td></tr>
        <tr><th>TLDs</th><td>${small(p.tlds)}</td></tr>
@@ -100,7 +148,8 @@ async function runSearch(q) {
   q = (q || document.getElementById("q").value).trim();
   if (!q) return;
   document.getElementById("q").value = q;
-  const res = await api(`/api/search?q=${encodeURIComponent(q)}`);
+  const withRdap = document.getElementById("q-rdap").checked;
+  const res = await api(`/api/search?q=${encodeURIComponent(q)}&rdap=${withRdap}`);
   const ent = document.getElementById("entity");
   if (!res.found) {
     ent.innerHTML = `<p class="muted">No match for ${esc(q)} (${esc(res.kind)}).</p>` +
@@ -111,6 +160,7 @@ async function runSearch(q) {
   }
   const e = res.entity || {};
   const rows = Object.entries(e).filter(([k, v]) => v !== null && v !== "" && !["sightings", "stix_id", "id"].includes(k));
+  if (res.rdap) rows.push(["rdap", res.rdap]);
   ent.innerHTML = `<table><tbody>${rows.map(([k, v]) =>
     `<tr><th>${esc(k)}</th><td>${esc(typeof v === "object" ? JSON.stringify(v) : v)}</td></tr>`).join("")}</tbody></table>`;
   // The shared force layout gets crowded past ~25 nodes; keep the start node and the most
@@ -161,7 +211,8 @@ async function runEnrich() {
   let body;
   try { const j = JSON.parse(text); body = j.type === "bundle" ? j : { iocs: [].concat(j) }; }
   catch { body = { text }; }
-  const res = await api("/api/enrich", { method: "POST", body });
+  const withRdap = document.getElementById("enrich-rdap").checked;
+  const res = await api(`/api/enrich?rdap=${withRdap}`, { method: "POST", body });
   document.getElementById("enrich-summary").textContent = JSON.stringify(res.summary);
   renderTable("#enrich-out", res.results, [
     { key: "input", label: "input" }, { key: "type", label: "type" },
@@ -171,6 +222,8 @@ async function runEnrich() {
     { key: "actors", label: "actors", render: (a) => (a || []).map((x) => pivotLink(x.name)).join(" ") },
     { key: "inside_drop", label: "DROP" },
     { key: "asn", label: "ASN", render: (a) => (a ? esc(`AS${a.asn} ${a.as_name || ""} ${a.country || ""}`) : "") },
+    { key: "rdap", label: "registered / registrar / abuse", render: (r) => (r ? esc(`${(r.registered || r.status || "").slice(0, 10)} ${r.registrar || r.network || ""} ${r.abuse_email || ""}`) : "") },
+    { key: "phishing", label: "phish score", render: (p) => (p ? esc(`${p.score} ${(p.brands || []).join(",")}`) : "") },
     { key: "tags", label: "tags", render: list },
   ]);
 }

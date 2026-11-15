@@ -11,6 +11,7 @@ Every collector follows the same three steps:
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -73,3 +74,28 @@ class Collector:
 
     def __init__(self) -> None:
         self.notes: list[str] = []
+
+
+def stable_sample(values: list[str], limit: int) -> list[str]:
+    """Keep at most `limit` values, chosen by hash rather than by position.
+
+    Big lists are sorted by IP or listed in no useful order, so "the first N"
+    would always keep the same address ranges. Bottom-k by SHA-1 gives a fair
+    sample that is also stable from one day to the next: a value that stays on
+    the list stays in the sample, which keeps first/last-seen history meaningful.
+    """
+    uniq = list(dict.fromkeys(values))
+    if limit <= 0 or len(uniq) <= limit:
+        return uniq
+    return sorted(uniq, key=lambda v: hashlib.sha1(v.encode()).digest())[:limit]
+
+
+def comment_lines(text: str, prefixes: tuple[str, ...] = ("#", ";")) -> list[str]:
+    """Non-empty, non-comment lines with inline comments removed."""
+    out = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith(prefixes):
+            continue
+        out.append(line.split("#", 1)[0].split(";", 1)[0].strip())
+    return [x for x in out if x]

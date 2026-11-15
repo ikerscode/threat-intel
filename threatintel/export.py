@@ -22,7 +22,7 @@ def sid(kind: str, key: str) -> str:
     return f"{kind}--{uuid.uuid5(NAMESPACE, f'{kind}:{key}')}"
 
 
-def stix_pattern(itype: str, value: str) -> str | None:
+def stix_pattern(itype: str, value: str, tags=()) -> str | None:
     v = defang.refang(value).replace("\\", "\\\\").replace("'", "\\'")
     if itype == "ip":
         return f"[{'ipv6-addr' if ':' in v else 'ipv4-addr'}:value = '{v}']"
@@ -32,6 +32,8 @@ def stix_pattern(itype: str, value: str) -> str | None:
         return f"[domain-name:value = '{v}']"
     if itype == "url":
         return f"[url:value = '{v}']"
+    if itype == "hash" and "x509-sha1" in tags:
+        return f"[x509-certificate:hashes.'SHA-1' = '{v}']"
     if itype == "hash":
         algo = {32: "MD5", 40: "SHA-1", 64: "SHA-256"}.get(len(v))
         return f"[file:hashes.'{algo}' = '{v}']" if algo else None
@@ -46,11 +48,11 @@ def stix_bundle(conn, min_confidence: int = 50, limit: int = 2000) -> dict:
                             ORDER BY confidence DESC, last_seen DESC LIMIT ?""", (min_confidence, limit))
     families = {}
     for i in inds:
-        pattern = stix_pattern(i["type"], i["value"])
+        tags = db.jload(i["tags"])
+        pattern = stix_pattern(i["type"], i["value"], tags)
         if not pattern:
             continue
         iid = sid("indicator", f"{i['type']}:{i['value']}")
-        tags = db.jload(i["tags"])
         objs.append({
             "type": "indicator", "spec_version": "2.1", "id": iid, "created_by_ref": PRODUCER,
             "created": timeutil.iso(i["first_seen"]) or now, "modified": now,

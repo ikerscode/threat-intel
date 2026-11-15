@@ -8,6 +8,10 @@
 # API keys are never stored here. They are read from environment variables:
 #   NVD_API_KEY       optional, raises the NVD rate limit
 #   ABUSECH_AUTH_KEY  required by URLhaus and ThreatFox since their public exports were retired
+#   OTX_API_KEY       required by the optional AlienVault OTX feed
+#
+# limit            cap on rows kept per run (large lists use a stable hash sample)
+# retention_days   rotating lists only: drop entries not seen on the list for this long
 #
 # The HUD can switch a feed on or off at runtime. That override is kept in the
 # database (feed_state table) so this file stays the clean default.
@@ -102,3 +106,70 @@ enabled = false          # 11 MB download, run `python -m threatintel collect ip
 interval_min = 43200
 min_refetch_s = 604800
 timeout_s = 300
+
+[feeds.sslbl]
+enabled = true
+interval_min = 360
+min_refetch_s = 1800
+timeout_s = 60
+limit = 1500             # newest certificate listings kept (the file has ~11k back to 2014)
+
+[feeds.et_compromised]
+enabled = true
+interval_min = 720
+min_refetch_s = 3600
+timeout_s = 30
+limit = 2000
+retention_days = 14
+
+[feeds.cins]
+enabled = true
+interval_min = 720
+min_refetch_s = 3600
+timeout_s = 60
+limit = 5000             # ~15k listed; stable hash sample
+retention_days = 14
+
+[feeds.blocklistde]
+enabled = true
+interval_min = 720
+min_refetch_s = 3600
+timeout_s = 60
+list = "ssh"             # "ssh" (~5k, matches the SSH honeypot) or "all" (~23k)
+limit = 5000
+retention_days = 14
+
+[feeds.phishing_army]
+enabled = true
+interval_min = 720
+min_refetch_s = 14400    # the list says "Expires: 4 hours"
+timeout_s = 60
+limit = 4000             # ~145k listed; stable hash sample
+retention_days = 21
+
+[feeds.circl]
+enabled = true
+interval_min = 1440
+min_refetch_s = 21600
+timeout_s = 90
+events = 10              # most recently updated events
+event_max_bytes = 2500000
+attr_limit = 300         # to_ids attributes kept per event
+
+[feeds.otx]
+enabled = true           # skipped cleanly unless OTX_API_KEY is set
+interval_min = 360
+min_refetch_s = 1800
+timeout_s = 60
+days = 3
+pulses = 20
+ioc_limit = 200
+
+[rdap]
+# On-demand registration lookups. Only RDAP registry servers listed in the IANA
+# bootstrap files (and rdap.org as a fallback redirector) are contacted, never
+# the domain or IP being looked up.
+ttl_days = 7
+host_interval_s = 2.0
+timeout_s = 15
+max_per_request = 8

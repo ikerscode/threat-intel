@@ -12,6 +12,17 @@ Vulnerability priority (0-100)
     priority = 20*KEV + 30*EPSS + 25*(CVSS/10) + 15*RANSOMWARE + 10*0.5**(days_since_KEV_add / 180)
     KEV and RANSOMWARE are 0/1, EPSS is the 30-day exploitation probability (0-1),
     CVSS is the NVD base score (7.0 assumed and flagged when NVD has not been collected).
+
+Phishing impersonation score (0-100), see phishing.py and PHISH_POINTS
+    brand evidence (largest one only): homoglyph/IDN or character-swap lookalike 40,
+      edit-distance lookalike 35, brand token in host 30, brand inside a host label 25,
+      brand only in the path 15
+    + punycode host 10, suspicious keywords 5 each (max 20), high-abuse TLD 10,
+      free hosting / site builder 10, IP address host 15, 3+ subdomain levels 5,
+      host over 40 characters 5, 2+ hyphens in the registered label 5,
+      registered < 30 days ago 20 or < 180 days 10 (RDAP, when looked up),
+      listed by 2+ phishing feeds 10
+    capped at 100. Every point added is listed as a reason.
 """
 from __future__ import annotations
 
@@ -29,12 +40,28 @@ SOURCE_WEIGHTS = {
     "tor": 0.0,
     "drop-containment": 0.40,
     "enrich": 0.15,
+    # added 2026-11-14
+    "sslbl": 0.85,            # C2 certificate seen by abuse.ch on a live C2
+    "circl": 0.60,            # to_ids attributes in published OSINT reports (often older campaigns)
+    "phishing_army": 0.60,    # aggregated phishing domains, filtered for false positives
+    "otx": 0.55,              # community pulses, quality varies
+    "et_compromised": 0.55,   # hosts seen compromised / attacking, no context given
+    "blocklistde": 0.50,      # fail2ban reports of brute force
+    "cins": 0.45,             # reputation score list, broad
 }
 HALF_LIFE_DAYS = {"ip": 30, "url": 14, "domain": 45, "cidr": 180, "hash": 365}
 RECENCY_FLOOR = 0.25
 
 INDICATOR_FORMULA = ("confidence = round(100 * C * (0.25 + 0.75 * R)),  C = 1 - prod(1 - w_source),  "
                      "R = 0.5^(age_days / half_life)")
+PHISH_POINTS = {
+    "homoglyph": 40, "lookalike": 35, "brand-token": 30, "brand-in-label": 25, "brand-in-path": 15,
+    "punycode": 10, "keyword": 5, "keyword_max": 20, "tld": 10, "hosting": 10, "ip-host": 15,
+    "deep-subdomain": 5, "long-host": 5, "hyphens": 5, "new-30d": 20, "new-180d": 10, "multi-feed": 10,
+}
+PHISH_FORMULA = ("phish score = max(brand evidence: homoglyph 40 | lookalike 35 | brand token 30 | in label 25 | "
+                 "in path 15) + punycode 10 + keywords 5 each (max 20) + abused TLD 10 + free hosting 10 + IP host 15 "
+                 "+ deep subdomain 5 + long host 5 + hyphens 5 + registered <30d 20 / <180d 10 + 2+ feeds 10, cap 100")
 VULN_FORMULA = ("priority = 20*KEV + 30*EPSS + 25*(CVSS/10) + 15*RANSOMWARE + 10*0.5^(days_since_KEV_add/180)")
 
 

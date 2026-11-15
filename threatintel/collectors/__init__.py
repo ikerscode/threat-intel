@@ -12,14 +12,19 @@ from ..config import FIXTURES
 from ..fetch import FetchError
 from .attack import AttackCollector
 from .base import Collector, SkipFeed
+from .circl import CirclOsintCollector
 from .epss import EpssCollector
 from .feodo import FeodoCollector
 from .ip2asn import Ip2asnCollector
+from .iplists import BlocklistDeCollector, CinsCollector, EtCompromisedCollector
 from .kev import KevCollector
 from .nvd import NvdCollector
 from .openphish import OpenphishCollector
+from .otx import OtxCollector
+from .phishingarmy import PhishingArmyCollector
 from .ransomware import RansomwareCollector
 from .spamhaus import SpamhausCollector
+from .sslbl import SslblCollector
 from .threatfox import ThreatfoxCollector
 from .tor import TorCollector
 from .urlhaus import UrlhausCollector
@@ -30,6 +35,8 @@ log = logging.getLogger("threatintel.collect")
 REGISTRY: dict[str, type[Collector]] = {c.name: c for c in (
     KevCollector, EpssCollector, NvdCollector, AttackCollector, FeodoCollector, UrlhausCollector,
     ThreatfoxCollector, OpenphishCollector, RansomwareCollector, SpamhausCollector, TorCollector, Ip2asnCollector,
+    SslblCollector, EtCompromisedCollector, CinsCollector, BlocklistDeCollector, PhishingArmyCollector,
+    CirclOsintCollector, OtxCollector,
 )}
 
 _run_locks = {name: threading.Lock() for name in REGISTRY}
@@ -78,6 +85,12 @@ def run_feed(name: str, *, mode: str = "live", conn=None, fixture_dir: Path | No
             raw = collector.fetch(conn)
         records = collector.normalise(raw)
         rows_ = collector.store(conn, records)
+        keep_days = collector.cfg.get("retention_days")
+        if keep_days and mode == "live":
+            # rotating bulk lists: forget entries that have not been on the list for keep_days
+            pruned = db.prune_source(conn, name, float(keep_days))
+            if pruned:
+                log.info("feed %s: pruned %d indicators older than %s days", name, pruned, keep_days)
         conn.commit()
         if mode == "fixture":
             status = "seeded"

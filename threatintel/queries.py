@@ -38,6 +38,11 @@ def counts(conn) -> dict:
         "victims": q("SELECT COUNT(*) FROM victims"),
         "relationships": q("SELECT COUNT(*) FROM relationships"),
         "clusters": q("SELECT COUNT(*) FROM clusters"),
+        "phishing_domains": q("SELECT COUNT(*) FROM indicators WHERE type='domain' AND tags LIKE '%\"phishing\"%'"),
+        "c2_certs": q("SELECT COUNT(*) FROM indicators WHERE tags LIKE '%\"x509-sha1\"%'"),
+        "reputation_ips": q("SELECT COUNT(*) FROM indicators WHERE type='ip' AND tags LIKE '%\"reputation\"%'"),
+        "misp_events": q("SELECT COUNT(*) FROM misp_events"),
+        "rdap_cached": q("SELECT COUNT(*) FROM rdap"),
     }
 
 
@@ -152,6 +157,7 @@ def drop_overlaps(conn) -> list[dict]:
 
 
 def phishing_stats(conn, limit: int = 15) -> dict:
+    """Phishing URL stats (unchanged fields) plus the scored analysis for URLs and domains."""
     brands, tlds, hosting, domains = Counter(), Counter(), Counter(), Counter()
     rows = conn.execute("SELECT value, tags, host, reg_domain FROM indicators WHERE type='url' AND tags LIKE '%\"phishing\"%'").fetchall()
     for r in rows:
@@ -166,9 +172,82 @@ def phishing_stats(conn, limit: int = 15) -> dict:
         if r["reg_domain"]:
             domains[r["reg_domain"]] += 1
     as_rows = lambda c: [{"label": k, "value": v} for k, v in c.most_common(limit)]
-    return {"total": len(rows), "brands": as_rows(brands), "tlds": as_rows(tlds), "hosting": as_rows(hosting),
-            "registered_domains": as_rows(domains),
-            "unbranded": len(rows) - sum(1 for r in rows if "brand:" in (r["tags"] or ""))}
+    out = {"total": len(rows), "brands": as_rows(brands), "tlds": as_rows(tlds), "hosting": as_rows(hosting),
+           "registered_domains": as_rows(domains),
+           "unbranded": len(rows) - sum(1 for r in rows if "brand:" in (r["tags"] or ""))}
+    out["analysis"] = phishing_analysis_summary(conn)
+    return out
+
+
+def phishing_analysis_summary(conn) -> dict:
+    """Branded rate now vs the old keyword-only matcher, per indicator type and per source."""
+    rows = db.rows(conn, """SELECT i.type, i.sources, pa.brands, pa.keyword_brands, pa.method, pa.score, pa.tld, pa.idn
+                            FROM phishing_analysis pa JOIN indicators i ON i.id = pa.indicator_id""")
+    by_type: dict[str, dict] = {}
+    by_source: dict[str, dict] = {}
+    methods, brand_counter, tld_counter = Counter(), Counter(), Counter()
+    bands = Counter()
+    for r in rows:
+        b, kw = db.jload(r["brands"]), db.jload(r["keyword_brands"])
+        for bucket in [by_type.setdefault(r["type"], {})] + [by_source.setdefault(s, {}) for s in db.jload(r["sources"])
+                                                              if s in ("openphish", "phishing_army", "circl", "urlhaus", "otx")]:
+            bucket["total"] = bucket.get("total", 0) + 1
+            bucket["branded"] = bucket.get("branded", 0) + bool(b)
+            bucket["branded_keyword_only"] = bucket.get("branded_keyword_only", 0) + bool(kw)
+        methods[r["method"] or "none"] += 1
+        brand_counter.update(b[:1])
+        tld_counter[r["tld"] or "(ip)"] += 1
+        bands["70-100" if r["score"] >= 70 else "40-69" if r["score"] >= 40 else "20-39" if r["score"] >= 20 else "0-19"] += 1
+    for bucket in list(by_type.values()) + list(by_source.values()):
+        t = bucket["total"] or 1
+        bucket["unbranded"] = bucket["total"] - bucket["branded"]
+        bucket["unbranded_keyword_only"] = bucket["total"] - bucket["branded_keyword_only"]
+        bucket["unbranded_pct"] = round(100 * bucket["unbranded"] / t, 1)
+        bucket["unbranded_pct_keyword_only"] = round(100 * bucket["unbranded_keyword_only"] / t, 1)
+    return {"total": len(rows), "by_type": by_type, "by_source": by_source,
+            "methods": [{"label": k, "value": v} for k, v in methods.most_common()],
+            "brands": [{"label": k, "value": v} for k, v in brand_counter.most_common(15)],
+            "tlds": [{"label": k, "value": v} for k, v in tld_counter.most_common(15)],
+            "score_bands": [{"label": k, "value": bands.get(k, 0)} for k in ("70-100", "40-69", "20-39", "0-19")]}
+
+
+def phishing_top(conn, limit: int = 50, brand: str = "", min_score: int = 0) -> list[dict]:
+    """Highest-scoring phishing URLs/domains with the reasons behind each score."""
+    where, params = ["pa.score >= ?"], [min_score]
+    if brand:
+        where.append("pa.brands LIKE ?")
+        params.append(f'%"{brand}"%')
+    rows = db.rows(conn, f"""SELECT i.type, i.value, i.reg_domain, i.sources, pa.score, pa.brands, pa.method, pa.reasons,
+                               pa.tld, pa.idn FROM phishing_analysis pa JOIN indicators i ON i.id = pa.indicator_id
+                             WHERE {' AND '.join(where)} ORDER BY pa.score DESC, i.value LIMIT ?""", (*params, limit))
+    for r in rows:
+        r["sources"], r["brands"], r["reasons"] = db.jload(r["sources"]), db.jload(r["brands"]), db.jload(r["reasons"])
+        r["brand"] = r["brands"][0] if r["brands"] else ""
+        r["why"] = "; ".join(x.split(" ", 1)[1] for x in r["reasons"][:3])
+    return rows
+
+
+def infrastructure_by_source(conn, days: int = 7) -> list[dict]:
+    """Per feed: indicators held, how many were first observed in the window, mean confidence."""
+    return db.rows(conn, """SELECT s.source, COUNT(*) AS indicators,
+                              SUM(s.first_obs > CAST(strftime('%s','now', ?) AS REAL)) AS new_observed,
+                              ROUND(AVG(i.confidence), 1) AS avg_confidence,
+                              SUM(i.confidence >= 60) AS malicious_verdicts
+                            FROM sightings s JOIN indicators i ON i.id = s.indicator_id
+                            WHERE s.source NOT IN ('enrich') GROUP BY s.source ORDER BY indicators DESC""",
+                   (f"-{days} day",))
+
+
+def misp_events(conn, limit: int = 20) -> list[dict]:
+    rows = db.rows(conn, """SELECT uuid, info, date, org, threat_level, attributes, stored, timestamp, tags
+                            FROM misp_events ORDER BY timestamp DESC LIMIT ?""", (limit,))
+    for r in rows:
+        r["actors"] = [x["dst"] for x in db.rows(conn, "SELECT dst FROM relationships WHERE src=? AND rel='attributed-to'",
+                                                    (f"event:{r['uuid']}",))]
+        r["malware"] = [x["dst"].split(":", 1)[1] for x in db.rows(conn, "SELECT dst FROM relationships WHERE src=? AND rel='mentions'",
+                                                                      (f"event:{r['uuid']}",))]
+        r["tags"] = [t for t in db.jload(r["tags"]) if t.startswith("misp-galaxy:")][:6]
+    return rows
 
 
 # ------------------------------------------------------------------ ATT&CK

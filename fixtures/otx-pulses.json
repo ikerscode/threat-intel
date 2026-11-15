@@ -1,0 +1,65 @@
+{
+ "results": [
+  {
+   "id": "synthetic000000000000001",
+   "name": "SYNTHETIC sample pulse: QakBot C2",
+   "created": "2026-11-12T16:57:11.821401+00:00",
+   "modified": "2026-11-14T16:57:11.821401+00:00",
+   "adversary": "",
+   "malware_families": [
+    {
+     "id": "QakBot",
+     "display_name": "QakBot"
+    }
+   ],
+   "indicators": [
+    {
+     "type": "IPv4",
+     "indicator": "198.51.100.77",
+     "created": "2026-11-13T16:57:11.821401+00:00"
+    },
+    {
+     "type": "IPv4",
+     "indicator": "203.0.113.50",
+     "created": "2026-11-13T16:57:11.821401+00:00"
+    },
+    {
+     "type": "domain",
+     "indicator": "update-qakbot.example",
+     "created": "2026-11-13T16:57:11.821401+00:00"
+    }
+   ]
+  },
+  {
+   "id": "synthetic000000000000002",
+   "name": "SYNTHETIC sample pulse: phishing kit",
+   "created": "2026-11-12T16:57:11.821401+00:00",
+   "modified": "2026-11-14T16:57:11.821401+00:00",
+   "adversary": "",
+   "malware_families": [
+    {
+     "id": "Tycoon2FA",
+     "display_name": "Tycoon2FA"
+    }
+   ],
+   "indicators": [
+    {
+     "type": "domain",
+     "indicator": "secure-paypa1-login.example",
+     "created": "2026-11-13T16:57:11.821401+00:00"
+    },
+    {
+     "type": "URL",
+     "indicator": "http://login-micr0soft.example/owa",
+     "created": "2026-11-13T16:57:11.821401+00:00"
+    },
+    {
+     "type": "FileHash-SHA256",
+     "indicator": "847140f038504afbd2d4eb8c467d293525961370b7582e8d052a95d2ff2d32ea",
+     "created": "2026-11-13T16:57:11.821401+00:00"
+    }
+   ]
+  }
+ ],
+ "count": 2
+}

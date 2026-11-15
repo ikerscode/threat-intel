@@ -1,0 +1,327 @@
+# Curated brand list for phishing impersonation analysis (threatintel/phishing.py).
+#
+# terms    brand names as they would appear in a hostname: lower case, letters and
+#          digits only. Terms of 6+ characters are also matched by edit distance
+#          (paypai, rnicrosoft, g00gle); shorter ones only exactly or after
+#          homoglyph / character-swap folding, because short words collide with
+#          ordinary words (ups, att, chase).
+# domains  registered domains the brand really owns. A URL on one of these is not
+#          counted as impersonation of that brand.
+#
+# Keys are the labels used in tags (brand:<key>) and in the HUD. Keep them stable.
+
+[brands.microsoft]
+terms = ["microsoft", "office365", "outlook", "onedrive", "sharepoint", "hotmail", "microsoftonline"]
+domains = ["microsoft.com", "office.com", "live.com", "outlook.com", "sharepoint.com", "microsoftonline.com", "office365.com", "hotmail.com", "azure.com", "onedrive.com", "windows.net"]
+
+[brands.paypal]
+terms = ["paypal"]
+domains = ["paypal.com", "paypal.me"]
+
+[brands.apple]
+terms = ["apple", "icloud", "itunes", "appleid"]
+domains = ["apple.com", "icloud.com"]
+
+[brands.amazon]
+terms = ["amazon", "amzn", "primevideo", "aws"]
+domains = ["amazon.com", "amazon.co.uk", "amazon.de", "amazon.fr", "amazon.it", "amazon.es", "amazon.co.jp", "amazon.ca", "amazonaws.com", "amazon.in", "amazon.com.br"]
+
+[brands.netflix]
+terms = ["netflix"]
+domains = ["netflix.com"]
+
+[brands.meta]
+terms = ["facebook", "instagram", "whatsapp", "messenger"]
+domains = ["facebook.com", "instagram.com", "whatsapp.com", "meta.com", "fb.com", "messenger.com"]
+
+[brands.google]
+terms = ["google", "gmail", "googledocs", "youtube"]
+domains = ["google.com", "gmail.com", "googleusercontent.com", "goo.gl", "youtube.com", "googleapis.com"]
+
+[brands.dhl]
+terms = ["dhl"]
+domains = ["dhl.com", "dhl.de"]
+
+[brands.fedex]
+terms = ["fedex"]
+domains = ["fedex.com"]
+
+[brands.ups]
+terms = ["ups"]
+domains = ["ups.com"]
+
+[brands.usps]
+terms = ["usps"]
+domains = ["usps.com"]
+
+[brands."royal mail"]
+terms = ["royalmail"]
+domains = ["royalmail.com"]
+
+[brands.hmrc]
+terms = ["hmrc"]
+domains = ["gov.uk"]
+
+[brands.coinbase]
+terms = ["coinbase"]
+domains = ["coinbase.com"]
+
+[brands.binance]
+terms = ["binance"]
+domains = ["binance.com"]
+
+[brands.metamask]
+terms = ["metamask"]
+domains = ["metamask.io"]
+
+[brands.ledger]
+terms = ["ledger", "ledgerlive", "ledgerwallet"]
+domains = ["ledger.com"]
+
+[brands.trezor]
+terms = ["trezor"]
+domains = ["trezor.io"]
+
+[brands.trustwallet]
+terms = ["trustwallet"]
+domains = ["trustwallet.com"]
+
+[brands.kraken]
+terms = ["kraken"]
+domains = ["kraken.com"]
+
+[brands.steam]
+terms = ["steamcommunity", "steampowered"]
+domains = ["steamcommunity.com", "steampowered.com"]
+
+[brands.roblox]
+terms = ["roblox"]
+domains = ["roblox.com"]
+
+[brands.adobe]
+terms = ["adobe"]
+domains = ["adobe.com"]
+
+[brands.docusign]
+terms = ["docusign"]
+domains = ["docusign.com", "docusign.net"]
+
+[brands.dropbox]
+terms = ["dropbox"]
+domains = ["dropbox.com"]
+
+[brands.linkedin]
+terms = ["linkedin"]
+domains = ["linkedin.com"]
+
+[brands.att]
+terms = ["att", "attmail"]
+domains = ["att.com", "att.net"]
+
+[brands.verizon]
+terms = ["verizon"]
+domains = ["verizon.com"]
+
+[brands.chase]
+terms = ["chase", "jpmorgan"]
+domains = ["chase.com", "jpmorgan.com"]
+
+[brands."wells fargo"]
+terms = ["wellsfargo"]
+domains = ["wellsfargo.com"]
+
+[brands."bank of america"]
+terms = ["bankofamerica", "bofa"]
+domains = ["bankofamerica.com"]
+
+[brands.hsbc]
+terms = ["hsbc"]
+domains = ["hsbc.com", "hsbc.co.uk"]
+
+[brands.santander]
+terms = ["santander"]
+domains = ["santander.com", "santander.co.uk"]
+
+[brands.barclays]
+terms = ["barclays"]
+domains = ["barclays.co.uk", "barclays.com"]
+
+[brands.lloyds]
+terms = ["lloyds", "lloydsbank"]
+domains = ["lloydsbank.com"]
+
+[brands.natwest]
+terms = ["natwest"]
+domains = ["natwest.com"]
+
+[brands.telegram]
+terms = ["telegram"]
+domains = ["telegram.org", "t.me"]
+
+[brands.discord]
+terms = ["discord"]
+domains = ["discord.com", "discord.gg"]
+
+[brands."booking.com"]
+terms = ["booking"]
+domains = ["booking.com"]
+
+[brands.dpd]
+terms = ["dpd", "mydpd", "dpdlocal", "dpdpl"]
+domains = ["dpd.co.uk", "dpd.com"]
+
+[brands.evri]
+terms = ["evri", "myhermes"]
+domains = ["evri.com"]
+
+[brands.allegro]
+terms = ["allegro"]
+domains = ["allegro.pl"]
+
+[brands.inpost]
+terms = ["inpost"]
+domains = ["inpost.pl", "inpost.co.uk"]
+
+[brands.spotify]
+terms = ["spotify"]
+domains = ["spotify.com"]
+
+[brands.yahoo]
+terms = ["yahoo"]
+domains = ["yahoo.com"]
+
+[brands.aol]
+terms = ["aol"]
+domains = ["aol.com"]
+
+[brands.ebay]
+terms = ["ebay"]
+domains = ["ebay.com", "ebay.co.uk"]
+
+[brands.walmart]
+terms = ["walmart"]
+domains = ["walmart.com"]
+
+[brands.irs]
+terms = ["irs"]
+domains = ["irs.gov"]
+
+[brands.webmail]
+terms = ["webmail", "roundcube", "zimbra", "owamail"]
+domains = []
+
+[brands.mercadolibre]
+terms = ["mercadolibre", "mercadolivre", "mercadopago"]
+domains = ["mercadolibre.com", "mercadolivre.com.br", "mercadopago.com"]
+
+[brands.correos]
+terms = ["correos"]
+domains = ["correos.es"]
+
+[brands.laposte]
+terms = ["laposte"]
+domains = ["laposte.fr", "laposte.net"]
+
+[brands.postnl]
+terms = ["postnl"]
+domains = ["postnl.nl"]
+
+[brands.auspost]
+terms = ["auspost"]
+domains = ["auspost.com.au"]
+
+[brands.canadapost]
+terms = ["canadapost"]
+domains = ["canadapost.ca", "canadapost-postescanada.ca"]
+
+[brands.ing]
+terms = ["ingbank"]
+domains = ["ing.com", "ing.nl"]
+
+[brands.rabobank]
+terms = ["rabobank"]
+domains = ["rabobank.nl"]
+
+[brands.credit_agricole]
+terms = ["creditagricole"]
+domains = ["credit-agricole.fr"]
+
+[brands."societe generale"]
+terms = ["societegenerale", "societegeneral"]
+domains = ["societegenerale.fr", "societegenerale.com"]
+
+[brands.bbva]
+terms = ["bbva"]
+domains = ["bbva.es", "bbva.com"]
+
+[brands.intesa]
+terms = ["intesasanpaolo"]
+domains = ["intesasanpaolo.com"]
+
+[brands.poste_italiane]
+terms = ["posteitaliane"]
+domains = ["poste.it"]
+
+[brands.americanexpress]
+terms = ["americanexpress", "amex"]
+domains = ["americanexpress.com"]
+
+[brands.capitalone]
+terms = ["capitalone"]
+domains = ["capitalone.com"]
+
+[brands.citi]
+terms = ["citibank"]
+domains = ["citi.com", "citibank.com"]
+
+[brands.usaa]
+terms = ["usaa"]
+domains = ["usaa.com"]
+
+[brands.zoom]
+terms = ["zoom"]
+domains = ["zoom.us", "zoom.com"]
+
+[brands.tiktok]
+terms = ["tiktok"]
+domains = ["tiktok.com"]
+
+[brands.twitter]
+terms = ["twitter"]
+domains = ["twitter.com", "x.com"]
+
+[brands.opensea]
+terms = ["opensea"]
+domains = ["opensea.io"]
+
+[brands.uniswap]
+terms = ["uniswap"]
+domains = ["uniswap.org"]
+
+[brands.phantom]
+terms = ["phantomwallet"]
+domains = ["phantom.app", "phantom.com"]
+
+[brands.dofus]
+terms = ["dofus", "ankama"]
+domains = ["dofus.com", "ankama.com"]
+
+[brands.epicgames]
+terms = ["epicgames", "fortnite"]
+domains = ["epicgames.com", "fortnite.com"]
+
+[brands.kucoin]
+terms = ["kucoin"]
+domains = ["kucoin.com"]
+
+[brands.shopee]
+terms = ["shopee"]
+domains = ["shopee.com", "shopee.co.id", "shopee.com.my", "shopee.sg", "shopee.ph", "shopee.vn", "shopee.co.th", "shopee.tw", "shopee.com.br"]
+
+[brands.uphold]
+terms = ["uphold"]
+domains = ["uphold.com"]
+
+[brands.bybit]
+terms = ["bybit"]
+domains = ["bybit.com"]

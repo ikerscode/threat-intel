@@ -1,6 +1,8 @@
 """Rebuild fixtures/ from the live cache (data/cache) after a live `collect`.
 
-Usage:  python scripts/make_fixtures.py
+Usage:  python scripts/make_fixtures.py            rebuild everything
+        python scripts/make_fixtures.py --round2   only the feeds added in round 2 (SSLBL, ET, CINS,
+                                                   blocklist.de, Phishing Army, CIRCL, OTX, RDAP cache)
 
 Trims each feed to a few hundred rows, keeps what the correlation demo needs
 (overlaps, ATT&CK objects linked to the kept groups) and strips fields we never
@@ -325,25 +327,156 @@ def synthetic_abusech():
     write("urlhaus-recent.json", {"query_status": "ok", "urls": uh})
 
 
+# ------------------------------------------------------------------ round 2 feeds
+
+def _lines(feed: str, url_part: str) -> list[str]:
+    body = cached(feed, url_part)[0][1].decode("utf-8", "replace")
+    return body.splitlines()
+
+
+def ip_lists_round2() -> None:
+    """ET, CINS and blocklist.de: real lines; IPs on two or more lists are kept first (corroboration demo)."""
+    lists = {"et": ("et_compromised", "compromised-ips", "et-compromised-ips.txt"),
+             "cins": ("cins", "ci-badguys", "cins-badguys.txt"),
+             "bde": ("blocklistde", "lists.blocklist.de", "blocklistde-ssh.txt")}
+    ips = {k: [ln.strip() for ln in _lines(f, u) if ln.strip() and not ln.startswith("#")] for k, (f, u, _) in lists.items()}
+    sets = {k: set(v) for k, v in ips.items()}
+    for k, (feed, _, name) in lists.items():
+        others = set().union(*(sets[o] for o in sets if o != k))
+        shared = sorted(sets[k] & others)[:60]
+        rest = RNG.sample(sorted(sets[k] - set(shared)), min(200 - len(shared), len(sets[k]) - len(shared)))
+        header = f"# trimmed real snapshot of the {feed} list, {datetime.now(timezone.utc):%Y-%m-%d}"
+        write(name, "\n".join([header] + shared + sorted(rest)) + "\n")
+
+
+def sslbl_round2() -> None:
+    lines = _lines("sslbl", "sslblacklist")
+    head = [ln for ln in lines if ln.startswith("#")]
+    rows = [ln for ln in lines if ln and not ln.startswith("#")]
+    keep = rows[:150] + RNG.sample(rows[150:], min(50, len(rows) - 150))
+    write("sslbl-certs.csv", "\n".join(head + keep) + "\n")
+
+
+def phishing_army_round2() -> None:
+    from threatintel import phishing
+    lines = _lines("phishing_army", "phishing_army_blocklist")
+    head = [ln for ln in lines if ln.startswith("#")][:12]
+    doms = [ln.strip() for ln in lines if ln.strip() and not ln.startswith("#") and "amiprotected" not in ln]
+    sample = RNG.sample(doms, min(6000, len(doms)))
+    branded = [d for d in sample if phishing.analyse(d)["brands"]][:150]
+    rest = RNG.sample([d for d in sample if d not in set(branded)], 150)
+    head.append("# trimmed real snapshot; domains stored defanged so nothing in the repo is a live link")
+    write("phishing-army.txt", "\n".join(head + [defang.defang_domain(d) for d in branded + rest]) + "\n")
+
+
+def circl_round2() -> None:
+    from threatintel.collectors.circl import KEEP_TYPES
+    manifest = json.loads(cached("circl", "manifest.json")[0][1])
+    events, chosen = [], {}
+    for url, body in cached("circl", "/feed-osint/"):
+        if url.endswith("manifest.json"):
+            continue
+        doc = json.loads(body)
+        ev = doc["Event"]
+        keep = []
+        attrs = list(ev.get("Attribute") or [])
+        for o in ev.get("Object") or []:
+            attrs += o.get("Attribute") or []
+        for a in attrs:
+            if a.get("to_ids") and a.get("type") in KEEP_TYPES and len(keep) < 60:
+                v = a["value"]
+                if a["type"] == "url":
+                    v = defang.defang_url(v)
+                elif a["type"] in ("domain", "hostname"):
+                    v = defang.defang_domain(v)
+                elif a["type"] == "domain|ip":
+                    d, _, ip = v.partition("|")
+                    v = defang.defang_domain(d) + "|" + ip
+                keep.append({k: a.get(k) for k in ("type", "category", "to_ids", "timestamp", "uuid")} | {"value": v})
+        trimmed = {k: ev.get(k) for k in ("uuid", "info", "date", "timestamp", "threat_level_id", "analysis",
+                                         "published", "Orgc", "Tag")}
+        trimmed["Attribute"] = keep
+        events.append({"Event": trimmed})
+        chosen[ev["uuid"]] = manifest.get(ev["uuid"], {})
+    write("circl-osint.json", {"manifest": chosen, "events": events})
+
+
+def otx_synthetic() -> None:
+    """OTX needs a key, so this fixture is synthetic, in the API's response format."""
+    now = datetime.now(timezone.utc)
+    pulse = lambda pid, name, fam, inds: {
+        "id": pid, "name": name, "created": (now - timedelta(days=2)).isoformat(), "modified": now.isoformat(),
+        "adversary": "", "malware_families": [{"id": fam, "display_name": fam}],
+        "indicators": [{"type": t, "indicator": v, "created": (now - timedelta(days=1)).isoformat()} for t, v in inds]}
+    write("otx-pulses.json", {"results": [
+        pulse("synthetic000000000000001", "SYNTHETIC sample pulse: QakBot C2", "QakBot",
+              [("IPv4", "198.51.100.77"), ("IPv4", "203.0.113.50"), ("domain", "update-qakbot.example")]),
+        pulse("synthetic000000000000002", "SYNTHETIC sample pulse: phishing kit", "Tycoon2FA",
+              [("domain", "secure-paypa1-login.example"), ("URL", "http://login-micr0soft.example/owa"),
+               ("FileHash-SHA256", fake_hash("otx-1"))]),
+    ], "count": 2})
+
+
+def rdap_cache_round2() -> None:
+    import sqlite3
+    c = sqlite3.connect(ROOT / "data" / "threatintel.db")
+    c.row_factory = sqlite3.Row
+    rows = [dict(r) for r in c.execute("SELECT * FROM rdap WHERE status='ok' ORDER BY fetched_at DESC LIMIT 40")]
+    for r in rows:
+        r["statuses"] = json.loads(r["statuses"] or "[]")
+        if r["kind"] == "domain":
+            r["query"] = r["query"]
+    write("rdap-cache.json", rows)
+
+
+ROUND2_SYNTHETIC = {
+    "otx-pulses.json": "Synthetic sample in OTX pulses API format (the API needs a key). RFC 5737 IPs and .example names only; the hash is made up.",
+}
+
+
+def write_manifest() -> None:
+    files = sorted(p.name for p in OUT.iterdir() if p.name != "MANIFEST.json")
+    old = json.loads((OUT / "MANIFEST.json").read_text()) if (OUT / "MANIFEST.json").exists() else {}
+    synthetic = {
+        "urlhaus-recent.json": "Synthetic sample in URLhaus API format (the API needs an Auth-Key). RFC 5737 IPs and .example/.test names only; hashes are made up.",
+        "threatfox-iocs.json": "Synthetic sample in ThreatFox API format (the API needs an Auth-Key). RFC 5737 IPs and .example names only; hashes are made up.",
+        **ROUND2_SYNTHETIC,
+    }
+    manifest = {
+        "created": old.get("created") or datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "note": ("Trimmed snapshots of live feeds fetched on the creation date (round 2 feeds and rdap-cache.json on the "
+                 "update date). URLs and domains are stored defanged. rdap-samples.json holds the real IANA bootstrap "
+                 "(trimmed) and two real RDAP answers used by the offline tests."),
+        "synthetic": synthetic,
+        "files": files,
+    }
+    write("MANIFEST.json", manifest)
+
+
+def round2() -> None:
+    ip_lists_round2()
+    sslbl_round2()
+    phishing_army_round2()
+    circl_round2()
+    otx_synthetic()
+    rdap_cache_round2()
+
+
 def main():
     OUT.mkdir(exist_ok=True)
+    if "--round2" in sys.argv:
+        round2()
+        write_manifest()
+        return
     rw_groups, _ = ransomware()
     exploited = attack(rw_groups)
     vulns(exploited)
     ips = ip_feeds()
     ip2asn_subset(ips)
     synthetic_abusech()
-    files = sorted(p.name for p in OUT.iterdir() if p.name != "MANIFEST.json")
-    manifest = {
-        "created": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-        "note": "Trimmed snapshots of live feeds fetched on the creation date. URLs are stored defanged.",
-        "synthetic": {
-            "urlhaus-recent.json": "Synthetic sample in URLhaus API format (the API needs an Auth-Key). RFC 5737 IPs and .example/.test names only; hashes are made up.",
-            "threatfox-iocs.json": "Synthetic sample in ThreatFox API format (the API needs an Auth-Key). RFC 5737 IPs and .example names only; hashes are made up.",
-        },
-        "files": files,
-    }
-    write("MANIFEST.json", manifest)
+    round2()
+    write_manifest()
 
 
 if __name__ == "__main__":

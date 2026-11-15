@@ -26,7 +26,7 @@ def _route_exists(method: str, endpoint: str) -> bool:
 
 def test_spec_shape():
     assert SPEC["title"] == "THREAT-INTEL"
-    assert 3 <= len(SPEC["views"]) <= 4
+    assert 3 <= len(SPEC["views"]) <= 9
     keys = [a["key"] for a in SPEC["actions"]]
     assert len(keys) == len(set(keys))
     for key in keys:

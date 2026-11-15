@@ -11,6 +11,10 @@ Design notes
   "technique:T1059", "actor:lockbit", "malware:qakbot", "ip:1.2.3.4".
   Edges written by the correlation engine use source = 'correlate' and are
   rebuilt on every run.
+- History: each sighting also keeps first_obs / last_obs (when this lab first and
+  last saw the indicator in that feed, across runs) and days_seen. A daily
+  snapshot of key counts goes to `daily_snapshot` after every correlation run,
+  so trends survive even when bulk lists are pruned (see prune_source).
 """
 from __future__ import annotations
 
@@ -157,7 +161,48 @@ CREATE TABLE IF NOT EXISTS feed_state (
 );
 
 CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT);
+
+CREATE TABLE IF NOT EXISTS daily_snapshot (
+    day TEXT NOT NULL,               -- YYYY-MM-DD (UTC)
+    metric TEXT NOT NULL,            -- e.g. indicators, c2_ips, source:cins, phishing_branded
+    value REAL,
+    PRIMARY KEY (day, metric)
+);
+
+CREATE TABLE IF NOT EXISTS misp_events (
+    uuid TEXT PRIMARY KEY,
+    source TEXT NOT NULL,            -- circl
+    info TEXT, date TEXT, org TEXT,
+    threat_level INTEGER,
+    tags TEXT DEFAULT '[]',
+    timestamp REAL,
+    attributes INTEGER DEFAULT 0,    -- attributes in the event
+    stored INTEGER DEFAULT 0         -- attributes kept as indicators
+);
+
+CREATE TABLE IF NOT EXISTS rdap (
+    key TEXT PRIMARY KEY,            -- domain:<registered domain> | ip:<address>
+    kind TEXT, query TEXT,
+    status TEXT,                     -- ok | not-found | no-service | error
+    registered TEXT, expires TEXT, last_changed TEXT,
+    registrar TEXT, abuse_email TEXT, abuse_phone TEXT,
+    network TEXT, country TEXT, statuses TEXT DEFAULT '[]',
+    server TEXT, error TEXT,
+    fetched_at REAL
+);
+
+CREATE TABLE IF NOT EXISTS phishing_analysis (
+    indicator_id INTEGER PRIMARY KEY,
+    score INTEGER, brands TEXT DEFAULT '[]', method TEXT,
+    reasons TEXT DEFAULT '[]', tld TEXT, idn INTEGER DEFAULT 0,
+    keyword_brands TEXT DEFAULT '[]' -- what the old keyword-only matcher found (for before/after)
+);
 """
+
+# Columns added after the first release; connect() adds them to older databases.
+MIGRATIONS = {
+    "sightings": {"first_obs": "REAL", "last_obs": "REAL", "days_seen": "INTEGER DEFAULT 0", "last_day": "TEXT"},
+}
 
 
 def connect(path: str | Path | None = None) -> sqlite3.Connection:
@@ -170,7 +215,28 @@ def connect(path: str | Path | None = None) -> sqlite3.Connection:
     conn.execute("PRAGMA busy_timeout=30000")
     conn.execute("PRAGMA foreign_keys=OFF")
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    for table, cols in MIGRATIONS.items():
+        have = {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+        missing = {c: t for c, t in cols.items() if c not in have}
+        for col, typ in missing.items():
+            conn.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
+        if table == "sightings" and "first_obs" in missing:
+            # Older databases: the best estimate of "first observed by this lab" is the
+            # first successful run of that feed, else the feed's own first_seen.
+            conn.execute("""UPDATE sightings SET
+                first_obs = COALESCE((SELECT MIN(started) FROM feed_runs WHERE feed=sightings.source
+                                      AND status IN ('ok','cached','seeded','stale')), first_seen),
+                last_obs = COALESCE((SELECT MAX(started) FROM feed_runs WHERE feed=sightings.source
+                                     AND status IN ('ok','cached','seeded','stale')), last_seen),
+                days_seen = 1""")
+            conn.execute("UPDATE sightings SET last_day = strftime('%Y-%m-%d', last_obs, 'unixepoch')")
+            conn.commit()
+    conn.execute("CREATE INDEX IF NOT EXISTS ix_sight_obs ON sightings(source, first_obs)")
 
 
 @contextmanager
@@ -210,9 +276,16 @@ def now() -> float:
 def upsert_indicator(conn, *, type: str, value: str, source: str, first_seen: float | None = None,
                      last_seen: float | None = None, tags=None, malware: str | None = None,
                      asn: int | None = None, as_name: str | None = None, country: str | None = None,
-                     host: str | None = None, reg_domain: str | None = None, extra: dict | None = None) -> int:
-    """Insert or merge an indicator and record the sighting for `source`."""
+                     host: str | None = None, reg_domain: str | None = None, extra: dict | None = None,
+                     observed_at: float | None = None) -> int:
+    """Insert or merge an indicator and record the sighting for `source`.
+
+    observed_at is when this lab saw it (default now); it feeds first_obs/last_obs
+    and days_seen, which are independent of the dates the feed itself reports.
+    """
     ts = now()
+    obs = observed_at or ts
+    obs_day = time.strftime("%Y-%m-%d", time.gmtime(obs))
     first_seen = first_seen or ts
     last_seen = last_seen or ts
     tags = sorted(set(tags or []))
@@ -237,15 +310,52 @@ def upsert_indicator(conn, *, type: str, value: str, source: str, first_seen: fl
              country, host, reg_domain))
         ind_id = cur.lastrowid
     conn.execute(
-        """INSERT INTO sightings(indicator_id, source, first_seen, last_seen, malware, tags, extra)
-           VALUES (?,?,?,?,?,?,?)
+        """INSERT INTO sightings(indicator_id, source, first_seen, last_seen, malware, tags, extra,
+                                 first_obs, last_obs, days_seen, last_day)
+           VALUES (?,?,?,?,?,?,?,?,?,1,?)
            ON CONFLICT(indicator_id, source) DO UPDATE SET
              first_seen=MIN(sightings.first_seen, excluded.first_seen),
              last_seen=MAX(sightings.last_seen, excluded.last_seen),
              malware=COALESCE(excluded.malware, sightings.malware),
-             tags=excluded.tags, extra=excluded.extra""",
-        (ind_id, source, first_seen, last_seen, malware, json.dumps(tags), json.dumps(extra or {})))
+             tags=excluded.tags, extra=excluded.extra,
+             first_obs=MIN(COALESCE(sightings.first_obs, excluded.first_obs), excluded.first_obs),
+             last_obs=MAX(COALESCE(sightings.last_obs, 0), excluded.last_obs),
+             days_seen=COALESCE(sightings.days_seen, 0) +
+                       (COALESCE(sightings.last_day, '') < excluded.last_day),
+             last_day=MAX(COALESCE(sightings.last_day, ''), excluded.last_day)""",
+        (ind_id, source, first_seen, last_seen, malware, json.dumps(tags), json.dumps(extra or {}),
+         obs, obs, obs_day))
     return ind_id
+
+
+def prune_source(conn, source: str, keep_days: float, ref: float | None = None) -> int:
+    """Drop `source` sightings not observed for keep_days, then indicators left with no sightings.
+
+    Used for large rotating lists (CINS, blocklist.de, phishing.army) so the database
+    does not grow without bound. Daily counts already captured in daily_snapshot stay.
+    Returns the number of indicators deleted.
+    """
+    cutoff = (ref or now()) - keep_days * 86400
+    stale = [r[0] for r in conn.execute("SELECT indicator_id FROM sightings WHERE source=? AND last_obs < ?",
+                                        (source, cutoff))]
+    if not stale:
+        return 0
+    conn.executemany("DELETE FROM sightings WHERE indicator_id=? AND source=?", [(i, source) for i in stale])
+    gone = [i for i in stale if not conn.execute("SELECT 1 FROM sightings WHERE indicator_id=? LIMIT 1", (i,)).fetchone()]
+    for i in gone:
+        row = conn.execute("SELECT type, value FROM indicators WHERE id=?", (i,)).fetchone()
+        if row:
+            node = f"{row['type']}:{row['value']}"
+            conn.execute("DELETE FROM relationships WHERE (src=? OR dst=?) AND source=?", (node, node, source))
+        conn.execute("DELETE FROM indicators WHERE id=?", (i,))
+        conn.execute("DELETE FROM phishing_analysis WHERE indicator_id=?", (i,))
+    # indicators still reported by another feed lose this source from their list
+    for i in set(stale) - set(gone):
+        row = conn.execute("SELECT sources FROM indicators WHERE id=?", (i,)).fetchone()
+        if row:
+            conn.execute("UPDATE indicators SET sources=? WHERE id=?",
+                         (json.dumps(sorted(set(jload(row["sources"])) - {source})), i))
+    return len(gone)
 
 
 def add_rel(conn, src: str, rel: str, dst: str, source: str, note: str | None = None) -> None:

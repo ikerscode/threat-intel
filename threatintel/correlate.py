@@ -11,8 +11,10 @@ Steps
 3. malware     link malware family names seen in feeds to ATT&CK software and actors
 4. vulns       vendor/product edges come from KEV; here: priority score + ransomware edge
 5. indicators  ASN enrichment, DROP containment, confidence score
-6. phishing    host, registered domain, brand and hosting edges
+6. phishing    brand impersonation (tokens, edit distance, homoglyphs), hosting, score
+6b. events     MISP OSINT events -> actors from their galaxy tags
 7. clusters    shared /24, shared ASN, shared registered domain, IPs inside DROP
+8. snapshot    daily counts for the trends view
 """
 from __future__ import annotations
 
@@ -298,19 +300,58 @@ def infrastructure_edges(conn) -> dict:
 
 # ------------------------------------------------------------------ 6. phishing
 
+PHISHING_FEEDS = {"openphish", "phishing_army", "urlhaus", "threatfox", "circl", "otx"}
+
+
 def analyse_phishing(conn) -> dict:
-    n = 0
-    for ind in db.rows(conn, "SELECT id, value, tags FROM indicators WHERE type='url' AND tags LIKE '%phishing%'"):
-        info = phishing.analyse(ind["value"])
-        tags = {t for t in db.jload(ind["tags"]) if not t.startswith(("brand:", "hosting:"))}
-        for b in info["brands"]:
+    """Brand impersonation, hosting and the phishing score for every phishing URL and domain.
+
+    The RDAP registration date is used when it has already been looked up (on
+    demand, see rdap.py); correlation itself never goes to the network.
+    """
+    from . import rdap
+    conn.execute("DELETE FROM phishing_analysis")
+    reg_dates = {r["key"].split(":", 1)[1]: r["registered"] for r in
+                 db.rows(conn, "SELECT key, registered FROM rdap WHERE kind='domain' AND registered IS NOT NULL")}
+    stats = {"phishing_urls": 0, "phishing_domains": 0, "phishing_branded": 0, "phishing_branded_keyword_only": 0}
+    for ind in db.rows(conn, """SELECT id, type, value, tags, sources FROM indicators
+                                WHERE type IN ('url','domain') AND tags LIKE '%"phishing"%'"""):
+        sources = set(db.jload(ind["sources"]))
+        target = rdap.target(ind["value"])
+        registered = reg_dates.get(target[1]) if target and target[0] == "domain" else None
+        info = phishing.analyse(ind["value"], registered=registered, feeds=len(sources & PHISHING_FEEDS))
+        legacy = phishing.keyword_brands(ind["value"])
+        tags = {t for t in db.jload(ind["tags"]) if not t.startswith(("brand:", "hosting:", "lookalike:"))}
+        for b in info["brands"][:3]:
             tags.add(f"brand:{b}")
-            rel(conn, f"url:{ind['value']}", "impersonates", f"brand:{b}")
+            rel(conn, f"{ind['type']}:{ind['value']}", "impersonates", f"brand:{b}", info["method"])
+        if info["method"] in ("homoglyph", "lookalike"):
+            tags.add(f"lookalike:{info['method']}")
         if info["hosting"]:
             tags.add(f"hosting:{info['hosting']}")
         conn.execute("UPDATE indicators SET tags=? WHERE id=?", (json.dumps(sorted(tags)), ind["id"]))
-        n += 1
-    return {"phishing_urls": n}
+        conn.execute("""INSERT OR REPLACE INTO phishing_analysis(indicator_id, score, brands, method, reasons, tld, idn,
+                        keyword_brands) VALUES (?,?,?,?,?,?,?,?)""",
+                     (ind["id"], info["score"], json.dumps(info["brands"]), info["method"], json.dumps(info["reasons"]),
+                      info["tld"], int(info["idn"]), json.dumps(legacy)))
+        stats["phishing_urls" if ind["type"] == "url" else "phishing_domains"] += 1
+        stats["phishing_branded"] += bool(info["brands"])
+        stats["phishing_branded_keyword_only"] += bool(legacy)
+    return stats
+
+
+def link_events(conn) -> dict:
+    """MISP OSINT events -> actors named in their threat-actor galaxy tags."""
+    from .collectors.circl import tag_links
+    alias_map = dict(conn.execute("SELECT alias, actor_id FROM actor_aliases").fetchall())
+    n = 0
+    for e in db.rows(conn, "SELECT uuid, tags FROM misp_events"):
+        for name in tag_links(db.jload(e["tags"]))["actors"]:
+            aid = alias_map.get(aliases.canonical_group(name))
+            if aid:
+                rel(conn, f"event:{e['uuid']}", "attributed-to", aid, f"galaxy tag: {name}")
+                n += 1
+    return {"event_actor_links": n}
 
 
 # ------------------------------------------------------------------ 7. clusters
@@ -359,8 +400,11 @@ def run(conn) -> dict:
     stats.update(score_indicators(conn))
     stats.update(infrastructure_edges(conn))
     stats.update(analyse_phishing(conn))
+    stats.update(link_events(conn))
     stats.update(build_clusters(conn))
     stats["derived_edges"] = conn.execute("SELECT COUNT(*) FROM relationships WHERE source=?", (DERIVED,)).fetchone()[0]
+    from . import trends
+    trends.snapshot(conn)          # one row per metric per day: history that survives pruning
     stats["seconds"] = round(time.time() - t0, 2)
     db.set_meta(conn, "last_correlate", {"at": time.time(), **stats})
     conn.commit()

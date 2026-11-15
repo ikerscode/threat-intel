@@ -1,0 +1,1601 @@
+{
+ "_note": "Real IANA RDAP bootstrap (dns trimmed to common TLDs) and two real RDAP answers captured 2026-11-14, for offline tests.",
+ "bootstrap": {
+  "dns": {
+   "description": "RDAP bootstrap file for Domain Name System registrations",
+   "publication": "2026-10-28T22:00:04Z",
+   "services": [
+    [
+     [
+      "ads",
+      "android",
+      "app",
+      "boo",
+      "cal",
+      "channel",
+      "chrome",
+      "dad",
+      "day",
+      "dclk",
+      "dev",
+      "docs",
+      "drive",
+      "eat",
+      "esq",
+      "fly",
+      "foo",
+      "gbiz",
+      "gle",
+      "gmail",
+      "goog",
+      "google",
+      "guge",
+      "hangout",
+      "here",
+      "how",
+      "ing",
+      "map",
+      "meet",
+      "meme",
+      "mov",
+      "new",
+      "nexus",
+      "page",
+      "phd",
+      "play",
+      "prod",
+      "prof",
+      "rsvp",
+      "search",
+      "soy",
+      "xn--flw351e",
+      "xn--q9jyb4c",
+      "xn--qcka1pmc",
+      "youtube",
+      "zip"
+     ],
+     [
+      "https://pubapi.registry.google/rdap/"
+     ]
+    ],
+    [
+     [
+      "cfd"
+     ],
+     [
+      "https://rdap.centralnic.com/cfd/"
+     ]
+    ],
+    [
+     [
+      "cyou"
+     ],
+     [
+      "https://rdap.centralnic.com/cyou/"
+     ]
+    ],
+    [
+     [
+      "icu"
+     ],
+     [
+      "https://rdap.centralnic.com/icu/"
+     ]
+    ],
+    [
+     [
+      "sbs"
+     ],
+     [
+      "https://rdap.centralnic.com/sbs/"
+     ]
+    ],
+    [
+     [
+      "xyz"
+     ],
+     [
+      "https://rdap.centralnic.com/xyz/"
+     ]
+    ],
+    [
+     [
+      "pl"
+     ],
+     [
+      "https://rdap.dns.pl/"
+     ]
+    ],
+    [
+     [
+      "bridgestone",
+      "brother",
+      "canon",
+      "datsun",
+      "dnp",
+      "epson",
+      "firestone",
+      "fujitsu",
+      "ggee",
+      "gmo",
+      "goldpoint",
+      "hisamitsu",
+      "hitachi",
+      "honda",
+      "hyundai",
+      "infiniti",
+      "jcb",
+      "kddi",
+      "kia",
+      "komatsu",
+      "kyoto",
+      "lexus",
+      "lotte",
+      "mitsubishi",
+      "nagoya",
+      "nec",
+      "nhk",
+      "nico",
+      "nissan",
+      "okinawa",
+      "otsuka",
+      "panasonic",
+      "playstation",
+      "ricoh",
+      "ryukyu",
+      "sharp",
+      "shop",
+      "softbank",
+      "sony",
+      "suzuki",
+      "tokyo",
+      "toray",
+      "toshiba",
+      "toyota",
+      "yodobashi",
+      "yokohama"
+     ],
+     [
+      "https://rdap.gmoregistry.net/rdap/"
+     ]
+    ],
+    [
+     [
+      "abb",
+      "abbott",
+      "abc",
+      "academy",
+      "accenture",
+      "accountants",
+      "actor",
+      "aeg",
+      "aero",
+      "agakhan",
+      "agency",
+      "ai",
+      "airbus",
+      "airforce",
+      "akdn",
+      "alipay",
+      "allstate",
+      "aol",
+      "apartments",
+      "archi",
+      "army",
+      "arte",
+      "asda",
+      "asia",
+      "associates",
+      "attorney",
+      "auction",
+      "audi",
+      "band",
+      "barclaycard",
+      "barclays",
+      "barefoot",
+      "bargains",
+      "bbt",
+      "bcg",
+      "beats",
+      "bestbuy",
+      "bet",
+      "bike",
+      "bingo",
+      "bio",
+      "black",
+      "bloomberg",
+      "blue",
+      "bm",
+      "bms",
+      "bnpparibas",
+      "boehringer",
+      "bofa",
+      "bosch",
+      "boutique",
+      "bradesco",
+      "broker",
+      "builders",
+      "business",
+      "cab",
+      "cafe",
+      "camera",
+      "camp",
+      "capital",
+      "cards",
+      "care",
+      "careers",
+      "cash",
+      "casino",
+      "catering",
+      "center",
+      "cern",
+      "cfa",
+      "chanel",
+      "chat",
+      "cheap",
+      "church",
+      "cipriani",
+      "circle",
+      "citadel",
+      "city",
+      "claims",
+      "cleaning",
+      "clinic",
+      "clinique",
+      "clothing",
+      "clubmed",
+      "coach",
+      "codes",
+      "coffee",
+      "community",
+      "company",
+      "computer",
+      "condos",
+      "construction",
+      "consulting",
+      "contact",
+      "contractors",
+      "cool",
+      "coupon",
+      "coupons",
+      "credit",
+      "creditcard",
+      "crs",
+      "cruise",
+      "cruises",
+      "dance",
+      "dating",
+      "deals",
+      "degree",
+      "delivery",
+      "delta",
+      "democrat",
+      "dental",
+      "dentist",
+      "diamonds",
+      "digital",
+      "direct",
+      "directory",
+      "discount",
+      "discover",
+      "doctor",
+      "dog",
+      "domains",
+      "edeka",
+      "education",
+      "email",
+      "emerck",
+      "energy",
+      "engineer",
+      "engineering",
+      "enterprises",
+      "equipment",
+      "ericsson",
+      "estate",
+      "events",
+      "exchange",
+      "expert",
+      "exposed",
+      "express",
+      "extraspace",
+      "fage",
+      "fail",
+      "family",
+      "fan",
+      "farm",
+      "fedex",
+      "ferrari",
+      "fidelity",
+      "fido",
+      "finance",
+      "financial",
+      "fish",
+      "fitness",
+      "flights",
+      "florist",
+      "football",
+      "forex",
+      "forsale",
+      "frogans",
+      "fund",
+      "furniture",
+      "futbol",
+      "fyi",
+      "gallery",
+      "gallo",
+      "gallup",
+      "games",
+      "genting",
+      "gifts",
+      "glass",
+      "global",
+      "gmbh",
+      "gold",
+      "golf",
+      "goodyear",
+      "got",
+      "graphics",
+      "gratis",
+      "green",
+      "gripe",
+      "group",
+      "guide",
+      "guru",
+      "haus",
+      "hdfc",
+      "hdfcbank",
+      "healthcare",
+      "hermes",
+      "hkt",
+      "hockey",
+      "holdings",
+      "holiday",
+      "homedepot",
+      "hospital",
+      "house",
+      "hughes",
+      "ice",
+      "imamat",
+      "immo",
+      "immobilien",
+      "industries",
+      "info",
+      "institute",
+      "insure",
+      "international",
+      "investments",
+      "irish",
+      "ismaili",
+      "ist",
+      "istanbul",
+      "itv",
+      "jaguar",
+      "java",
+      "jeep",
+      "jetzt",
+      "jewelry",
+      "jio",
+      "jll",
+      "jot",
+      "juegos",
+      "kaufen",
+      "kerryhotels",
+      "kerryproperties",
+      "kids",
+      "kim",
+      "kitchen",
+      "kosher",
+      "kuokgroup",
+      "lamborghini",
+      "lamer",
+      "land",
+      "landrover",
+      "lasalle",
+      "lawyer",
+      "lds",
+      "lease",
+      "lefrak",
+      "legal",
+      "lego",
+      "lgbt",
+      "life",
+      "lighting",
+      "limited",
+      "limo",
+      "live",
+      "llc",
+      "loans",
+      "lotto",
+      "ltd",
+      "ltda",
+      "lundbeck",
+      "maif",
+      "maison",
+      "management",
+      "market",
+      "marketing",
+      "markets",
+      "marriott",
+      "mba",
+      "mckinsey",
+      "media",
+      "memorial",
+      "mit",
+      "mobi",
+      "moda",
+      "money",
+      "mormon",
+      "mortgage",
+      "movie",
+      "mu",
+      "nab",
+      "navy",
+      "network",
+      "news",
+      "next",
+      "nextdirect",
+      "nikon",
+      "ninja",
+      "nissay",
+      "nowtv",
+      "nra",
+      "obi",
+      "onl",
+      "oracle",
+      "orange",
+      "organic",
+      "origins",
+      "partners",
+      "parts",
+      "pccw",
+      "pet",
+      "photography",
+      "photos",
+      "pictet",
+      "pictures",
+      "pink",
+      "pizza",
+      "place",
+      "plumbing",
+      "plus",
+      "pnc",
+      "poker",
+      "post",
+      "pro",
+      "productions",
+      "progressive",
+      "promo",
+      "properties",
+      "pub",
+      "pwc",
+      "recipes",
+      "red",
+      "redumbrella",
+      "rehab",
+      "reise",
+      "reisen",
+      "reliance",
+      "rentals",
+      "repair",
+      "report",
+      "republican",
+      "restaurant",
+      "reviews",
+      "rexroth",
+      "rich",
+      "richardli",
+      "ril",
+      "rip",
+      "rocks",
+      "rogers",
+      "run",
+      "rwe",
+      "safety",
+      "sale",
+      "salon",
+      "sanofi",
+      "sarl",
+      "saxo",
+      "sbi",
+      "sc",
+      "scholarships",
+      "school",
+      "schule",
+      "sener",
+      "services",
+      "sew",
+      "shangrila",
+      "shiksha",
+      "shoes",
+      "shopping",
+      "show",
+      "singles",
+      "ski",
+      "soccer",
+      "social",
+      "software",
+      "solar",
+      "solutions",
+      "song",
+      "spa",
+      "srl",
+      "stada",
+      "star",
+      "statebank",
+      "stockholm",
+      "studio",
+      "style",
+      "supplies",
+      "supply",
+      "support",
+      "surgery",
+      "systems",
+      "taobao",
+      "tatamotors",
+      "tax",
+      "taxi",
+      "team",
+      "technology",
+      "temasek",
+      "tennis",
+      "thd",
+      "theater",
+      "tiaa",
+      "tienda",
+      "tips",
+      "tires",
+      "tmall",
+      "today",
+      "tools",
+      "tours",
+      "town",
+      "toys",
+      "trading",
+      "training",
+      "travel",
+      "travelers",
+      "travelersinsurance",
+      "trv",
+      "tvs",
+      "ubank",
+      "ubs",
+      "university",
+      "ups",
+      "vacations",
+      "vanguard",
+      "vegas",
+      "ventures",
+      "vet",
+      "viajes",
+      "video",
+      "vig",
+      "viking",
+      "villas",
+      "vin",
+      "visa",
+      "vision",
+      "volvo",
+      "vote",
+      "voto",
+      "voyage",
+      "watch",
+      "watches",
+      "weber",
+      "weir",
+      "wine",
+      "works",
+      "world",
+      "wtf",
+      "xin",
+      "xn--1ck2e1b",
+      "xn--5su34j936bgsg",
+      "xn--5tzm5g",
+      "xn--6frz82g",
+      "xn--b4w605ferd",
+      "xn--bck1b9a5dre4c",
+      "xn--cck2b3b",
+      "xn--czrs0t",
+      "xn--eckvdtc9d",
+      "xn--fct429k",
+      "xn--fjq720a",
+      "xn--fzys8d69uvgm",
+      "xn--gckr3f0f",
+      "xn--gk3at1e",
+      "xn--jvr189m",
+      "xn--rovu88b",
+      "xn--unup4y",
+      "xn--vhquv",
+      "xn--w4r85el8fhu5dnra",
+      "xn--w4rs40l",
+      "yahoo",
+      "zara",
+      "zero",
+      "zone"
+     ],
+     [
+      "https://rdap.identitydigital.services/rdap/"
+     ]
+    ],
+    [
+     [
+      "fr"
+     ],
+     [
+      "https://rdap.nic.fr/"
+     ]
+    ],
+    [
+     [
+      "uk"
+     ],
+     [
+      "https://rdap.nominet.uk/uk/"
+     ]
+    ],
+    [
+     [
+      "charity",
+      "foundation",
+      "gives",
+      "giving",
+      "ngo",
+      "ong",
+      "org",
+      "xn--c1avg",
+      "xn--i1b6b1a6a2e",
+      "xn--nqv7f",
+      "xn--nqv7fs00ema"
+     ],
+     [
+      "https://rdap.publicinterestregistry.org/rdap/"
+     ]
+    ],
+    [
+     [
+      "fun",
+      "host",
+      "online",
+      "press",
+      "pw",
+      "site",
+      "space",
+      "store",
+      "tech",
+      "uno",
+      "website"
+     ],
+     [
+      "https://rdap.radix.host/rdap/"
+     ]
+    ],
+    [
+     [
+      "click",
+      "country",
+      "diy",
+      "feedback",
+      "food",
+      "forum",
+      "hiv",
+      "lifestyle",
+      "living",
+      "observer",
+      "pid",
+      "property",
+      "realty",
+      "sexy",
+      "trust",
+      "vana"
+     ],
+     [
+      "https://rdap.registry.click/rdap/"
+     ]
+    ],
+    [
+     [
+      "com"
+     ],
+     [
+      "https://rdap.verisign.com/com/v1/"
+     ]
+    ],
+    [
+     [
+      "net"
+     ],
+     [
+      "https://rdap.verisign.com/net/v1/"
+     ]
+    ],
+    [
+     [
+      "top"
+     ],
+     [
+      "https://rdap.zdnsgtld.com/top/"
+     ]
+    ]
+   ],
+   "version": "1.0"
+  },
+  "ipv4": {
+   "description": "RDAP bootstrap file for IPv4 address allocations",
+   "publication": "2019-06-07T19:00:02Z",
+   "services": [
+    [
+     [
+      "41.0.0.0/8",
+      "102.0.0.0/8",
+      "105.0.0.0/8",
+      "154.0.0.0/8",
+      "196.0.0.0/8",
+      "197.0.0.0/8"
+     ],
+     [
+      "https://rdap.afrinic.net/rdap/",
+      "http://rdap.afrinic.net/rdap/"
+     ]
+    ],
+    [
+     [
+      "1.0.0.0/8",
+      "14.0.0.0/8",
+      "27.0.0.0/8",
+      "36.0.0.0/8",
+      "39.0.0.0/8",
+      "42.0.0.0/8",
+      "43.0.0.0/8",
+      "49.0.0.0/8",
+      "58.0.0.0/8",
+      "59.0.0.0/8",
+      "60.0.0.0/8",
+      "61.0.0.0/8",
+      "101.0.0.0/8",
+      "103.0.0.0/8",
+      "106.0.0.0/8",
+      "110.0.0.0/8",
+      "111.0.0.0/8",
+      "112.0.0.0/8",
+      "113.0.0.0/8",
+      "114.0.0.0/8",
+      "115.0.0.0/8",
+      "116.0.0.0/8",
+      "117.0.0.0/8",
+      "118.0.0.0/8",
+      "119.0.0.0/8",
+      "120.0.0.0/8",
+      "121.0.0.0/8",
+      "122.0.0.0/8",
+      "123.0.0.0/8",
+      "124.0.0.0/8",
+      "125.0.0.0/8",
+      "126.0.0.0/8",
+      "133.0.0.0/8",
+      "150.0.0.0/8",
+      "153.0.0.0/8",
+      "163.0.0.0/8",
+      "171.0.0.0/8",
+      "175.0.0.0/8",
+      "180.0.0.0/8",
+      "182.0.0.0/8",
+      "183.0.0.0/8",
+      "202.0.0.0/8",
+      "203.0.0.0/8",
+      "210.0.0.0/8",
+      "211.0.0.0/8",
+      "218.0.0.0/8",
+      "219.0.0.0/8",
+      "220.0.0.0/8",
+      "221.0.0.0/8",
+      "222.0.0.0/8",
+      "223.0.0.0/8"
+     ],
+     [
+      "https://rdap.apnic.net/"
+     ]
+    ],
+    [
+     [
+      "3.0.0.0/8",
+      "4.0.0.0/8",
+      "6.0.0.0/8",
+      "7.0.0.0/8",
+      "8.0.0.0/8",
+      "9.0.0.0/8",
+      "11.0.0.0/8",
+      "12.0.0.0/8",
+      "13.0.0.0/8",
+      "15.0.0.0/8",
+      "16.0.0.0/8",
+      "17.0.0.0/8",
+      "18.0.0.0/8",
+      "19.0.0.0/8",
+      "20.0.0.0/8",
+      "21.0.0.0/8",
+      "22.0.0.0/8",
+      "23.0.0.0/8",
+      "24.0.0.0/8",
+      "26.0.0.0/8",
+      "28.0.0.0/8",
+      "29.0.0.0/8",
+      "30.0.0.0/8",
+      "32.0.0.0/8",
+      "33.0.0.0/8",
+      "34.0.0.0/8",
+      "35.0.0.0/8",
+      "38.0.0.0/8",
+      "40.0.0.0/8",
+      "44.0.0.0/8",
+      "45.0.0.0/8",
+      "47.0.0.0/8",
+      "48.0.0.0/8",
+      "50.0.0.0/8",
+      "52.0.0.0/8",
+      "54.0.0.0/8",
+      "55.0.0.0/8",
+      "56.0.0.0/8",
+      "63.0.0.0/8",
+      "64.0.0.0/8",
+      "65.0.0.0/8",
+      "66.0.0.0/8",
+      "67.0.0.0/8",
+      "68.0.0.0/8",
+      "69.0.0.0/8",
+      "70.0.0.0/8",
+      "71.0.0.0/8",
+      "72.0.0.0/8",
+      "73.0.0.0/8",
+      "74.0.0.0/8",
+      "75.0.0.0/8",
+      "76.0.0.0/8",
+      "96.0.0.0/8",
+      "97.0.0.0/8",
+      "98.0.0.0/8",
+      "99.0.0.0/8",
+      "100.0.0.0/8",
+      "104.0.0.0/8",
+      "107.0.0.0/8",
+      "108.0.0.0/8",
+      "128.0.0.0/8",
+      "129.0.0.0/8",
+      "130.0.0.0/8",
+      "131.0.0.0/8",
+      "132.0.0.0/8",
+      "134.0.0.0/8",
+      "135.0.0.0/8",
+      "136.0.0.0/8",
+      "137.0.0.0/8",
+      "138.0.0.0/8",
+      "139.0.0.0/8",
+      "140.0.0.0/8",
+      "142.0.0.0/8",
+      "143.0.0.0/8",
+      "144.0.0.0/8",
+      "146.0.0.0/8",
+      "147.0.0.0/8",
+      "148.0.0.0/8",
+      "149.0.0.0/8",
+      "152.0.0.0/8",
+      "155.0.0.0/8",
+      "156.0.0.0/8",
+      "157.0.0.0/8",
+      "158.0.0.0/8",
+      "159.0.0.0/8",
+      "160.0.0.0/8",
+      "161.0.0.0/8",
+      "162.0.0.0/8",
+      "164.0.0.0/8",
+      "165.0.0.0/8",
+      "166.0.0.0/8",
+      "167.0.0.0/8",
+      "168.0.0.0/8",
+      "169.0.0.0/8",
+      "170.0.0.0/8",
+      "172.0.0.0/8",
+      "173.0.0.0/8",
+      "174.0.0.0/8",
+      "184.0.0.0/8",
+      "192.0.0.0/8",
+      "198.0.0.0/8",
+      "199.0.0.0/8",
+      "204.0.0.0/8",
+      "205.0.0.0/8",
+      "206.0.0.0/8",
+      "207.0.0.0/8",
+      "208.0.0.0/8",
+      "209.0.0.0/8",
+      "214.0.0.0/8",
+      "215.0.0.0/8",
+      "216.0.0.0/8"
+     ],
+     [
+      "https://rdap.arin.net/registry/",
+      "http://rdap.arin.net/registry/"
+     ]
+    ],
+    [
+     [
+      "2.0.0.0/8",
+      "5.0.0.0/8",
+      "25.0.0.0/8",
+      "31.0.0.0/8",
+      "37.0.0.0/8",
+      "46.0.0.0/8",
+      "51.0.0.0/8",
+      "53.0.0.0/8",
+      "57.0.0.0/8",
+      "62.0.0.0/8",
+      "77.0.0.0/8",
+      "78.0.0.0/8",
+      "79.0.0.0/8",
+      "80.0.0.0/8",
+      "81.0.0.0/8",
+      "82.0.0.0/8",
+      "83.0.0.0/8",
+      "84.0.0.0/8",
+      "85.0.0.0/8",
+      "86.0.0.0/8",
+      "87.0.0.0/8",
+      "88.0.0.0/8",
+      "89.0.0.0/8",
+      "90.0.0.0/8",
+      "91.0.0.0/8",
+      "92.0.0.0/8",
+      "93.0.0.0/8",
+      "94.0.0.0/8",
+      "95.0.0.0/8",
+      "109.0.0.0/8",
+      "141.0.0.0/8",
+      "145.0.0.0/8",
+      "151.0.0.0/8",
+      "176.0.0.0/8",
+      "178.0.0.0/8",
+      "185.0.0.0/8",
+      "188.0.0.0/8",
+      "193.0.0.0/8",
+      "194.0.0.0/8",
+      "195.0.0.0/8",
+      "212.0.0.0/8",
+      "213.0.0.0/8",
+      "217.0.0.0/8"
+     ],
+     [
+      "https://rdap.db.ripe.net/"
+     ]
+    ],
+    [
+     [
+      "177.0.0.0/8",
+      "179.0.0.0/8",
+      "181.0.0.0/8",
+      "186.0.0.0/8",
+      "187.0.0.0/8",
+      "189.0.0.0/8",
+      "190.0.0.0/8",
+      "191.0.0.0/8",
+      "200.0.0.0/8",
+      "201.0.0.0/8"
+     ],
+     [
+      "https://rdap.lacnic.net/rdap/"
+     ]
+    ]
+   ],
+   "version": "1.0"
+  },
+  "ipv6": {
+   "description": "RDAP bootstrap file for IPv6 address allocations",
+   "publication": "2024-11-01T22:00:01Z",
+   "services": [
+    [
+     [
+      "2001:4200::/23",
+      "2c00::/12"
+     ],
+     [
+      "https://rdap.afrinic.net/rdap/",
+      "http://rdap.afrinic.net/rdap/"
+     ]
+    ],
+    [
+     [
+      "2001:200::/23",
+      "2001:4400::/23",
+      "2001:8000::/19",
+      "2001:a000::/20",
+      "2001:b000::/20",
+      "2001:c00::/23",
+      "2001:e00::/23",
+      "2400::/12",
+      "2410::/12"
+     ],
+     [
+      "https://rdap.apnic.net/"
+     ]
+    ],
+    [
+     [
+      "2001:1800::/23",
+      "2001:400::/23",
+      "2001:4800::/23",
+      "2600::/12",
+      "2610::/23",
+      "2620::/23",
+      "2630::/12"
+     ],
+     [
+      "https://rdap.arin.net/registry/",
+      "http://rdap.arin.net/registry/"
+     ]
+    ]
+   ],
+   "version": "1.0"
+  }
+ },
+ "responses": {
+  "https://rdap.verisign.com/com/v1/domain/example.com": {
+   "objectClassName": "domain",
+   "handle": "2336799_DOMAIN_COM-VRSN",
+   "ldhName": "EXAMPLE.COM",
+   "links": [
+    {
+     "value": "https://rdap.verisign.com/com/v1/domain/example.com",
+     "rel": "self",
+     "href": "https://rdap.verisign.com/com/v1/domain/example.com",
+     "type": "application/rdap+json"
+    }
+   ],
+   "status": [
+    "client delete prohibited",
+    "client transfer prohibited",
+    "client update prohibited"
+   ],
+   "entities": [
+    {
+     "objectClassName": "entity",
+     "handle": "376",
+     "roles": [
+      "registrar"
+     ],
+     "publicIds": [
+      {
+       "type": "IANA Registrar ID",
+       "identifier": "376"
+      }
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "RESERVED-Internet Assigned Numbers Authority"
+       ]
+      ]
+     ],
+     "entities": [
+      {
+       "objectClassName": "entity",
+       "roles": [
+        "abuse"
+       ],
+       "vcardArray": [
+        "vcard",
+        [
+         [
+          "version",
+          {},
+          "text",
+          "4.0"
+         ],
+         [
+          "fn",
+          {},
+          "text",
+          ""
+         ],
+         [
+          "tel",
+          {
+           "type": "voice"
+          },
+          "uri",
+          ""
+         ],
+         [
+          "email",
+          {},
+          "text",
+          ""
+         ]
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "events": [
+    {
+     "eventAction": "registration",
+     "eventDate": "1995-08-14T04:00:00Z"
+    },
+    {
+     "eventAction": "expiration",
+     "eventDate": "2027-08-13T04:00:00Z"
+    },
+    {
+     "eventAction": "last changed",
+     "eventDate": "2026-08-14T08:01:43Z"
+    },
+    {
+     "eventAction": "last update of RDAP database",
+     "eventDate": "2026-11-14T16:17:05Z"
+    }
+   ],
+   "secureDNS": {
+    "delegationSigned": true,
+    "dsData": [
+     {
+      "keyTag": 2371,
+      "algorithm": 13,
+      "digestType": 2,
+      "digest": "C988EC423E3880EB8DD8A46FE06CA230EE23F35B578D64E78B29C3E1C83D245A"
+     }
+    ]
+   },
+   "nameservers": [
+    {
+     "objectClassName": "nameserver",
+     "ldhName": "ELLIOTT.NS.CLOUDFLARE.COM"
+    },
+    {
+     "objectClassName": "nameserver",
+     "ldhName": "HERA.NS.CLOUDFLARE.COM"
+    }
+   ],
+   "rdapConformance": [
+    "rdap_level_0",
+    "icann_rdap_technical_implementation_guide_1",
+    "icann_rdap_response_profile_1"
+   ],
+   "notices": [
+    {
+     "title": "Terms of Service",
+     "description": [
+      "Service subject to Terms of Use."
+     ],
+     "links": [
+      {
+       "href": "https://www.verisign.com/domain-names/registration-data-access-protocol/terms-service/index.xhtml",
+       "type": "text/html",
+       "value": "https://rdap.verisign.com/com/v1/domain/example.com",
+       "rel": "terms-of-service"
+      }
+     ]
+    },
+    {
+     "title": "Status Codes",
+     "description": [
+      "For more information on domain status codes, please visit https://icann.org/epp"
+     ],
+     "links": [
+      {
+       "href": "https://icann.org/epp",
+       "type": "text/html",
+       "value": "https://rdap.verisign.com/com/v1/domain/example.com",
+       "rel": "glossary"
+      }
+     ]
+    },
+    {
+     "title": "RDDS Inaccuracy Complaint Form",
+     "description": [
+      "URL of the ICANN RDDS Inaccuracy Complaint Form: https://icann.org/wicf"
+     ],
+     "links": [
+      {
+       "href": "https://icann.org/wicf",
+       "type": "text/html",
+       "value": "https://rdap.verisign.com/com/v1/domain/example.com",
+       "rel": "help"
+      }
+     ]
+    }
+   ]
+  },
+  "https://rdap.arin.net/registry/ip/8.8.8.8": {
+   "arin_originas0_originautnums": [],
+   "cidr0_cidrs": [
+    {
+     "v4prefix": "8.8.8.0",
+     "length": 24
+    }
+   ],
+   "endAddress": "8.8.8.255",
+   "entities": [
+    {
+     "entities": [
+      {
+       "events": [
+        {
+         "eventAction": "last changed",
+         "eventDate": "2026-08-19T14:34:18-04:00"
+        },
+        {
+         "eventAction": "registration",
+         "eventDate": "2015-11-06T15:36:35-05:00"
+        }
+       ],
+       "handle": "ABUSE5250-ARIN",
+       "links": [
+        {
+         "href": "https://rdap.arin.net/registry/entity/ABUSE5250-ARIN",
+         "rel": "self",
+         "type": "application/rdap+json",
+         "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+        },
+        {
+         "href": "https://whois.arin.net/rest/poc/ABUSE5250-ARIN",
+         "rel": "alternate",
+         "type": "application/xml",
+         "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+        }
+       ],
+       "objectClassName": "entity",
+       "port43": "whois.arin.net",
+       "remarks": [
+        {
+         "description": [
+          "Please note that the recommended way to file abuse complaints are located in the following links.",
+          "",
+          "To report abuse and illegal activity: https://www.google.com/contact/",
+          "",
+          "For legal requests: http://support.google.com/legal ",
+          "",
+          "Regards,",
+          "The Google Team"
+         ],
+         "title": "Registration Comments"
+        }
+       ],
+       "roles": [
+        "abuse"
+       ],
+       "status": [
+        "validated"
+       ],
+       "vcardArray": [
+        "vcard",
+        [
+         [
+          "version",
+          {},
+          "text",
+          "4.0"
+         ],
+         [
+          "adr",
+          {
+           "label": "1600 Amphitheatre Parkway\nMountain View\nCA\n94043\nUnited States"
+          },
+          "text",
+          [
+           "",
+           "",
+           "",
+           "",
+           "",
+           "",
+           ""
+          ]
+         ],
+         [
+          "fn",
+          {},
+          "text",
+          "Abuse"
+         ],
+         [
+          "org",
+          {},
+          "text",
+          "Google Inc."
+         ],
+         [
+          "kind",
+          {},
+          "text",
+          "group"
+         ],
+         [
+          "email",
+          {},
+          "text",
+          "network-abuse@google.com"
+         ],
+         [
+          "tel",
+          {
+           "type": [
+            "work",
+            "voice"
+           ]
+          },
+          "text",
+          "+1-650-253-0000"
+         ]
+        ]
+       ]
+      },
+      {
+       "events": [
+        {
+         "eventAction": "last changed",
+         "eventDate": "2026-11-10T07:16:42-05:00"
+        },
+        {
+         "eventAction": "registration",
+         "eventDate": "2000-11-30T13:54:08-05:00"
+        }
+       ],
+       "handle": "ZG39-ARIN",
+       "links": [
+        {
+         "href": "https://rdap.arin.net/registry/entity/ZG39-ARIN",
+         "rel": "self",
+         "type": "application/rdap+json",
+         "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+        },
+        {
+         "href": "https://whois.arin.net/rest/poc/ZG39-ARIN",
+         "rel": "alternate",
+         "type": "application/xml",
+         "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+        }
+       ],
+       "objectClassName": "entity",
+       "port43": "whois.arin.net",
+       "roles": [
+        "technical",
+        "administrative"
+       ],
+       "status": [
+        "validated"
+       ],
+       "vcardArray": [
+        "vcard",
+        [
+         [
+          "version",
+          {},
+          "text",
+          "4.0"
+         ],
+         [
+          "adr",
+          {
+           "label": "1600 Amphitheatre Parkway\nMountain View\nCA\n94043\nUnited States"
+          },
+          "text",
+          [
+           "",
+           "",
+           "",
+           "",
+           "",
+           "",
+           ""
+          ]
+         ],
+         [
+          "fn",
+          {},
+          "text",
+          "Google LLC"
+         ],
+         [
+          "org",
+          {},
+          "text",
+          "Google LLC"
+         ],
+         [
+          "kind",
+          {},
+          "text",
+          "group"
+         ],
+         [
+          "email",
+          {},
+          "text",
+          "arin-contact@google.com"
+         ],
+         [
+          "tel",
+          {
+           "type": [
+            "work",
+            "voice"
+           ]
+          },
+          "text",
+          "+1-650-253-0000"
+         ]
+        ]
+       ]
+      }
+     ],
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2019-10-31T15:45:45-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2000-03-30T00:00:00-05:00"
+      }
+     ],
+     "handle": "GOGL",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/GOGL",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+      },
+      {
+       "href": "https://whois.arin.net/rest/org/GOGL",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "remarks": [
+      {
+       "description": [
+        "Please note that the recommended way to file abuse complaints are located in the following links. ",
+        "",
+        "To report abuse and illegal activity: https://www.google.com/contact/",
+        "",
+        "For legal requests: http://support.google.com/legal ",
+        "",
+        "Regards, ",
+        "The Google Team"
+       ],
+       "title": "Registration Comments"
+      }
+     ],
+     "roles": [
+      "registrant"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "Google LLC"
+       ],
+       [
+        "adr",
+        {
+         "label": "1600 Amphitheatre Parkway\nMountain View\nCA\n94043\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "org"
+       ]
+      ]
+     ]
+    }
+   ],
+   "events": [
+    {
+     "eventAction": "last changed",
+     "eventDate": "2023-12-28T17:24:56-05:00"
+    },
+    {
+     "eventAction": "registration",
+     "eventDate": "2023-12-28T17:24:33-05:00"
+    }
+   ],
+   "handle": "NET-8-8-8-0-2",
+   "ipVersion": "v4",
+   "links": [
+    {
+     "href": "https://rdap.arin.net/registry/ip/8.8.8.0",
+     "rel": "self",
+     "type": "application/rdap+json",
+     "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+    },
+    {
+     "href": "https://whois.arin.net/rest/net/NET-8-8-8-0-2",
+     "rel": "alternate",
+     "type": "application/xml",
+     "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+    }
+   ],
+   "name": "GOGL",
+   "notices": [
+    {
+     "description": [
+      "By using the ARIN RDAP/Whois service, you are agreeing to the RDAP/Whois Terms of Use"
+     ],
+     "links": [
+      {
+       "href": "https://www.arin.net/resources/registry/whois/tou/",
+       "rel": "terms-of-service",
+       "type": "text/html",
+       "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+      }
+     ],
+     "title": "Terms of Service"
+    },
+    {
+     "description": [
+      "If you see inaccuracies in the results, please visit: "
+     ],
+     "links": [
+      {
+       "href": "https://www.arin.net/resources/registry/whois/inaccuracy_reporting/",
+       "rel": "inaccuracy-report",
+       "type": "text/html",
+       "value": "https://rdap.arin.net/registry/ip/8.8.8.8"
+      }
+     ],
+     "title": "Whois Inaccuracy Reporting"
+    },
+    {
+     "description": [
+      "Copyright 1997-2026, American Registry for Internet Numbers, Ltd."
+     ],
+     "title": "Copyright Notice"
+    }
+   ],
+   "objectClassName": "ip network",
+   "parentHandle": "NET-8-0-0-0-0",
+   "port43": "whois.arin.net",
+   "rdapConformance": [
+    "nro_rdap_profile_0",
+    "rdap_level_0",
+    "cidr0",
+    "arin_originas0"
+   ],
+   "startAddress": "8.8.8.0",
+   "status": [
+    "active"
+   ],
+   "type": "DIRECT ALLOCATION"
+  }
+ }
+}

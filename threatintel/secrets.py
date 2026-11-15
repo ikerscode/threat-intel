@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import os
 
-KNOWN_KEYS = ("ABUSECH_AUTH_KEY", "NVD_API_KEY")
+KNOWN_KEYS = ("ABUSECH_AUTH_KEY", "NVD_API_KEY", "OTX_API_KEY")
 _ATTRS = {"project": "seclab-threat-intel"}
 
 

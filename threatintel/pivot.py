@@ -20,7 +20,7 @@ MAX_NODES = 120
 LEAF_TYPES = {"technique", "tactic", "campaign", "vendor", "brand"}
 # Typed node ids accepted verbatim by search (the HUD graph sends these on click).
 NODE_PREFIXES = {"actor", "attack-group", "rwgroup", "technique", "tactic", "software", "malware", "cve", "ip", "cidr",
-                 "url", "domain", "regdomain", "hash", "asn", "net24", "vendor", "product", "brand", "campaign"}
+                 "url", "domain", "regdomain", "hash", "asn", "net24", "vendor", "product", "brand", "campaign", "event"}
 FANOUT_START = 60
 FANOUT = 12
 
@@ -45,6 +45,9 @@ def label_for(conn, node: str) -> str:
     if kind == "attack-group":
         r = conn.execute("SELECT name FROM actor_records WHERE source='attack' AND source_id=?", (key,)).fetchone()
         return f"{key} {r[0]}" if r else key
+    if kind == "event":
+        r = conn.execute("SELECT info FROM misp_events WHERE uuid=?", (key,)).fetchone()
+        return (r[0] or key)[:60] if r else key
     return key
 
 
@@ -128,7 +131,10 @@ def neighbours(conn, node: str, cap: int) -> list[tuple[str, str, str, str]]:
         "SELECT src, rel, dst, source FROM relationships WHERE src=? UNION "
         "SELECT src, rel, dst, source FROM relationships WHERE dst=? LIMIT ?", (node, node, cap * 4)).fetchall()
     # prefer correlate/attack edges (more meaningful) and skip raw source-level duplicates
-    rows = sorted(rows, key=lambda r: (r[0].startswith(("attack-group:", "rwgroup:")), r[3] != "correlate"))
+    # hub nodes (techniques, tactics) last so a capped walk keeps the rarer links (events, IOCs, CVEs)
+    rows = sorted(rows, key=lambda r: (r[0].startswith(("attack-group:", "rwgroup:")),
+                                       node_type(r[2] if r[0] == node else r[0]) in LEAF_TYPES,
+                                       r[3] != "correlate"))
     return [tuple(r) for r in rows[:cap]]
 
 
@@ -196,15 +202,29 @@ def entity_details(conn, node: str) -> dict | None:
         if i:
             i["sources"] = db.jload(i["sources"])
             i["tags"] = db.jload(i["tags"])
-            i["sightings"] = db.rows(conn, "SELECT source, first_seen, last_seen, malware, extra FROM sightings WHERE indicator_id=?", (i["id"],))
+            i["sightings"] = db.rows(conn, """SELECT source, first_seen, last_seen, malware, extra, first_obs, last_obs,
+                                                days_seen FROM sightings WHERE indicator_id=?""", (i["id"],))
             for s in i["sightings"]:
                 s["extra"] = db.jload(s["extra"], {})
+            obs = [s for s in i["sightings"] if s.get("first_obs")]
+            if obs:
+                i["observed"] = {"first": min(s["first_obs"] for s in obs), "last": max(s["last_obs"] or 0 for s in obs),
+                                 "days_seen": max(s["days_seen"] or 0 for s in obs)}
+            pa = db.one(conn, "SELECT score, brands, method, reasons FROM phishing_analysis WHERE indicator_id=?", (i["id"],))
+            if pa:
+                i["phishing"] = {"score": pa["score"], "brands": db.jload(pa["brands"]), "method": pa["method"],
+                                 "reasons": db.jload(pa["reasons"])}
         elif kind == "ip":
             ctx = asn.lookup(key)
             from .correlate import NetblockIndex
             block = NetblockIndex(conn).find(key)
             i = {"type": "ip", "value": key, "known": False, "asn": ctx, "inside_drop": block}
         return i
+    if kind == "event":
+        e = db.one(conn, "SELECT * FROM misp_events WHERE uuid=?", (key,))
+        if e:
+            e["tags"] = db.jload(e["tags"])
+        return e
     if kind == "malware":
         n = conn.execute("SELECT COUNT(*) FROM indicators WHERE malware=?", (key,)).fetchone()[0]
         return {"family": key, "display": aliases.display_name(key) or key, "indicators": n}
@@ -249,7 +269,10 @@ def linked_tables(conn, nodes: list[str], start: list[str]) -> dict[str, list]:
                 out["indicators"].append(r)
             else:
                 out["indicators"].append({"type": t, "value": v, "confidence": None})
-    other = [n for t, ns in groups.items() if t not in ("actor", "technique", "software", "cve", "ip", "url", "domain", "hash", "cidr") for n in ns]
+    if "event" in groups:
+        ids = [n.split(":", 1)[1] for n in groups["event"]]
+        out["events"] = db.rows(conn, f"SELECT uuid, info, date, org, stored FROM misp_events WHERE uuid IN ({','.join('?' * len(ids))}) ORDER BY date DESC", ids)
+    other = [n for t, ns in groups.items() if t not in ("actor", "technique", "software", "cve", "ip", "url", "domain", "hash", "cidr", "event") for n in ns]
     if other:
         out["other"] = [{"type": node_type(n), "value": n.split(":", 1)[1]} for n in other]
     for s in start:
@@ -266,7 +289,30 @@ def linked_tables(conn, nodes: list[str], start: list[str]) -> dict[str, list]:
     return out
 
 
-def search(conn, value: str, depth: int = 2) -> dict:
+def attach_rdap(conn, res: dict, network: bool) -> None:
+    """Add registration data for the searched domain/IP (and cached data for linked indicators)."""
+    from . import rdap
+    if res["kind"] in ("ip", "domain", "url"):
+        row = rdap.lookup(conn, res["query"], network=network) if network else rdap.cached(conn, res["query"])
+        res["rdap"] = rdap.summary(row)
+    for ind in res.get("linked", {}).get("indicators", []):
+        if ind.get("type") in ("ip", "domain", "url"):
+            row = rdap.cached(conn, ind["value"])
+            if row and row.get("status") == "ok":
+                ind["registered"], ind["registrar"] = row.get("registered"), row.get("registrar")
+
+
+def search(conn, value: str, depth: int = 2, rdap: bool = False) -> dict:
+    """Pivot search. rdap=True looks the searched domain/IP up in RDAP (registries only, cached)."""
+    res = _search(conn, value, depth)
+    try:
+        attach_rdap(conn, res, network=rdap)
+    except Exception as exc:  # RDAP is optional context; never break search over it
+        res["rdap"] = {"status": "error", "error": f"{type(exc).__name__}: {exc}"[:200]}
+    return res
+
+
+def _search(conn, value: str, depth: int = 2) -> dict:
     kind, starts = resolve(conn, value)
     entity = None
     for s in starts:

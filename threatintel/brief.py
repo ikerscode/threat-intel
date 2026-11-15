@@ -8,7 +8,7 @@ from __future__ import annotations
 import html
 from pathlib import Path
 
-from . import config, db, queries, scoring, timeutil
+from . import config, db, queries, scoring, timeutil, trends
 
 
 def _sections(conn, days: int) -> list[dict]:
@@ -19,7 +19,9 @@ def _sections(conn, days: int) -> list[dict]:
         "text": (f"Tracking {c['indicators']} malicious indicators ({c['c2_ips']} C2 IPs, {c['phishing_urls']} phishing URLs), "
                  f"{c['drop_netblocks']} DROP netblocks, {c['vulnerabilities']} known exploited vulnerabilities "
                  f"({c['kev_ransomware']} with known ransomware use), {c['actors']} actors "
-                 f"({c['merged_actors']} merged across ATT&CK and ransomware.live) and {c['victims']} ransomware leak-site posts."),
+                 f"({c['merged_actors']} merged across ATT&CK and ransomware.live) and {c['victims']} ransomware leak-site posts. "
+                 f"Also {c['c2_certs']} C2 TLS certificates, {c['reputation_ips']} attacker/reputation IPs, "
+                 f"{c['phishing_domains']} phishing domains and {c['misp_events']} MISP OSINT events."),
     }]
     kevs = queries.new_kevs(conn, days)
     sections.append({
@@ -65,13 +67,73 @@ def _sections(conn, days: int) -> list[dict]:
         "columns": ["family", "c2_ips", "countries", "asns"],
         "rows": fresh or queries.c2_by_family(conn),
     })
+    reported = trends.new_c2_by_family(conn, days, "reported")
+    sections.append({
+        "title": f"C2 listings per day by family (feed-reported dates, last {days} days)",
+        "intro": ("From the dates the feeds publish (SSLBL certificate listing date, Feodo/ThreatFox first seen). "
+                  "" if reported else "No dated C2 listings in this window."),
+        "columns": ["day", "family", "n"],
+        "rows": reported[:30],
+    })
+    src = queries.infrastructure_by_source(conn, days)
+    listed = {k[len("listed:"):]: v for k, v in ((r["k"], db.jload(r["v"], {})) for r in
+              db.rows(conn, "SELECT k, v FROM meta WHERE k LIKE 'listed:%'"))}
+    for r in src:
+        l = listed.get(r["source"])
+        r["sampled"] = f"{l['kept']} of {l['listed']}" if l else ""
+    sections.append({
+        "title": "Malicious infrastructure by source",
+        "intro": (f"new_observed = first seen by this lab in the last {days} days. Large rotating lists are a stable "
+                  "hash sample (sampled column). malicious_verdicts = confidence >= 60, which single reputation lists "
+                  "cannot reach alone."),
+        "columns": ["source", "indicators", "new_observed", "avg_confidence", "malicious_verdicts", "sampled"],
+        "rows": src,
+    })
     ph = queries.phishing_stats(conn, 8)
+    an = ph["analysis"]
     fmt = lambda xs: ", ".join(f"{x['label']} ({x['value']})" for x in xs) or "none"
+    per = "; ".join(f"{k}: {v['total']} total, unbranded {v['unbranded']} ({v['unbranded_pct']}%) now vs "
+                    f"{v['unbranded_keyword_only']} ({v['unbranded_pct_keyword_only']}%) with keywords only"
+                    for k, v in an["by_source"].items())
     sections.append({
         "title": "Phishing trends",
-        "text": (f"{ph['total']} phishing URLs analysed offline ({ph['unbranded']} with no brand keyword). "
-                 f"Top impersonated brands: {fmt(ph['brands'])}. Top TLDs: {fmt(ph['tlds'])}. "
-                 f"Hosting platforms: {fmt(ph['hosting'])}. Busiest registered domains: {fmt(ph['registered_domains'][:5])}."),
+        "text": (f"{ph['total']} phishing URLs and {an['by_type'].get('domain', {}).get('total', 0)} phishing domains analysed "
+                 f"offline. Brand matching now uses tokens, edit distance and homoglyph folding. {(per + '.') if per else 'No phishing data.'} "
+                 f"Detection methods: {fmt(an['methods'])}. Top impersonated brands: {fmt(an['brands'][:8])}. "
+                 f"Top TLDs: {fmt(an['tlds'][:8])}. Hosting platforms: {fmt(ph['hosting'])}. "
+                 f"Score bands: {fmt(an['score_bands'])}."),
+    })
+    top_ph = queries.phishing_top(conn, 12, min_score=40)
+    sections.append({
+        "title": "Highest-scoring brand impersonation",
+        "intro": f"Formula: {scoring.PHISH_FORMULA}. Values are defanged.",
+        "columns": ["value", "brand", "method", "score", "why"],
+        "rows": top_ph,
+    })
+    daily = trends.daily_table(conn, max(days, 14))
+    sections.append({
+        "title": "Daily history",
+        "intro": ("One row per day with a correlation snapshot. new_indicators / new_c2 count first observations by this "
+                  "lab; the baseline day (first collection) counts everything already listed."),
+        "columns": ["day", "baseline", "indicators", "c2_ips", "c2_certs", "phishing_urls", "phishing_domains",
+                    "new_indicators", "new_c2", "victims"],
+        "rows": daily,
+    })
+    weekly = trends.victims_by_week(conn, 6, 6)
+    sections.append({
+        "title": "Ransomware leak-site posts per week (busiest groups)",
+        "columns": ["week", "group", "n"],
+        "rows": weekly[:36],
+    })
+    events = queries.misp_events(conn, 10)
+    for e in events:
+        e["actors"] = ", ".join(a.split(":", 1)[1] for a in e["actors"])
+        e["malware"] = ", ".join(e["malware"])
+    sections.append({
+        "title": "Recent MISP OSINT events (CIRCL)",
+        "intro": "" if events else "No MISP events collected.",
+        "columns": ["date", "org", "info", "stored", "actors", "malware"],
+        "rows": events,
     })
     tf = queries.technique_frequency(conn, "active", 15)
     sections.append({

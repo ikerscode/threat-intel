@@ -24,11 +24,33 @@ def isolated_env(tmp_path_factory):
     os.environ["TI_REPORTS"] = str(base / "reports")
     os.environ.pop("ABUSECH_AUTH_KEY", None)
     os.environ.pop("NVD_API_KEY", None)
+    os.environ.pop("OTX_API_KEY", None)
     os.environ["TI_NO_KEYRING"] = "1"  # tests never read the real keyring
-    from threatintel import asn, config
+    from threatintel import asn, config, rdap
     config.reset()
     asn.reload()
+    rdap.TRANSPORT = rdap_mock_transport()   # RDAP never reaches the network in tests
     yield base
+    rdap.TRANSPORT = None
+
+
+def rdap_mock_transport(log: list | None = None):
+    """Serve the real bootstrap files and RDAP answers saved in fixtures/rdap-samples.json; 404 otherwise."""
+    import json
+    import httpx
+    data = json.loads((ROOT / "fixtures" / "rdap-samples.json").read_text())
+    boots = {f"https://data.iana.org/rdap/{k}.json": v for k, v in data["bootstrap"].items()}
+
+    def handler(request):
+        url = str(request.url)
+        if log is not None:
+            log.append(url)
+        if url in boots:
+            return httpx.Response(200, json=boots[url])
+        if url in data["responses"]:
+            return httpx.Response(200, json=data["responses"][url])
+        return httpx.Response(404, json={"errorCode": 404})
+    return httpx.MockTransport(handler)
 
 
 @pytest.fixture(scope="session")

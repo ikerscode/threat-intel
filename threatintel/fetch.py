@@ -10,6 +10,9 @@ What it does for each request:
 - sends If-None-Match / If-Modified-Since when the cache has an ETag or
   Last-Modified and treats 304 as "use the cache".
 - enforces a minimum gap between requests to the same host.
+- optionally refuses bodies larger than `max_bytes` (streamed, so an oversized
+  file is never read in full) and lets a collector `transform` the body before
+  it is cached (CIRCL events drop embedded attachments that way).
 """
 from __future__ import annotations
 
@@ -39,11 +42,25 @@ FEED_HOSTS = {
     "www.spamhaus.org",
     "check.torproject.org",
     "iptoasn.com",
+    "sslbl.abuse.ch",
+    "rules.emergingthreats.net",
+    "cinsscore.com",
+    "lists.blocklist.de",
+    "phishing.army",
+    "www.circl.lu",
+    "otx.alienvault.com",
+    # RDAP: the IANA bootstrap files and the rdap.org redirector. The registry
+    # RDAP servers themselves are allowed per request by rdap.py, using only the
+    # hosts that the IANA bootstrap lists (never the host being looked up).
+    "data.iana.org",
+    "rdap.org",
 }
 
 
 class FetchError(RuntimeError):
-    pass
+    def __init__(self, msg: str, status: int | None = None):
+        super().__init__(msg)
+        self.status = status
 
 
 @dataclass
@@ -79,21 +96,47 @@ def _wait_for_host(host: str, interval: float) -> None:
         time.sleep(min(wait, 5))
 
 
-def check_host(url: str) -> str:
+def check_host(url: str, extra_hosts: frozenset | set | None = None) -> str:
     host = (urlsplit(url).hostname or "").lower()
-    if host not in FEED_HOSTS:
+    if host not in FEED_HOSTS and host not in (extra_hosts or ()):
         raise FetchError(f"refusing to contact non-feed host {host!r}")
     return host
+
+
+def _read_capped(client: httpx.Client, method: str, url: str, headers: dict, data, max_bytes: int) -> httpx.Response:
+    """Send a request but stop reading once the body passes max_bytes."""
+    req = client.build_request(method, url, headers=headers, json=data if method == "POST" else None)
+    resp = client.send(req, stream=True)
+    try:
+        declared = int(resp.headers.get("content-length") or 0)
+        if declared > max_bytes:
+            raise FetchError(f"{url} is {declared} bytes, over the {max_bytes} byte cap", status=resp.status_code)
+        chunks, size = [], 0
+        for chunk in resp.iter_bytes():
+            size += len(chunk)
+            if size > max_bytes:
+                raise FetchError(f"{url} passed the {max_bytes} byte cap while downloading", status=resp.status_code)
+            chunks.append(chunk)
+        resp._content = b"".join(chunks)
+    finally:
+        resp.close()
+    return resp
 
 
 def get(url: str, *, feed: str, min_refetch_s: float = 0, timeout_s: float = 30,
         host_interval_s: float | None = None, headers: dict | None = None,
         method: str = "GET", data: dict | None = None, cache_key: str | None = None,
         transport: httpx.BaseTransport | None = None, retries: int = 2,
-        backoff_s: float = 10.0) -> FetchResult:
-    """Fetch a feed URL with caching and conditional requests."""
+        backoff_s: float = 10.0, extra_hosts: frozenset | set | None = None,
+        max_bytes: int | None = None, transform=None) -> FetchResult:
+    """Fetch a feed URL with caching and conditional requests.
+
+    extra_hosts  hosts allowed for this request only (RDAP registry servers)
+    max_bytes    refuse larger bodies (checked on Content-Length and while streaming)
+    transform    function bytes -> bytes applied before the body is cached and returned
+    """
     settings = config.get()
-    host = check_host(url)
+    host = check_host(url, extra_hosts)
     key = cache_key or f"{method} {url} {json.dumps(data, sort_keys=True) if data else ''}"
     body_path, meta_path = _cache_paths(settings.cache_dir, feed, key)
     meta = json.loads(meta_path.read_text()) if meta_path.exists() and body_path.exists() else None
@@ -113,13 +156,16 @@ def get(url: str, *, feed: str, min_refetch_s: float = 0, timeout_s: float = 30,
     try:
         for attempt in range(retries + 1):
             _wait_for_host(host, interval)
-            with httpx.Client(timeout=timeout_s, follow_redirects=True, transport=transport) as client:
-                if method == "POST":
+            with httpx.Client(timeout=timeout_s, follow_redirects=True, transport=transport,
+                              event_hooks={"request": [lambda r: check_host(str(r.url), extra_hosts)]}) as client:
+                # The request hook checks every hop, so a redirect off the allowlist is never sent.
+                if max_bytes:
+                    resp = _read_capped(client, method, url, req_headers, data, max_bytes)
+                elif method == "POST":
                     resp = client.post(url, headers=req_headers, json=data)
                 else:
                     resp = client.get(url, headers=req_headers)
-                # Redirects are followed by httpx; make sure we did not end up off the allowlist.
-                check_host(str(resp.url))
+                check_host(str(resp.url), extra_hosts)
             # Back off on rate limiting and temporary server errors, then try again.
             if resp.status_code in (429, 500, 502, 503, 504) and attempt < retries:
                 time.sleep(backoff_s * (attempt + 1))
@@ -137,9 +183,11 @@ def get(url: str, *, feed: str, min_refetch_s: float = 0, timeout_s: float = 30,
         meta_path.write_text(json.dumps(meta))
         return FetchResult(url, body_path.read_bytes(), 304, True, meta["fetched_at"], note="304 not modified")
     if resp.status_code >= 400:
-        raise FetchError(f"HTTP {resp.status_code} from {host}: {resp.text[:200]}")
+        raise FetchError(f"HTTP {resp.status_code} from {host}: {resp.text[:200]}", status=resp.status_code)
 
     body = resp.content
+    if transform is not None:
+        body = transform(body)
     body_path.write_bytes(body)
     meta = {
         "url": url,
