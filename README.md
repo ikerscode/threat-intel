@@ -1,3 +1,5 @@
+[![tests](https://github.com/ikerscode/threat-intel/actions/workflows/tests.yml/badge.svg)](https://github.com/ikerscode/threat-intel/actions/workflows/tests.yml)
+
 # threat-intel
 
 A small threat intelligence operation for the seclab. It collects public threat
